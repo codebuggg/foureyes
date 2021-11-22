@@ -2,31 +2,14 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Passport\Passport;
-use Tests\TestCase;
+use Tests\AdminTestCase as TestCase;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 
 
 class ProductsTest extends TestCase
 {
-
-    use DatabaseMigrations, RefreshDatabase;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        \Artisan::call('passport:install');
-        $this->seed();
-        $user = \App\Models\User::where(["is_admin" => 1])->get()[0];
-        Passport::actingAs($user);
-
-        //See Below
-        //$token = $user->createToken('bigStore')->accessToken;
-    }
 
     public function test_fetches_all_products()
     {
