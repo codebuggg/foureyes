@@ -33,6 +33,7 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
 });
 
 Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin", "as" => "admin."], function(){
+  Route::put('products/{product}/units','ProductsController@units')->name("products.units");
   Route::resource('products', 'ProductsController');
 });
 

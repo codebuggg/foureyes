@@ -21,11 +21,14 @@ class ProductsController extends Controller
         $params["image"] = $imageName;
         $product = Product::create($params);
 
-        return response()->json([
+        return response()->json($product, 201);
+
+        /*return response()->json([
             'status' => (bool) $product,
             'data'   => $product,
             'message' => $product ? 'Product Created!' : 'Error Creating Product'
         ], 201);
+        */
     }
 
     public function show(Product $product)
@@ -45,9 +48,9 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function updateUnits(Request $request, Product $product)
+    public function units(Request $request, Product $product)
     {
-        $product->units = $product->units + $request->get('units');
+        $product->units += $request->get('units');
         $status = $product->save();
 
         return response()->json([

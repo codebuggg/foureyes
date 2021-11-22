@@ -15,8 +15,7 @@ class ProductFactory extends Factory
     {
         return [
           'name' => "MEN'S BETTER THAN NAKED & JACKET",
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua consequat.',
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consequat.',
           'units' => 21,
           'price' => 200.10,
           'image' => 'product.jpg',
