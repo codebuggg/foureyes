@@ -22,9 +22,21 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::post('login', 'App\Http\Controllers\UserController@login');
-Route::post('register', 'App\Http\Controllers\UserController@register');
-Route::get('/products', 'App\Http\Controllers\ProductController@index');
+Route::group(["namespace" => "App\Http\Controllers"], function(){
+  Route::post('login', 'UserController@login');
+  Route::post('register', 'UserController@register');
+  Route::resource('carts', "CartsController")->except("update", "destroy");
+  Route::delete('carts', "CartsController@destroy")->name("carts.destroy");
+  Route::put('carts', "CartsController@update")->name("carts.update");
+  Route::resource('orders', 'OrdersController');
+  Route::resource('products','ProductsController');
+});
+
+Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin", "as" => "admin."], function(){
+  Route::resource('products', 'ProductsController');
+});
+
+/*Route::get('/products', 'App\Http\Controllers\ProductController@index');
 Route::post('/upload-file', 'App\Http\Controllers\ProductController@uploadFile');
 Route::get('/products/{product}', 'App\Http\Controllers\ProductController@show');
 
@@ -40,3 +52,4 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::resource('/orders', 'App\Http\Controllers\OrderController');
     Route::resource('/products', 'App\Http\Controllers\ProductController')->except(['index','show']);
 });
+*/

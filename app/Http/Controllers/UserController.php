@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterUserRequest;
 use Auth;
-use App\User;
+use App\Models\User;
 use Validator;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        return response()->json(User::with(['orders'])->get());
-    }
 
     public function login(Request $request)
     {
@@ -30,18 +27,8 @@ class UserController extends Controller
         return response()->json($response, $status);
     }
 
-    public function register(Request $request)
+    public function register(RegisterUserRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:50',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'c_password' => 'required|same:password',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
-        }
 
         $data = $request->only(['name', 'email', 'password']);
         $data['password'] = bcrypt($data['password']);
@@ -60,8 +47,4 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-    public function showOrders(User $user)
-    {
-        return response()->json($user->orders()->with(['product'])->get());
-    }
 }

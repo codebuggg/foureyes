@@ -47,6 +47,8 @@ class ProductsTableSeeder extends Seeder
                 'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/enduro-boa-hydration-pack-AJQZ_JK3_hero.png',
             ]
         ];
+        foreach ($products as $key => $value) {
+          \App\Models\Product::create($value);
+        }
     }
 }
-

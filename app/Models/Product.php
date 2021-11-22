@@ -14,7 +14,37 @@ class Product extends Model
         'name', 'price', 'units', 'description', 'image'
     ];
 
-    public function orders(){
+    protected $visible = [
+        'name',
+        'price',
+        'units',
+        'description',
+        'image',
+        'images'
+    ];
+
+    protected $casts = [
+      'price' => 'double',
+      'units' => 'int'
+    ];
+
+    public function orders()
+    {
         return $this->hasMany(Order::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function scopeInStock($query)
+    {
+        return $query->where('units', '>', 0);
+    }
+
+    public function scopeOutOfStock($query)
+    {
+        return $query->where('units', '=', 0);
     }
 }
