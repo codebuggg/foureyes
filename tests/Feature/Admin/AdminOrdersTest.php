@@ -29,26 +29,32 @@ class AdminOrdersTest extends TestCase
         );
     }
 
-    /*
-    public function test_deletes_a_product()
+    public function test_deletes_an_order()
     {
-        $product = Product::factory()->create();
-        $response = $this->delete(route('admin.products.show', $product));
+        $order = Order::factory()->create();
+        $response = $this->delete(route('admin.orders.show', $order));
         $response->assertOk();
-        $this->assertSoftDeleted($product);
+        $this->assertSoftDeleted($order);
     }
 
-    public function test_updates_a_product_unit()
+    public function test_updates_an_orders_state()
     {
-        $product = Product::factory()->create();
-        $units = 30;
-        $response = $this->put(route('admin.products.units', $product), ["units" => $units]);
-        $this->assertDatabaseHas('products', [
-          "id" => $product["id"],
-          "units" => $product["units"] += $units
+        $order = Order::factory()->create();
+        $state = "Delivering";
+        $response = $this->put(route('admin.orders.state', $order), [
+          "state" => $state,
         ]);
-        $response->assertOk();
+        $this->assertDatabaseHas('orders', [
+          "id" => $order["id"],
+          "state" => $state,
+        ]);
+        $response
+          ->assertOk()
+          ->assertJson(fn ($json) =>
+            $json
+              ->where('status', true)
+              ->etc()
+          );
     }
-    */
 
 }

@@ -16,9 +16,21 @@ class OrdersController extends Controller
         return response()->json($orders, 200);
     }
 
-    public function show(Order $order)
+    public function show($id)
     {
+        $order = Order::with('products')->find($id);
         return response()->json($order, 200);
+    }
+
+    public function state(Request $request, Order $order)
+    {
+        $status = $order->update([
+          "state" => $request->state,
+        ]);
+        return response()->json([
+          "status" => $status,
+          "data" => $order,
+        ]);
     }
 
     public function destroy($order)
