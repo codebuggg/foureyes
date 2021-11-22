@@ -1,24 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
 use App\Models\OrderProduct;
 use \App\Models\Cart;
 use Illuminate\Http\Request;
-use Auth;
 
 class OrdersController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware("auth");
-    }
-
     public function index()
     {
-        $orders = Order::where(["user_id" => Auth::id()])->get();
+        $orders = Order::all();
         return response()->json($orders, 200);
     }
 
