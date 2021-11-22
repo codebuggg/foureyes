@@ -20,10 +20,6 @@ class ImagesController extends Controller
     {
     }
 
-    public function edit(Image $image)
-    {
-    }
-
     public function update(Request $request, Image $image)
     {
     }
