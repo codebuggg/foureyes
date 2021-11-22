@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Illuminate\Http\UploadedFile;
 
 class ProductFactory extends Factory
 {
@@ -20,7 +19,7 @@ class ProductFactory extends Factory
               tempor incididunt ut labore et dolore magna aliqua consequat.',
           'units' => 21,
           'price' => 200.10,
-          'image' => 'product.jpg' //UploadedFile::fake()->image('product.jpg'),
+          'image' => 'product.jpg',
         ];
     }
 

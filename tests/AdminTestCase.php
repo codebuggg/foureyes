@@ -4,11 +4,11 @@ namespace Tests;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Passport\Passport;
 
 class AdminTestCase extends TestCase
 {
     use DatabaseMigrations, RefreshDatabase;
-
 
     public function setUp(): void
     {
@@ -21,4 +21,5 @@ class AdminTestCase extends TestCase
         //See Below
         //$token = $user->createToken('bigStore')->accessToken;
     }
+
 }
