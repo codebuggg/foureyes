@@ -1494,6 +1494,90 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -1508,6 +1592,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7085,9 +7259,285 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  Orders\n")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "bg-white" }, [
+      _c("div", { staticClass: "max-w-4xl mx-auto py-16 sm:px-6 sm:py-24" }, [
+        _c("div", { staticClass: "px-4 sm:px-0" }, [
+          _c(
+            "h1",
+            {
+              staticClass:
+                "text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"
+            },
+            [_vm._v("Order history")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "mt-2 text-sm text-gray-500" }, [
+            _vm._v(
+              "Check the status of recent orders, manage returns, and download invoices."
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-16" }, [
+          _c("h2", { staticClass: "sr-only" }, [_vm._v("Recent orders")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "space-y-16 sm:space-y-24" }, [
+            _c("div", [
+              _c("h3", { staticClass: "sr-only" }, [
+                _vm._v("Order placed on "),
+                _c("time", { attrs: { datetime: "2021-01-22" } }, [
+                  _vm._v("January 22, 2021")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-gray-50 px-4 py-6 sm:rounded-lg sm:p-6 md:flex md:items-center md:justify-between md:space-x-6 lg:space-x-8"
+                },
+                [
+                  _c(
+                    "dl",
+                    {
+                      staticClass:
+                        "divide-y divide-gray-200 space-y-4 text-sm text-gray-600 flex-auto md:divide-y-0 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-6 lg:w-1/2 lg:flex-none lg:gap-x-8"
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-between md:block" },
+                        [
+                          _c(
+                            "dt",
+                            { staticClass: "font-medium text-gray-900" },
+                            [_vm._v("Order number")]
+                          ),
+                          _vm._v(" "),
+                          _c("dd", { staticClass: "md:mt-1" }, [
+                            _vm._v(
+                              "\n                                    WU88191111\n                                "
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-between pt-4 md:block md:pt-0"
+                        },
+                        [
+                          _c(
+                            "dt",
+                            { staticClass: "font-medium text-gray-900" },
+                            [_vm._v("Date placed")]
+                          ),
+                          _vm._v(" "),
+                          _c("dd", { staticClass: "md:mt-1" }, [
+                            _c("time", { attrs: { datetime: "2021-01-22" } }, [
+                              _vm._v("January 22, 2021")
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-between pt-4 font-medium text-gray-900 md:block md:pt-0"
+                        },
+                        [
+                          _c("dt", [_vm._v("Total amount")]),
+                          _vm._v(" "),
+                          _c("dd", { staticClass: "md:mt-1" }, [
+                            _vm._v(
+                              "\n                                    $302.00\n                                "
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "space-y-4 mt-6 sm:flex sm:space-x-4 sm:space-y-0 md:mt-0"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "w-full flex items-center justify-center bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 md:w-auto",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                View Order\n                                "
+                          ),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("WU88191111")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "w-full flex items-center justify-center bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 md:w-auto",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                View Invoice\n                                "
+                          ),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("for order WU88191111")
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-6 flow-root px-4 sm:mt-10 sm:px-0" },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "-my-6 divide-y divide-gray-200 sm:-my-10" },
+                    [
+                      _c("div", { staticClass: "flex py-6 sm:py-10" }, [
+                        _c(
+                          "div",
+                          { staticClass: "min-w-0 flex-1 lg:flex lg:flex-col" },
+                          [
+                            _c("div", { staticClass: "lg:flex-1" }, [
+                              _c("div", { staticClass: "sm:flex" }, [
+                                _c("div", [
+                                  _c(
+                                    "h4",
+                                    {
+                                      staticClass: "font-medium text-gray-900"
+                                    },
+                                    [_vm._v("Nomad Tumbler")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "hidden mt-2 text-sm text-gray-500 sm:block"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "This durable double-walled insulated tumbler keeps your beverages at the perfect temperature all day long. Hot, cold, or even lukewarm if you're weird like that, this bottle is ready for your next adventure."
+                                      )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "mt-1 font-medium text-gray-900 sm:mt-0 sm:ml-6"
+                                  },
+                                  [_vm._v("$35.00")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "mt-2 flex text-sm font-medium sm:mt-4"
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "text-indigo-600 hover:text-indigo-500",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v("View Product")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "border-l border-gray-200 ml-4 pl-4 sm:ml-6 sm:pl-6"
+                                    },
+                                    [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "text-indigo-600 hover:text-indigo-500",
+                                          attrs: { href: "#" }
+                                        },
+                                        [_vm._v("Buy Again")]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "mt-6 font-medium" }, [
+                              _c("p", [_vm._v("Out for delivery")])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "ml-4 flex-shrink-0 sm:m-0 sm:mr-6 sm:order-first"
+                          },
+                          [
+                            _c("img", {
+                              staticClass:
+                                "col-start-2 col-end-3 sm:col-start-1 sm:row-start-1 sm:row-span-2 w-20 h-20 rounded-lg object-center object-cover sm:w-40 sm:h-40 lg:w-52 lg:h-52",
+                              attrs: {
+                                src:
+                                  "https://tailwindui.com/img/ecommerce-images/order-history-page-06-product-01.jpg",
+                                alt:
+                                  "Olive drab green insulated bottle with flared screw lid and flat top."
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -7109,9 +7559,289 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  New Order\n")])
+  return _c("div", [
+    _c("main", { staticClass: "relative lg:min-h-full" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "div",
+          {
+            staticClass:
+              "max-w-2xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:py-32 lg:grid lg:grid-cols-2 lg:gap-x-8 xl:gap-x-24"
+          },
+          [
+            _c("div", { staticClass: "lg:col-start-2" }, [
+              _c("h1", { staticClass: "text-sm font-medium text-indigo-600" }, [
+                _vm._v("Payment successful")
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+                },
+                [_vm._v("Thanks for ordering")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-2 text-base text-gray-500" }, [
+                _vm._v(
+                  "We appreciate your order, we’re currently processing it. So hang tight and we’ll send you confirmation very soon!"
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "dl",
+                {
+                  staticClass:
+                    "mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600"
+                },
+                [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("dt", { staticClass: "font-medium text-gray-900" }, [
+                      _vm._v("Payment Information")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "dd",
+                      {
+                        staticClass:
+                          "mt-2 space-y-2 sm:flex sm:space-y-0 sm:space-x-4"
+                      },
+                      [
+                        _c("div", { staticClass: "flex-none" }, [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "h-6 w-auto",
+                              attrs: {
+                                "aria-hidden": "true",
+                                width: "36",
+                                height: "24",
+                                viewBox: "0 0 36 24",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "36",
+                                  height: "24",
+                                  rx: "4",
+                                  fill: "#224DBA"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.925 15.673H8.874l-1.538-6c-.073-.276-.228-.52-.456-.635A6.575 6.575 0 005 8.403v-.231h3.304c.456 0 .798.347.855.75l.798 4.328 2.05-5.078h1.994l-3.076 7.5zm4.216 0h-1.937L14.8 8.172h1.937l-1.595 7.5zm4.101-5.422c.057-.404.399-.635.798-.635a3.54 3.54 0 011.88.346l.342-1.615A4.808 4.808 0 0020.496 8c-1.88 0-3.248 1.039-3.248 2.481 0 1.097.969 1.673 1.653 2.02.74.346 1.025.577.968.923 0 .519-.57.75-1.139.75a4.795 4.795 0 01-1.994-.462l-.342 1.616a5.48 5.48 0 002.108.404c2.108.057 3.418-.981 3.418-2.539 0-1.962-2.678-2.077-2.678-2.942zm9.457 5.422L27.16 8.172h-1.652a.858.858 0 00-.798.577l-2.848 6.924h1.994l.398-1.096h2.45l.228 1.096h1.766zm-2.905-5.482l.57 2.827h-1.596l1.026-2.827z",
+                                  fill: "#fff"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "sr-only" }, [_vm._v("Visa")])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(5)
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(6)
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "h-80 overflow-hidden lg:absolute lg:w-1/2 lg:h-full lg:pr-4 xl:pr-12"
+      },
+      [
+        _c("img", {
+          staticClass: "h-full w-full object-center object-cover",
+          attrs: {
+            src:
+              "https://tailwindui.com/img/ecommerce-images/confirmation-page-06-hero.jpg",
+            alt: "TODO"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("dl", { staticClass: "mt-16 text-sm font-medium" }, [
+      _c("dt", { staticClass: "text-gray-900" }, [_vm._v("Tracking number")]),
+      _vm._v(" "),
+      _c("dd", { staticClass: "mt-2 text-indigo-600" }, [
+        _vm._v("51547878755545848512")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass:
+          "mt-6 text-sm font-medium text-gray-500 border-t border-gray-200 divide-y divide-gray-200",
+        attrs: { role: "list" }
+      },
+      [
+        _c("li", { staticClass: "flex py-6 space-x-6" }, [
+          _c("img", {
+            staticClass:
+              "flex-none w-24 h-24 bg-gray-100 rounded-md object-center object-cover",
+            attrs: {
+              src:
+                "https://tailwindui.com/img/ecommerce-images/confirmation-page-06-product-01.jpg",
+              alt: "Model wearing men&#039;s charcoal basic tee in large."
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex-auto space-y-1" }, [
+            _c("h3", { staticClass: "text-gray-900" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Basic Tee")])
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Charcoal")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("L")])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "flex-none font-medium text-gray-900" }, [
+            _vm._v("$36.00")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "dl",
+      {
+        staticClass:
+          "text-sm font-medium text-gray-500 space-y-6 border-t border-gray-200 pt-6"
+      },
+      [
+        _c("div", { staticClass: "flex justify-between" }, [
+          _c("dt", [_vm._v("Subtotal")]),
+          _vm._v(" "),
+          _c("dd", { staticClass: "text-gray-900" }, [_vm._v("$72.00")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex justify-between" }, [
+          _c("dt", [_vm._v("Shipping")]),
+          _vm._v(" "),
+          _c("dd", { staticClass: "text-gray-900" }, [_vm._v("$8.00")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex justify-between" }, [
+          _c("dt", [_vm._v("Taxes")]),
+          _vm._v(" "),
+          _c("dd", { staticClass: "text-gray-900" }, [_vm._v("$6.40")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex items-center justify-between border-t border-gray-200 text-gray-900 pt-6"
+          },
+          [
+            _c("dt", { staticClass: "text-base" }, [_vm._v("Total")]),
+            _vm._v(" "),
+            _c("dd", { staticClass: "text-base" }, [_vm._v("$86.40")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("dt", { staticClass: "font-medium text-gray-900" }, [
+        _vm._v("Shipping Address")
+      ]),
+      _vm._v(" "),
+      _c("dd", { staticClass: "mt-2" }, [
+        _c("address", { staticClass: "not-italic" }, [
+          _c("span", { staticClass: "block" }, [_vm._v("Kristin Watson")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "block" }, [_vm._v("7363 Cynthia Pass")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "block" }, [_vm._v("Toronto, ON N3Y 4H8")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-auto" }, [
+      _c("p", { staticClass: "text-gray-900" }, [_vm._v("Ending with 4242")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Expires 12 / 21")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "mt-16 border-t border-gray-200 py-6 text-right" },
+      [
+        _c(
+          "a",
+          {
+            staticClass:
+              "text-sm font-medium text-indigo-600 hover:text-indigo-500",
+            attrs: { href: "#" }
+          },
+          [
+            _vm._v("Continue Shopping"),
+            _c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v(" →")])
+          ]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
