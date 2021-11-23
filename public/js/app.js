@@ -55,6 +55,1282 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var _this = this;
@@ -1293,9 +2569,3917 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  Home\n")])
+  return _c("div", [
+    _c("div", { staticClass: "bg-white" }, [
+      _c(
+        "div",
+        {
+          staticClass: "fixed inset-0 flex z-40 lg:hidden",
+          attrs: { role: "dialog", "aria-modal": "true" }
+        },
+        [
+          _c("div", {
+            staticClass: "fixed inset-0 bg-black bg-opacity-25",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto"
+            },
+            [
+              _c("div", { staticClass: "px-4 pt-5 pb-2 flex" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400",
+                    attrs: { type: "button" }
+                  },
+                  [
+                    _c("span", { staticClass: "sr-only" }, [
+                      _vm._v("Close menu")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          fill: "none",
+                          viewBox: "0 0 24 24",
+                          stroke: "currentColor",
+                          "aria-hidden": "true"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            "stroke-width": "2",
+                            d: "M6 18L18 6M6 6l12 12"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("header", { staticClass: "relative overflow-hidden" }, [
+        _c(
+          "nav",
+          {
+            staticClass:
+              "relative z-20 bg-white bg-opacity-90 backdrop-filter backdrop-blur-xl",
+            attrs: { "aria-label": "Top" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
+              [
+                _c("div", { staticClass: "h-16 flex items-center" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "bg-white p-2 rounded-md text-gray-400 lg:hidden",
+                      attrs: { type: "button" }
+                    },
+                    [
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Open menu")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "h-6 w-6",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            "aria-hidden": "true"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                              d: "M4 6h16M4 12h16M4 18h16"
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ml-auto flex items-center" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _vm._m(7),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex lg:ml-6" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "p-2 text-gray-400 hover:text-gray-500",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("Search")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "w-6 h-6",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  d:
+                                    "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ml-4 flow-root lg:ml-6" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "group -m-2 p-2 flex items-center",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  d:
+                                    "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
+                            },
+                            [_vm._v("0")]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("items in cart, view bag")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(8)
+      ]),
+      _vm._v(" "),
+      _vm._m(9),
+      _vm._v(" "),
+      _vm._m(10)
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-2" }, [
+      _c("div", { staticClass: "border-b border-gray-200" }, [
+        _c(
+          "div",
+          {
+            staticClass: "-mb-px flex px-4 space-x-8",
+            attrs: { "aria-orientation": "horizontal", role: "tablist" }
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium",
+                attrs: {
+                  id: "tabs-1-tab-1",
+                  "aria-controls": "tabs-1-panel-1",
+                  role: "tab",
+                  type: "button"
+                }
+              },
+              [
+                _vm._v(
+                  "\n                                Women\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium",
+                attrs: {
+                  id: "tabs-1-tab-2",
+                  "aria-controls": "tabs-1-panel-2",
+                  role: "tab",
+                  type: "button"
+                }
+              },
+              [
+                _vm._v(
+                  "\n                                Men\n                            "
+                )
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "pt-10 pb-8 px-4 space-y-10",
+          attrs: {
+            id: "tabs-1-panel-1",
+            "aria-labelledby": "tabs-1-tab-1",
+            role: "tabpanel",
+            tabindex: "0"
+          }
+        },
+        [
+          _c("div", { staticClass: "grid grid-cols-2 gap-x-4" }, [
+            _c("div", { staticClass: "group relative text-sm" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                },
+                [
+                  _c("img", {
+                    staticClass: "object-center object-cover",
+                    attrs: {
+                      src:
+                        "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+                      alt:
+                        "Models sitting back to back, wearing Basic Tee in black and bone."
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "mt-6 block font-medium text-gray-900",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("span", {
+                    staticClass: "absolute z-10 inset-0",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                                    New Arrivals\n                                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "mt-1", attrs: { "aria-hidden": "true" } },
+                [_vm._v("Shop now")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "group relative text-sm" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                },
+                [
+                  _c("img", {
+                    staticClass: "object-center object-cover",
+                    attrs: {
+                      src:
+                        "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+                      alt:
+                        "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "mt-6 block font-medium text-gray-900",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("span", {
+                    staticClass: "absolute z-10 inset-0",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                                    Basic Tees\n                                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "mt-1", attrs: { "aria-hidden": "true" } },
+                [_vm._v("Shop now")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "women-clothing-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Clothing\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "women-clothing-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Tops\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Dresses\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Pants\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Denim\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Sweaters\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        T-Shirts\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Jackets\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Activewear\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Browse All\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "women-accessories-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Accessories\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "women-accessories-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Watches\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Wallets\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Bags\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Sunglasses\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Hats\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Belts\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "women-brands-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Brands\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "women-brands-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Full Nelson\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        My Way\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Re-Arranged\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Counterfeit\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Significant Other\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "pt-10 pb-8 px-4 space-y-10",
+          attrs: {
+            id: "tabs-1-panel-2",
+            "aria-labelledby": "tabs-1-tab-2",
+            role: "tabpanel",
+            tabindex: "0"
+          }
+        },
+        [
+          _c("div", { staticClass: "grid grid-cols-2 gap-x-4" }, [
+            _c("div", { staticClass: "group relative text-sm" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                },
+                [
+                  _c("img", {
+                    staticClass: "object-center object-cover",
+                    attrs: {
+                      src:
+                        "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
+                      alt:
+                        "Drawstring top with elastic loop closure and textured interior padding."
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "mt-6 block font-medium text-gray-900",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("span", {
+                    staticClass: "absolute z-10 inset-0",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                                    New Arrivals\n                                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "mt-1", attrs: { "aria-hidden": "true" } },
+                [_vm._v("Shop now")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "group relative text-sm" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                },
+                [
+                  _c("img", {
+                    staticClass: "object-center object-cover",
+                    attrs: {
+                      src:
+                        "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
+                      alt:
+                        "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "mt-6 block font-medium text-gray-900",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("span", {
+                    staticClass: "absolute z-10 inset-0",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                                    Artwork Tees\n                                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "mt-1", attrs: { "aria-hidden": "true" } },
+                [_vm._v("Shop now")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "men-clothing-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Clothing\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "men-clothing-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Tops\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Pants\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Sweaters\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        T-Shirts\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Jackets\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Activewear\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Browse All\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "men-accessories-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Accessories\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "men-accessories-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Watches\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Wallets\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Bags\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Sunglasses\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Hats\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Belts\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "p",
+              {
+                staticClass: "font-medium text-gray-900",
+                attrs: { id: "men-brands-heading-mobile" }
+              },
+              [
+                _vm._v(
+                  "\n                                Brands\n                            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              {
+                staticClass: "mt-6 flex flex-col space-y-6",
+                attrs: {
+                  role: "list",
+                  "aria-labelledby": "men-brands-heading-mobile"
+                }
+              },
+              [
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Re-Arranged\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Counterfeit\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        Full Nelson\n                                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "flow-root" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "-m-2 p-2 block text-gray-500",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                        My Way\n                                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "border-t border-gray-200 py-6 px-4 space-y-6" },
+      [
+        _c("div", { staticClass: "flow-root" }, [
+          _c(
+            "a",
+            {
+              staticClass: "-m-2 p-2 block font-medium text-gray-900",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Company")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flow-root" }, [
+          _c(
+            "a",
+            {
+              staticClass: "-m-2 p-2 block font-medium text-gray-900",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Stores")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "border-t border-gray-200 py-6 px-4 space-y-6" },
+      [
+        _c("div", { staticClass: "flow-root" }, [
+          _c(
+            "a",
+            {
+              staticClass: "-m-2 p-2 block font-medium text-gray-900",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Sign in")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flow-root" }, [
+          _c(
+            "a",
+            {
+              staticClass: "-m-2 p-2 block font-medium text-gray-900",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Create account")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "border-t border-gray-200 py-6 px-4" }, [
+      _c(
+        "a",
+        { staticClass: "-m-2 p-2 flex items-center", attrs: { href: "#" } },
+        [
+          _c("img", {
+            staticClass: "w-5 h-auto block flex-shrink-0",
+            attrs: {
+              src: "https://tailwindui.com/img/flags/flag-canada.svg",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "span",
+            { staticClass: "ml-3 block text-base font-medium text-gray-900" },
+            [_vm._v("\n          CAD\n        ")]
+          ),
+          _vm._v(" "),
+          _c("span", { staticClass: "sr-only" }, [_vm._v(", change currency")])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ml-4 flex lg:ml-0" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Workflow")]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "h-8 w-auto",
+          attrs: {
+            src:
+              "https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600",
+            alt: ""
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "hidden lg:ml-8 lg:block lg:self-stretch" },
+      [
+        _c("div", { staticClass: "h-full flex space-x-8" }, [
+          _c("div", { staticClass: "flex" }, [
+            _c("div", { staticClass: "relative flex" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px",
+                  attrs: { type: "button", "aria-expanded": "false" }
+                },
+                [
+                  _vm._v(
+                    "\n                                            Women\n                                        "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute top-full inset-x-0 bg-white text-sm text-gray-500"
+              },
+              [
+                _c("div", {
+                  staticClass: "absolute inset-0 top-1/2 bg-white shadow",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute inset-0 top-0 h-px max-w-7xl mx-auto px-8",
+                    attrs: { "aria-hidden": "true" }
+                  },
+                  [
+                    _c("div", {
+                      staticClass:
+                        "bg-transparent w-full h-px transition-colors ease-out duration-200"
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "relative" }, [
+                  _c("div", { staticClass: "max-w-7xl mx-auto px-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "grid grid-cols-2 gap-y-10 gap-x-8 py-16"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-start-2 grid grid-cols-2 gap-x-8"
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "group relative text-base sm:text-sm"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+                                        alt:
+                                          "Models sitting back to back, wearing Basic Tee in black and bone."
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "mt-6 block font-medium text-gray-900",
+                                    attrs: { href: "#" }
+                                  },
+                                  [
+                                    _c("span", {
+                                      staticClass: "absolute z-10 inset-0",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(
+                                      "\n                                                                New Arrivals\n                                                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "mt-1",
+                                    attrs: { "aria-hidden": "true" }
+                                  },
+                                  [_vm._v("Shop now")]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "group relative text-base sm:text-sm"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+                                        alt:
+                                          "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "mt-6 block font-medium text-gray-900",
+                                    attrs: { href: "#" }
+                                  },
+                                  [
+                                    _c("span", {
+                                      staticClass: "absolute z-10 inset-0",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(
+                                      "\n                                                                Basic Tees\n                                                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "mt-1",
+                                    attrs: { "aria-hidden": "true" }
+                                  },
+                                  [_vm._v("Shop now")]
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm"
+                          },
+                          [
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Clothing-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Clothing\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Clothing-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Tops\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Dresses\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Pants\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Denim\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Sweaters\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        T-Shirts\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Jackets\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Activewear\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Browse All\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Accessories-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Accessories\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Accessories-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Watches\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Wallets\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Bags\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Sunglasses\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Hats\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Belts\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Brands-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Brands\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Brands-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Full Nelson\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        My Way\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Re-Arranged\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Counterfeit\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Significant Other\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex" }, [
+            _c("div", { staticClass: "relative flex" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px",
+                  attrs: { type: "button", "aria-expanded": "false" }
+                },
+                [
+                  _vm._v(
+                    "\n                                            Men\n                                        "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute top-full inset-x-0 bg-white text-sm text-gray-500"
+              },
+              [
+                _c("div", {
+                  staticClass: "absolute inset-0 top-1/2 bg-white shadow",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute inset-0 top-0 h-px max-w-7xl mx-auto px-8",
+                    attrs: { "aria-hidden": "true" }
+                  },
+                  [
+                    _c("div", {
+                      staticClass:
+                        "bg-transparent w-full h-px transition-colors ease-out duration-200"
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "relative" }, [
+                  _c("div", { staticClass: "max-w-7xl mx-auto px-8" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "grid grid-cols-2 gap-y-10 gap-x-8 py-16"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-start-2 grid grid-cols-2 gap-x-8"
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "group relative text-base sm:text-sm"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
+                                        alt:
+                                          "Drawstring top with elastic loop closure and textured interior padding."
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "mt-6 block font-medium text-gray-900",
+                                    attrs: { href: "#" }
+                                  },
+                                  [
+                                    _c("span", {
+                                      staticClass: "absolute z-10 inset-0",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(
+                                      "\n                                                                New Arrivals\n                                                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "mt-1",
+                                    attrs: { "aria-hidden": "true" }
+                                  },
+                                  [_vm._v("Shop now")]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "group relative text-base sm:text-sm"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
+                                        alt:
+                                          "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt."
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "mt-6 block font-medium text-gray-900",
+                                    attrs: { href: "#" }
+                                  },
+                                  [
+                                    _c("span", {
+                                      staticClass: "absolute z-10 inset-0",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(
+                                      "\n                                                                Artwork Tees\n                                                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "mt-1",
+                                    attrs: { "aria-hidden": "true" }
+                                  },
+                                  [_vm._v("Shop now")]
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm"
+                          },
+                          [
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Clothing-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Clothing\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Clothing-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Tops\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Pants\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Sweaters\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        T-Shirts\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Jackets\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Activewear\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Browse All\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Accessories-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Accessories\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Accessories-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Watches\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Wallets\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Bags\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Sunglasses\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Hats\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Belts\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "font-medium text-gray-900",
+                                  attrs: { id: "Brands-heading" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                                Brands\n                                                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "mt-6 space-y-6 sm:mt-4 sm:space-y-4",
+                                  attrs: {
+                                    role: "list",
+                                    "aria-labelledby": "Brands-heading"
+                                  }
+                                },
+                                [
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Re-Arranged\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Counterfeit\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        Full Nelson\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "flex" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "hover:text-gray-800",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                                                        My Way\n                                                                    "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "flex items-center text-sm font-medium text-gray-700 hover:text-gray-800",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Company")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "flex items-center text-sm font-medium text-gray-700 hover:text-gray-800",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Stores")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass:
+              "text-sm font-medium text-gray-700 hover:text-gray-800",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Sign in")]
+        ),
+        _vm._v(" "),
+        _c("span", {
+          staticClass: "h-6 w-px bg-gray-200",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass:
+              "text-sm font-medium text-gray-700 hover:text-gray-800",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Create account")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "hidden lg:ml-8 lg:flex" }, [
+      _c(
+        "a",
+        {
+          staticClass: "text-gray-700 hover:text-gray-800 flex items-center",
+          attrs: { href: "#" }
+        },
+        [
+          _c("img", {
+            staticClass: "w-5 h-auto block flex-shrink-0",
+            attrs: {
+              src: "https://tailwindui.com/img/flags/flag-canada.svg",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "ml-3 block text-sm font-medium" }, [
+            _vm._v("\n                CAD\n              ")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "sr-only" }, [_vm._v(", change currency")])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48" },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static"
+          },
+          [
+            _c("div", { staticClass: "sm:max-w-lg" }, [
+              _c(
+                "h1",
+                {
+                  staticClass:
+                    "text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+                },
+                [
+                  _vm._v(
+                    "\n                            Summer styles are finally here\n                        "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-4 text-xl text-gray-500" }, [
+                _vm._v(
+                  "This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("div", { staticClass: "mt-10" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full",
+                    attrs: { "aria-hidden": "true" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex items-center space-x-6 lg:space-x-8"
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "w-44 h-64 rounded-lg overflow-hidden"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        "w-full h-full object-center object-cover",
+                                      attrs: {
+                                        src:
+                                          "https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg",
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v("Shop Collection")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c(
+        "section",
+        {
+          staticClass: "bg-gray-50",
+          attrs: { "aria-labelledby": "category-heading" }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "sm:flex sm:items-baseline sm:justify-between" },
+                [
+                  _c(
+                    "h2",
+                    {
+                      staticClass:
+                        "text-2xl font-extrabold tracking-tight text-gray-900",
+                      attrs: { id: "category-heading" }
+                    },
+                    [_vm._v("Shop by Category")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v("Browse all categories"),
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v(" →")
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2"
+                    },
+                    [
+                      _c("img", {
+                        staticClass:
+                          "object-center object-cover group-hover:opacity-75",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-featured-category.jpg",
+                          alt:
+                            "Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "bg-gradient-to-b from-transparent to-black opacity-50",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "p-6 flex items-end" }, [
+                        _c("div", [
+                          _c(
+                            "h3",
+                            { staticClass: "font-semibold text-white" },
+                            [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("span", { staticClass: "absolute inset-0" }),
+                                _vm._v(
+                                  "\n                                            New Arrivals\n                                        "
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass: "mt-1 text-sm text-white",
+                              attrs: { "aria-hidden": "true" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                        Shop now\n                                    "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full"
+                    },
+                    [
+                      _c("img", {
+                        staticClass:
+                          "object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg",
+                          alt:
+                            "Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "p-6 flex items-end sm:absolute sm:inset-0"
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "h3",
+                              { staticClass: "font-semibold text-white" },
+                              [
+                                _c("a", { attrs: { href: "#" } }, [
+                                  _c("span", {
+                                    staticClass: "absolute inset-0"
+                                  }),
+                                  _vm._v(
+                                    "\n                                            Accessories\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticClass: "mt-1 text-sm text-white",
+                                attrs: { "aria-hidden": "true" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Shop now\n                                    "
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full"
+                    },
+                    [
+                      _c("img", {
+                        staticClass:
+                          "object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg",
+                          alt:
+                            "Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "p-6 flex items-end sm:absolute sm:inset-0"
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "h3",
+                              { staticClass: "font-semibold text-white" },
+                              [
+                                _c("a", { attrs: { href: "#" } }, [
+                                  _c("span", {
+                                    staticClass: "absolute inset-0"
+                                  }),
+                                  _vm._v(
+                                    "\n                                            Workspace\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticClass: "mt-1 text-sm text-white",
+                                attrs: { "aria-hidden": "true" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Shop now\n                                    "
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-6 sm:hidden" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "block text-sm font-semibold text-indigo-600 hover:text-indigo-500",
+                    attrs: { href: "#" }
+                  },
+                  [
+                    _vm._v("Browse all categories"),
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v(" →")
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { attrs: { "aria-labelledby": "cause-heading" } }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "relative bg-gray-800 py-32 px-6 sm:py-40 sm:px-12 lg:px-16"
+          },
+          [
+            _c("div", { staticClass: "absolute inset-0 overflow-hidden" }, [
+              _c("img", {
+                staticClass: "w-full h-full object-center object-cover",
+                attrs: {
+                  src:
+                    "https://tailwindui.com/img/ecommerce-images/home-page-03-feature-section-full-width.jpg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "absolute inset-0 bg-gray-900 bg-opacity-50",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "relative max-w-3xl mx-auto flex flex-col items-center text-center"
+              },
+              [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "text-3xl font-extrabold tracking-tight text-white sm:text-4xl",
+                    attrs: { id: "cause-heading" }
+                  },
+                  [_vm._v("Long-term thinking")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "mt-3 text-xl text-white" }, [
+                  _vm._v(
+                    "We're committed to responsible, sustainable, and ethical manufacturing. Our small-scale approach allows us to focus on quality and reduce our impact. We're doing our best to delay the inevitable heat-death of the universe."
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v("Read our story")]
+                )
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { "aria-labelledby": "favorites-heading" } }, [
+        _c(
+          "div",
+          {
+            staticClass: "max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "sm:flex sm:items-baseline sm:justify-between" },
+              [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "text-2xl font-extrabold tracking-tight text-gray-900",
+                    attrs: { id: "favorites-heading" }
+                  },
+                  [_vm._v("Our Favorites")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block",
+                    attrs: { href: "#" }
+                  },
+                  [
+                    _vm._v("Browse all favorites"),
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v(" →")
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8"
+              },
+              [
+                _c("div", { staticClass: "group relative" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3"
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "w-full h-full object-center object-cover",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-01.jpg",
+                          alt:
+                            "Model wearing women&#039;s black cotton crewneck tee."
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "mt-4 text-base font-semibold text-gray-900"
+                    },
+                    [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("span", { staticClass: "absolute inset-0" }),
+                        _vm._v(
+                          "\n                                    Black Basic Tee\n                                "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
+                    _vm._v("$32")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "group relative" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3"
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "w-full h-full object-center object-cover",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-02.jpg",
+                          alt:
+                            "Model wearing women&#039;s off-white cotton crewneck tee."
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "mt-4 text-base font-semibold text-gray-900"
+                    },
+                    [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("span", { staticClass: "absolute inset-0" }),
+                        _vm._v(
+                          "\n                                    Off-White Basic Tee\n                                "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
+                    _vm._v("$32")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "group relative" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3"
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "w-full h-full object-center object-cover",
+                        attrs: {
+                          src:
+                            "https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-03.jpg",
+                          alt:
+                            "Model wearing women&#039;s burgundy red crewneck artwork tee with small white triangle overlapping larger black triangle."
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "mt-4 text-base font-semibold text-gray-900"
+                    },
+                    [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("span", { staticClass: "absolute inset-0" }),
+                        _vm._v(
+                          "\n                                    Mountains Artwork Tee\n                                "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
+                    _vm._v("$36")
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-6 sm:hidden" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "block text-sm font-semibold text-indigo-600 hover:text-indigo-500",
+                  attrs: { href: "#" }
+                },
+                [
+                  _vm._v("Browse all favorites"),
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v(" →")
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { "aria-labelledby": "sale-heading" } }, [
+        _c("div", { staticClass: "pt-32 overflow-hidden sm:pt-14" }, [
+          _c("div", { staticClass: "bg-gray-800" }, [
+            _c(
+              "div",
+              { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
+              [
+                _c("div", { staticClass: "relative pt-48 pb-16 sm:pb-24" }, [
+                  _c("div", [
+                    _c(
+                      "h2",
+                      {
+                        staticClass:
+                          "text-4xl font-extrabold tracking-tight text-white md:text-5xl",
+                        attrs: { id: "sale-heading" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                        Final Stock.\n                                        "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          "\n                                        Up to 50% off.\n                                    "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-6 text-base" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "font-semibold text-white",
+                          attrs: { href: "#" }
+                        },
+                        [
+                          _vm._v("Shop the sale"),
+                          _c("span", { attrs: { "aria-hidden": "true" } }, [
+                            _vm._v(" →")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "absolute -top-32 left-1/2 transform -translate-x-1/2 sm:top-6 sm:translate-x-0"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "ml-24 flex space-x-6 min-w-max sm:ml-3 lg:space-x-8"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8"
+                            },
+                            [
+                              _c("div", { staticClass: "flex-shrink-0" }, [
+                                _c("img", {
+                                  staticClass:
+                                    "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                  attrs: {
+                                    src:
+                                      "https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg",
+                                    alt: ""
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "mt-6 flex-shrink-0 sm:mt-0" },
+                                [
+                                  _c("img", {
+                                    staticClass:
+                                      "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                    attrs: {
+                                      src:
+                                        "https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex space-x-6 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8"
+                            },
+                            [
+                              _c("div", { staticClass: "flex-shrink-0" }, [
+                                _c("img", {
+                                  staticClass:
+                                    "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                  attrs: {
+                                    src:
+                                      "https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-01.jpg",
+                                    alt: ""
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "mt-6 flex-shrink-0 sm:mt-0" },
+                                [
+                                  _c("img", {
+                                    staticClass:
+                                      "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                    attrs: {
+                                      src:
+                                        "https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-02.jpg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8"
+                            },
+                            [
+                              _c("div", { staticClass: "flex-shrink-0" }, [
+                                _c("img", {
+                                  staticClass:
+                                    "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                  attrs: {
+                                    src:
+                                      "https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg",
+                                    alt: ""
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "mt-6 flex-shrink-0 sm:mt-0" },
+                                [
+                                  _c("img", {
+                                    staticClass:
+                                      "h-64 w-64 rounded-lg object-cover md:h-72 md:w-72",
+                                    attrs: {
+                                      src:
+                                        "https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "footer",
+      {
+        staticClass: "bg-white",
+        attrs: { "aria-labelledby": "footer-heading" }
+      },
+      [
+        _c("h2", { staticClass: "sr-only", attrs: { id: "footer-heading" } }, [
+          _vm._v("Footer")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
+          _c("div", { staticClass: "py-20 xl:grid xl:grid-cols-3 xl:gap-8" }, [
+            _c("div", { staticClass: "grid grid-cols-2 gap-8 xl:col-span-2" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "space-y-16 md:space-y-0 md:grid md:grid-cols-2 md:gap-8"
+                },
+                [
+                  _c("div", [
+                    _c(
+                      "h3",
+                      { staticClass: "text-sm font-medium text-gray-900" },
+                      [
+                        _vm._v(
+                          "\n                                    Shop\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "mt-6 space-y-6",
+                        attrs: { role: "list" }
+                      },
+                      [
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Bags\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Tees\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Objects\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Home Goods\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Accessories\n                                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "h3",
+                      { staticClass: "text-sm font-medium text-gray-900" },
+                      [
+                        _vm._v(
+                          "\n                                    Company\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "mt-6 space-y-6",
+                        attrs: { role: "list" }
+                      },
+                      [
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Who we are\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Sustainability\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Press\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Careers\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Terms & Conditions\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Privacy\n                                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "space-y-16 md:space-y-0 md:grid md:grid-cols-2 md:gap-8"
+                },
+                [
+                  _c("div", [
+                    _c(
+                      "h3",
+                      { staticClass: "text-sm font-medium text-gray-900" },
+                      [
+                        _vm._v(
+                          "\n                                    Account\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "mt-6 space-y-6",
+                        attrs: { role: "list" }
+                      },
+                      [
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Manage Account\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Returns & Exchanges\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Redeem a Gift Card\n                                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "h3",
+                      { staticClass: "text-sm font-medium text-gray-900" },
+                      [
+                        _vm._v(
+                          "\n                                    Connect\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "mt-6 space-y-6",
+                        attrs: { role: "list" }
+                      },
+                      [
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Contact Us\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Twitter\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Instagram\n                                        "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "text-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-gray-500 hover:text-gray-600",
+                              attrs: { href: "#" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            Pinterest\n                                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-16 md:mt-16 xl:mt-0" }, [
+              _c("h3", { staticClass: "text-sm font-medium text-gray-900" }, [
+                _vm._v("Sign up for our newsletter")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-6 text-sm text-gray-500" }, [
+                _vm._v(
+                  "The latest deals and savings, sent to your inbox weekly."
+                )
+              ]),
+              _vm._v(" "),
+              _c("form", { staticClass: "mt-2 flex sm:max-w-md" }, [
+                _c(
+                  "label",
+                  { staticClass: "sr-only", attrs: { for: "email-address" } },
+                  [_vm._v("Email address")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass:
+                    "appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-indigo-500 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500",
+                  attrs: {
+                    id: "email-address",
+                    type: "text",
+                    autocomplete: "email",
+                    required: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "ml-4 flex-shrink-0" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                    Sign up\n                                "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "border-t border-gray-200 py-10" }, [
+            _c("p", { staticClass: "text-sm text-gray-500" }, [
+              _vm._v("Copyright © 2021 Clothing Company Inc.")
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
