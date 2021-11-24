@@ -17,9 +17,9 @@ class UserController extends Controller
         $response = ['error' => 'Unauthorised'];
 
         if (Auth::attempt($request->only(['email', 'password']))) {
-            $status = 200;
+            $status = 201;
             $response = [
-                'user' => Auth::user(),
+                'data' => Auth::user(),
                 'token' => Auth::user()->createToken('bigStore')->accessToken,
             ];
         }
@@ -37,9 +37,9 @@ class UserController extends Controller
         $user->is_admin = 0;
 
         return response()->json([
-            'user' => $user,
+            'data' => $user,
             'token' => $user->createToken('bigStore')->accessToken,
-        ]);
+        ], 201);
     }
 
     public function show(User $user)
