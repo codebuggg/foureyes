@@ -15,6 +15,7 @@ import Products from "./views/products";
 import ShowProduct from "./views/products/show";
 import Orders from "./views/orders";
 import NewOrder from "./views/orders/new";
+import Register from "./register";
 
 const router = new VueRouter({
   mode: 'history',

@@ -450,7 +450,7 @@
                                           From: "opacity-100"
                                           To: "opacity-0"
                                       -->
-                                      <div class="absolute top-full inset-x-0 bg-white text-sm text-gray-500">
+                                      <div class="absolute top-full inset-x-0 bg-white text-sm text-gray-500" style="display: none;">
                                           <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
                                           <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
                                           <!-- Fake border when menu is open -->
@@ -651,7 +651,7 @@
                                           From: "opacity-100"
                                           To: "opacity-0"
                                       -->
-                                      <div class="absolute top-full inset-x-0 bg-white text-sm text-gray-500">
+                                      <div class="absolute top-full inset-x-0 bg-white text-sm text-gray-500" style="display: none;">
                                           <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
                                           <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
                                           <!-- Fake border when menu is open -->
@@ -824,9 +824,9 @@
 
                           <div class="ml-auto flex items-center">
                               <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                  <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                                  <a href="/sign_in" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
                                   <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                                  <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+                                  <a href="/sign_up" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
                               </div>
 
                               <div class="hidden lg:ml-8 lg:flex">
@@ -1282,6 +1282,6 @@
 
 <script>
   export default {
-    
+
   }
 </script>
