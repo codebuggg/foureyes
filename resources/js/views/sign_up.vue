@@ -11,14 +11,9 @@
             <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                     <form class="space-y-6" action="#" method="POST">
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">
-                                Full Name
-                            </label>
-                            <div class="mt-1">
-                                <input id="name" name="name" type="text" autocomplete="" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            </div>
-                        </div>
+                        <BaseInput
+                          label="Full Name"
+                        />
 
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">
