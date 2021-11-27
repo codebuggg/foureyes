@@ -22,32 +22,7 @@
               </a>
             </div>
 
-            <!-- Flyout menus -->
-            <div class="hidden lg:ml-8 lg:block lg:self-stretch">
-              <div class="h-full flex space-x-8">
-                <div class="flex">
-                  <div class="relative flex">
-                    <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                    <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
-                        Women
-                    </button>
-                  </div>
-                  <FlyoutMenu />
-                </div>
-
-                <div class="flex">
-                  <div class="relative flex">
-                    <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                    <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
-                      Men
-                    </button>
-                  </div>
-                  <FlyoutMenu />
-                </div>
-                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
-                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
-              </div>
-            </div>
+            <NavbarMenus />
 
               <div class="ml-auto flex items-center">
                   <NavbarAuth />
@@ -89,17 +64,18 @@
         </div>
       </nav>
 
-      <HeroSection />
   </header>
 </template>
 <script>
   import HeroSection from "./HeroSection";
   import NavbarAuth from "./NavbarAuth";
+  import NavbarMenus from "./NavbarMenus";
 
   export default {
     components: {
       HeroSection,
       NavbarAuth,
+      NavbarMenus,
     },
   }
 </script>

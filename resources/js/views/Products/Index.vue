@@ -1,76 +1,63 @@
 <template>
-  <div>
+  <Page>
+    <div>
       <div class="bg-white">
-          <div class="py-16 sm:py-24 lg:max-w-7xl lg:mx-auto lg:px-8">
-              <div class="px-4 flex items-center justify-between sm:px-6 lg:px-0">
-                  <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Trending products</h2>
-                  <a href="#" class="hidden sm:block text-sm font-semibold text-indigo-600 hover:text-indigo-500">See everything<span aria-hidden="true"> &rarr;</span></a>
-              </div>
-
-              <div class="mt-8 relative">
-                  <div class="relative w-full pb-6 -mb-6 overflow-x-auto">
-                      <ul role="list" class="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:space-x-0 lg:grid lg:grid-cols-4 lg:gap-x-8">
-                          <li class="w-64 inline-flex flex-col text-center lg:w-auto">
-                              <div class="group relative">
-                                  <div class="w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1">
-                                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">
-                                  </div>
-                                  <div class="mt-6">
-                                      <p class="text-sm text-gray-500">
-                                          Black
-                                      </p>
-                                      <h3 class="mt-1 font-semibold text-gray-900">
-                                          <a href="#">
-                                              <span class="absolute inset-0"></span>
-                                              Machined Pen
-                                          </a>
-                                      </h3>
-                                      <p class="mt-1 text-gray-900">
-                                          $35
-                                      </p>
-                                  </div>
-                              </div>
-
-                              <h4 class="sr-only">Available colors</h4>
-                              <ul role="list" class="mt-auto pt-6 flex items-center justify-center space-x-3">
-                                  <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #111827;">
-                <span class="sr-only">
-                  Black
-                </span>
-                                  </li>
-
-                                  <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #fde68a;">
-                <span class="sr-only">
-                  Brass
-                </span>
-                                  </li>
-
-                                  <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #e5e7eb;">
-                <span class="sr-only">
-                  Chrome
-                </span>
-                                  </li>
-                              </ul>
-                          </li>
-
-                          <!-- More products... -->
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="mt-12 flex px-4 sm:hidden">
-                  <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-500">See everything<span aria-hidden="true"> &rarr;</span></a>
-              </div>
+        <div class="py-16 sm:py-24 lg:max-w-7xl lg:mx-auto lg:px-8">
+          <div class="px-4 flex items-center justify-between sm:px-6 lg:px-0">
+            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Products</h2>
           </div>
+
+          <div class="mt-8 relative">
+            <div class="relative w-full pb-6 -mb-6 overflow-x-auto">
+              <ul role="list" class="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:space-x-0 lg:grid lg:grid-cols-4 lg:gap-x-8">
+                <template v-for="product in products">
+                  <Product
+                    :product="product"
+                  />
+                </template>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-12 flex px-4 sm:hidden">
+            <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-500">See everything<span aria-hidden="true"> &rarr;</span></a>
+          </div>
+        </div>
       </div>
 
-  </div>
+    </div>
+  </Page>
 </template>
 
 <script>
-export default {
-    mounted() {
-        console.log('Component mounted.')
-    }
-}
+  import Page from "../Page";
+  import Product from "../../components/Product";
+
+  export default {
+      components: {
+        Page,
+        Product,
+      },
+      data(){
+        return{
+          products: [
+            {
+              image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+              name: "Machined Pen",
+              price: "35",
+              color: "Black",
+            },
+            {
+              image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+              name: "Machined Pen",
+              price: "35",
+              color: "Black",
+            },
+          ],
+        }
+      },
+      mounted() {
+          console.log('Component mounted.')
+      }
+  }
 </script>
