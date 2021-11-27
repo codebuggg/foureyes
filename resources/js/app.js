@@ -6,15 +6,15 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import App from "./views/app";
-import Home from "./views/home";
-import SignUp from "./views/sign_up";
-import SignIn from "./views/sign_in";
-import Cart from "./views/cart";
-import Products from "./views/products";
-import ShowProduct from "./views/products/show";
-import Orders from "./views/orders";
-import NewOrder from "./views/orders/new";
+import App from "./views/App";
+import Home from "./views/Home";
+import SignUp from "./views/SignUp";
+import SignIn from "./views/SignIn";
+import Cart from "./views/Cart";
+import Products from "./views/Products/Index";
+import ShowProduct from "./views/Products/Show";
+import Orders from "./views/Orders/Index";
+import NewOrder from "./views/Orders/New";
 import Register from "./register";
 
 const router = new VueRouter({
