@@ -1803,6 +1803,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Page */ "./resources/js/views/Page.vue");
 //
 //
 //
@@ -2017,7 +2018,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Page: _Page__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -8928,11 +8935,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("a", [
-    _c(
-      "li",
-      { staticClass: "w-64 inline-flex flex-col text-center lg:w-auto" },
-      [
+  return _c(
+    "li",
+    { staticClass: "w-64 inline-flex flex-col text-center lg:w-auto" },
+    [
+      _c("router-link", { attrs: { to: "/products/1" } }, [
         _c("div", { staticClass: "group relative" }, [
           _c(
             "div",
@@ -8977,68 +8984,63 @@ var render = function() {
         _vm._v(" "),
         _c("h4", { staticClass: "sr-only" }, [_vm._v("Available colors")]),
         _vm._v(" "),
-        _vm._m(0)
-      ]
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      {
-        staticClass: "mt-auto pt-6 flex items-center justify-center space-x-3",
-        attrs: { role: "list" }
-      },
-      [
         _c(
-          "li",
+          "ul",
           {
             staticClass:
-              "w-4 h-4 rounded-full border border-black border-opacity-10",
-            staticStyle: { "background-color": "#111827" }
+              "mt-auto pt-6 flex items-center justify-center space-x-3",
+            attrs: { role: "list" }
           },
           [
-            _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n        Black\n        ")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "w-4 h-4 rounded-full border border-black border-opacity-10",
-            staticStyle: { "background-color": "#fde68a" }
-          },
-          [
-            _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n        Brass\n        ")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "w-4 h-4 rounded-full border border-black border-opacity-10",
-            staticStyle: { "background-color": "#e5e7eb" }
-          },
-          [
-            _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n        Chrome\n        ")
-            ])
+            _c(
+              "li",
+              {
+                staticClass:
+                  "w-4 h-4 rounded-full border border-black border-opacity-10",
+                staticStyle: { "background-color": "#111827" }
+              },
+              [
+                _c("span", { staticClass: "sr-only" }, [
+                  _vm._v("\n        Black\n        ")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                staticClass:
+                  "w-4 h-4 rounded-full border border-black border-opacity-10",
+                staticStyle: { "background-color": "#fde68a" }
+              },
+              [
+                _c("span", { staticClass: "sr-only" }, [
+                  _vm._v("\n        Brass\n        ")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                staticClass:
+                  "w-4 h-4 rounded-full border border-black border-opacity-10",
+                staticStyle: { "background-color": "#e5e7eb" }
+              },
+              [
+                _c("span", { staticClass: "sr-only" }, [
+                  _vm._v("\n        Chrome\n        ")
+                ])
+              ]
+            )
           ]
         )
-      ]
-    )
-  }
-]
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -10540,612 +10542,623 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "bg-white" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start" },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0" },
-                [
+  return _c("Page", [
+    _c("div", [
+      _c("div", { staticClass: "bg-white" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start"
+              },
+              [
+                _c("div", { staticClass: "flex flex-col-reverse" }, [
                   _c(
-                    "h1",
+                    "div",
                     {
                       staticClass:
-                        "text-3xl font-extrabold tracking-tight text-gray-900"
+                        "hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none"
                     },
-                    [_vm._v("Zip Tote Basket")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "mt-3" }, [
-                    _c("h3", { staticClass: "sr-only" }, [_vm._v("Reviews")]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flex items-center" }, [
-                      _c("div", { staticClass: "flex items-center" }, [
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "h-5 w-5 flex-shrink-0 text-indigo-500",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "h-5 w-5 flex-shrink-0 text-indigo-500",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "h-5 w-5 flex-shrink-0 text-indigo-500",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "h-5 w-5 flex-shrink-0 text-indigo-500",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "svg",
-                          {
-                            staticClass: "h-5 w-5 flex-shrink-0 text-gray-300",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 20 20",
-                              fill: "currentColor",
-                              "aria-hidden": "true"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                              }
-                            })
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "sr-only" }, [
-                        _vm._v("4 out of 5 stars")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c("form", { staticClass: "mt-6" }, [
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mt-10 flex sm:flex-col1" }, [
+                    [
                       _c(
-                        "button",
+                        "div",
                         {
-                          staticClass:
-                            "max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full",
-                          attrs: { type: "submit" }
-                        },
-                        [_vm._v("Add to bag")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500",
-                          attrs: { type: "button" }
+                          staticClass: "grid grid-cols-4 gap-6",
+                          attrs: {
+                            "aria-orientation": "horizontal",
+                            role: "tablist"
+                          }
                         },
                         [
                           _c(
+                            "button",
+                            {
+                              staticClass:
+                                "relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50",
+                              attrs: {
+                                id: "tabs-1-tab-1",
+                                "aria-controls": "tabs-1-panel-1",
+                                role: "tab",
+                                type: "button"
+                              }
+                            },
+                            [
+                              _c("span", { staticClass: "sr-only" }, [
+                                _vm._v(
+                                  "\n                Angled view\n              "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "absolute inset-0 rounded-md overflow-hidden"
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass:
+                                      "w-full h-full object-center object-cover",
+                                    attrs: {
+                                      src:
+                                        "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass:
+                                  "ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none",
+                                attrs: { "aria-hidden": "true" }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full aspect-w-1 aspect-h-1" }, [
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "tabs-1-panel-1",
+                          "aria-labelledby": "tabs-1-tab-1",
+                          role: "tabpanel",
+                          tabindex: "0"
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass:
+                            "w-full h-full object-center object-cover sm:rounded-lg",
+                          attrs: {
+                            src:
+                              "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
+                            alt:
+                              "Angled front view with bag zipped and handles upright."
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0" },
+                  [
+                    _c(
+                      "h1",
+                      {
+                        staticClass:
+                          "text-3xl font-extrabold tracking-tight text-gray-900"
+                      },
+                      [_vm._v("Zip Tote Basket")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-3" }, [
+                      _c("h2", { staticClass: "sr-only" }, [
+                        _vm._v("Product information")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-3xl text-gray-900" }, [
+                        _vm._v("$140")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-3" }, [
+                      _c("h3", { staticClass: "sr-only" }, [_vm._v("Reviews")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "flex items-center" }, [
+                        _c("div", { staticClass: "flex items-center" }, [
+                          _c(
                             "svg",
                             {
-                              staticClass: "h-6 w-6 flex-shrink-0",
+                              staticClass:
+                                "h-5 w-5 flex-shrink-0 text-indigo-500",
                               attrs: {
                                 xmlns: "http://www.w3.org/2000/svg",
-                                fill: "none",
-                                viewBox: "0 0 24 24",
-                                stroke: "currentColor",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
                                 "aria-hidden": "true"
                               }
                             },
                             [
                               _c("path", {
                                 attrs: {
-                                  "stroke-linecap": "round",
-                                  "stroke-linejoin": "round",
-                                  "stroke-width": "2",
                                   d:
-                                    "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                    "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                 }
                               })
                             ]
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "sr-only" }, [
-                            _vm._v("Add to favorites")
-                          ])
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "section",
-                    {
-                      staticClass: "mt-12",
-                      attrs: { "aria-labelledby": "details-heading" }
-                    },
-                    [
-                      _c(
-                        "h2",
-                        {
-                          staticClass: "sr-only",
-                          attrs: { id: "details-heading" }
-                        },
-                        [_vm._v("Additional details")]
-                      ),
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 w-5 flex-shrink-0 text-indigo-500",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 w-5 flex-shrink-0 text-indigo-500",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 w-5 flex-shrink-0 text-indigo-500",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 w-5 flex-shrink-0 text-gray-300",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor",
+                                "aria-hidden": "true"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "sr-only" }, [
+                          _vm._v("4 out of 5 stars")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-6" }, [
+                      _c("h3", { staticClass: "sr-only" }, [
+                        _vm._v("Description")
+                      ]),
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "border-t divide-y divide-gray-200" },
+                        { staticClass: "text-base text-gray-700 space-y-6" },
                         [
-                          _c("div", [
-                            _c("h3", [
+                          _c("p", [
+                            _vm._v(
+                              "The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use."
+                            )
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("form", { staticClass: "mt-6" }, [
+                      _c("div", [
+                        _c("h3", { staticClass: "text-sm text-gray-600" }, [
+                          _vm._v("Color")
+                        ]),
+                        _vm._v(" "),
+                        _c("fieldset", { staticClass: "mt-2" }, [
+                          _c("legend", { staticClass: "sr-only" }, [
+                            _vm._v(
+                              "\n                                      Choose a color\n                                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex items-center space-x-3" },
+                            [
                               _c(
-                                "button",
+                                "label",
                                 {
                                   staticClass:
-                                    "group relative w-full py-6 flex justify-between items-center text-left",
-                                  attrs: {
-                                    type: "button",
-                                    "aria-controls": "disclosure-1",
-                                    "aria-expanded": "false"
-                                  }
+                                    "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700"
                                 },
                                 [
+                                  _c("input", {
+                                    staticClass: "sr-only",
+                                    attrs: {
+                                      type: "radio",
+                                      name: "color-choice",
+                                      value: "Washed Black",
+                                      "aria-labelledby": "color-choice-0-label"
+                                    }
+                                  }),
+                                  _vm._v(" "),
                                   _c(
-                                    "span",
+                                    "p",
                                     {
-                                      staticClass:
-                                        "text-gray-900 text-sm font-medium"
+                                      staticClass: "sr-only",
+                                      attrs: { id: "color-choice-0-label" }
                                     },
                                     [
                                       _vm._v(
-                                        "\n                  Features\n                "
+                                        "\n                                              Washed Black\n                                          "
                                       )
                                     ]
                                   ),
                                   _vm._v(" "),
+                                  _c("span", {
+                                    staticClass:
+                                      "h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full",
+                                    attrs: { "aria-hidden": "true" }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400"
+                                },
+                                [
+                                  _c("input", {
+                                    staticClass: "sr-only",
+                                    attrs: {
+                                      type: "radio",
+                                      name: "color-choice",
+                                      value: "White",
+                                      "aria-labelledby": "color-choice-1-label"
+                                    }
+                                  }),
+                                  _vm._v(" "),
                                   _c(
-                                    "span",
-                                    { staticClass: "ml-6 flex items-center" },
+                                    "p",
+                                    {
+                                      staticClass: "sr-only",
+                                      attrs: { id: "color-choice-1-label" }
+                                    },
                                     [
-                                      _c(
-                                        "svg",
-                                        {
-                                          staticClass:
-                                            "block h-6 w-6 text-gray-400 group-hover:text-gray-500",
-                                          attrs: {
-                                            xmlns: "http://www.w3.org/2000/svg",
-                                            fill: "none",
-                                            viewBox: "0 0 24 24",
-                                            stroke: "currentColor",
-                                            "aria-hidden": "true"
-                                          }
-                                        },
-                                        [
-                                          _c("path", {
-                                            attrs: {
-                                              "stroke-linecap": "round",
-                                              "stroke-linejoin": "round",
-                                              "stroke-width": "2",
-                                              d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
-                                            }
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "svg",
-                                        {
-                                          staticClass:
-                                            "hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500",
-                                          attrs: {
-                                            xmlns: "http://www.w3.org/2000/svg",
-                                            fill: "none",
-                                            viewBox: "0 0 24 24",
-                                            stroke: "currentColor",
-                                            "aria-hidden": "true"
-                                          }
-                                        },
-                                        [
-                                          _c("path", {
-                                            attrs: {
-                                              "stroke-linecap": "round",
-                                              "stroke-linejoin": "round",
-                                              "stroke-width": "2",
-                                              d: "M18 12H6"
-                                            }
-                                          })
-                                        ]
+                                      _vm._v(
+                                        "\n                                              White\n                                          "
                                       )
                                     ]
-                                  )
+                                  ),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass:
+                                      "h-8 w-8 bg-white border border-black border-opacity-10 rounded-full",
+                                    attrs: { "aria-hidden": "true" }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500"
+                                },
+                                [
+                                  _c("input", {
+                                    staticClass: "sr-only",
+                                    attrs: {
+                                      type: "radio",
+                                      name: "color-choice",
+                                      value: "Washed Gray",
+                                      "aria-labelledby": "color-choice-2-label"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass: "sr-only",
+                                      attrs: { id: "color-choice-2-label" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                              Washed Gray\n                                          "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass:
+                                      "h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full",
+                                    attrs: { "aria-hidden": "true" }
+                                  })
                                 ]
                               )
-                            ]),
+                            ]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-10 flex sm:flex-col1" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full",
+                            attrs: { type: "submit" }
+                          },
+                          [_vm._v("Add to bag")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500",
+                            attrs: { type: "button" }
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "h-6 w-6 flex-shrink-0",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  fill: "none",
+                                  viewBox: "0 0 24 24",
+                                  stroke: "currentColor",
+                                  "aria-hidden": "true"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    "stroke-linecap": "round",
+                                    "stroke-linejoin": "round",
+                                    "stroke-width": "2",
+                                    d:
+                                      "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                  }
+                                })
+                              ]
+                            ),
                             _vm._v(" "),
-                            _vm._m(4)
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              )
-            ]
-          )
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex flex-col-reverse" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none"
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "grid grid-cols-4 gap-6",
-              attrs: { "aria-orientation": "horizontal", role: "tablist" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50",
-                  attrs: {
-                    id: "tabs-1-tab-1",
-                    "aria-controls": "tabs-1-panel-1",
-                    role: "tab",
-                    type: "button"
-                  }
-                },
-                [
-                  _c("span", { staticClass: "sr-only" }, [
-                    _vm._v("\n              Angled view\n            ")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass: "absolute inset-0 rounded-md overflow-hidden"
-                    },
-                    [
-                      _c("img", {
-                        staticClass: "w-full h-full object-center object-cover",
-                        attrs: {
-                          src:
-                            "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass:
-                      "ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none",
-                    attrs: { "aria-hidden": "true" }
-                  })
-                ]
-              )
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "w-full aspect-w-1 aspect-h-1" }, [
-        _c(
-          "div",
-          {
-            attrs: {
-              id: "tabs-1-panel-1",
-              "aria-labelledby": "tabs-1-tab-1",
-              role: "tabpanel",
-              tabindex: "0"
-            }
-          },
-          [
-            _c("img", {
-              staticClass:
-                "w-full h-full object-center object-cover sm:rounded-lg",
-              attrs: {
-                src:
-                  "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
-                alt: "Angled front view with bag zipped and handles upright."
-              }
-            })
+                            _c("span", { staticClass: "sr-only" }, [
+                              _vm._v("Add to favorites")
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "section",
+                      {
+                        staticClass: "mt-12",
+                        attrs: { "aria-labelledby": "details-heading" }
+                      },
+                      [
+                        _c(
+                          "h2",
+                          {
+                            staticClass: "sr-only",
+                            attrs: { id: "details-heading" }
+                          },
+                          [_vm._v("Additional details")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "border-t divide-y divide-gray-200" },
+                          [
+                            _c("div", [
+                              _c("h3", [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "group relative w-full py-6 flex justify-between items-center text-left",
+                                    attrs: {
+                                      type: "button",
+                                      "aria-controls": "disclosure-1",
+                                      "aria-expanded": "false"
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "text-gray-900 text-sm font-medium"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                    Features\n                  "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      { staticClass: "ml-6 flex items-center" },
+                                      [
+                                        _c(
+                                          "svg",
+                                          {
+                                            staticClass:
+                                              "block h-6 w-6 text-gray-400 group-hover:text-gray-500",
+                                            attrs: {
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg",
+                                              fill: "none",
+                                              viewBox: "0 0 24 24",
+                                              stroke: "currentColor",
+                                              "aria-hidden": "true"
+                                            }
+                                          },
+                                          [
+                                            _c("path", {
+                                              attrs: {
+                                                "stroke-linecap": "round",
+                                                "stroke-linejoin": "round",
+                                                "stroke-width": "2",
+                                                d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "svg",
+                                          {
+                                            staticClass:
+                                              "hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500",
+                                            attrs: {
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg",
+                                              fill: "none",
+                                              viewBox: "0 0 24 24",
+                                              stroke: "currentColor",
+                                              "aria-hidden": "true"
+                                            }
+                                          },
+                                          [
+                                            _c("path", {
+                                              attrs: {
+                                                "stroke-linecap": "round",
+                                                "stroke-linejoin": "round",
+                                                "stroke-width": "2",
+                                                d: "M18 12H6"
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "pb-6 prose prose-sm",
+                                  attrs: { id: "disclosure-1" }
+                                },
+                                [
+                                  _c("ul", { attrs: { role: "list" } }, [
+                                    _c("li", [
+                                      _vm._v("Multiple strap configurations")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [
+                                      _vm._v("Spacious interior with top zip")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [
+                                      _vm._v("Leather handle and tabs")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [_vm._v("Interior dividers")]),
+                                    _vm._v(" "),
+                                    _c("li", [_vm._v("Stainless strap loops")]),
+                                    _vm._v(" "),
+                                    _c("li", [
+                                      _vm._v("Double stitched construction")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [_vm._v("Water-resistant")])
+                                  ])
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
           ]
         )
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-3" }, [
-      _c("h2", { staticClass: "sr-only" }, [_vm._v("Product information")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-3xl text-gray-900" }, [_vm._v("$140")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-6" }, [
-      _c("h3", { staticClass: "sr-only" }, [_vm._v("Description")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-base text-gray-700 space-y-6" }, [
-        _c("p", [
-          _vm._v(
-            "The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h3", { staticClass: "text-sm text-gray-600" }, [_vm._v("Color")]),
-      _vm._v(" "),
-      _c("fieldset", { staticClass: "mt-2" }, [
-        _c("legend", { staticClass: "sr-only" }, [
-          _vm._v(
-            "\n                                    Choose a color\n                                "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex items-center space-x-3" }, [
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "Washed Black",
-                  "aria-labelledby": "color-choice-0-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-0-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                                            Washed Black\n                                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "White",
-                  "aria-labelledby": "color-choice-1-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-1-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                                            White\n                                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-white border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "Washed Gray",
-                  "aria-labelledby": "color-choice-2-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-2-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                                            Washed Gray\n                                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "pb-6 prose prose-sm", attrs: { id: "disclosure-1" } },
-      [
-        _c("ul", { attrs: { role: "list" } }, [
-          _c("li", [_vm._v("Multiple strap configurations")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Spacious interior with top zip")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Leather handle and tabs")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Interior dividers")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Stainless strap loops")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Double stitched construction")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Water-resistant")])
-        ])
-      ]
-    )
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
