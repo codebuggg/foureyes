@@ -1104,6 +1104,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["product"]
 });
@@ -1699,8 +1701,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Page */ "./resources/js/views/Page.vue");
-/* harmony import */ var _components_Product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Product */ "./resources/js/components/Product.vue");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Page */ "./resources/js/views/Page.vue");
+/* harmony import */ var _components_Product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Product */ "./resources/js/components/Product.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -1736,26 +1746,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Page: _Page__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Product: _components_Product__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Page: _Page__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Product: _components_Product__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-      products: [{
-        image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
-        name: "Machined Pen",
-        price: "35",
-        color: "Black"
-      }, {
-        image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
-        name: "Machined Pen",
-        price: "35",
-        color: "Black"
-      }]
+      products: []
     };
   },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return fetch("/api/products");
+
+            case 2:
+              res = _context.sent;
+
+              if (!(res.status == 200)) {
+                _context.next = 7;
+                break;
+              }
+
+              _context.next = 6;
+              return res.json();
+
+            case 6:
+              _this.products = _context.sent;
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   }
 });
 
@@ -8897,53 +8928,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "li",
-    { staticClass: "w-64 inline-flex flex-col text-center lg:w-auto" },
-    [
-      _c("div", { staticClass: "group relative" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1"
-          },
-          [
-            _c("img", {
+  return _c("a", [
+    _c(
+      "li",
+      { staticClass: "w-64 inline-flex flex-col text-center lg:w-auto" },
+      [
+        _c("div", { staticClass: "group relative" }, [
+          _c(
+            "div",
+            {
               staticClass:
-                "w-full h-full object-center object-cover group-hover:opacity-75",
-              attrs: {
-                src: _vm.product.image,
-                alt:
-                  "Black machined steel pen with hexagonal grip and small white logo at top."
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-6" }, [
-          _c("p", { staticClass: "text-sm text-gray-500" }, [
-            _vm._v("\n        " + _vm._s(_vm.product.color) + "\n      ")
-          ]),
+                "w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1"
+            },
+            [
+              _c("img", {
+                staticClass:
+                  "w-full h-full object-center object-cover group-hover:opacity-75",
+                attrs: {
+                  src: _vm.product.image,
+                  alt:
+                    "Black machined steel pen with hexagonal grip and small white logo at top."
+                }
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("h3", { staticClass: "mt-1 font-semibold text-gray-900" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("span", { staticClass: "absolute inset-0" }),
-              _vm._v("\n          " + _vm._s(_vm.product.name) + "\n        ")
+          _c("div", { staticClass: "mt-6" }, [
+            _c("p", { staticClass: "text-sm text-gray-500" }, [
+              _vm._v("\n          " + _vm._s(_vm.product.color) + "\n        ")
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "mt-1 font-semibold text-gray-900" }, [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("span", { staticClass: "absolute inset-0" }),
+                _vm._v(
+                  "\n            " + _vm._s(_vm.product.name) + "\n          "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-1 text-gray-900" }, [
+              _vm._v(
+                "\n          " + _vm._s("$" + _vm.product.price) + "\n        "
+              )
             ])
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "mt-1 text-gray-900" }, [
-            _vm._v("\n        " + _vm._s("$" + _vm.product.price) + "\n      ")
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("h4", { staticClass: "sr-only" }, [_vm._v("Available colors")]),
-      _vm._v(" "),
-      _vm._m(0)
-    ]
-  )
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "sr-only" }, [_vm._v("Available colors")]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -8966,7 +9003,7 @@ var staticRenderFns = [
           },
           [
             _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n      Black\n      ")
+              _vm._v("\n        Black\n        ")
             ])
           ]
         ),
@@ -8980,7 +9017,7 @@ var staticRenderFns = [
           },
           [
             _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n      Brass\n      ")
+              _vm._v("\n        Brass\n        ")
             ])
           ]
         ),
@@ -8994,7 +9031,7 @@ var staticRenderFns = [
           },
           [
             _c("span", { staticClass: "sr-only" }, [
-              _vm._v("\n      Chrome\n      ")
+              _vm._v("\n        Chrome\n        ")
             ])
           ]
         )

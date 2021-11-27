@@ -41,23 +41,15 @@
       data(){
         return{
           products: [
-            {
-              image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
-              name: "Machined Pen",
-              price: "35",
-              color: "Black",
-            },
-            {
-              image: "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
-              name: "Machined Pen",
-              price: "35",
-              color: "Black",
-            },
+
           ],
         }
       },
-      mounted() {
-          console.log('Component mounted.')
+      async mounted() {
+        const res = await fetch("/api/products");
+        if(res.status == 200){
+          this.products = await res.json();
+        }
       }
   }
 </script>
