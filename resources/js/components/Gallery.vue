@@ -33,6 +33,6 @@
     },
     methods: {
       selectImage: function(i) { this.image = i}
-    }
+    },
   }
 </script>

@@ -1,9 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Vuex from 'vuex';
 
-//require('./bootstrap');
-//window.Vue = require('vue').default;
-
+Vue.use(Vuex);
 Vue.use(VueRouter);
 
 import App from "./views/App";
@@ -63,12 +62,26 @@ const router = new VueRouter({
   ]
 })
 
+const store = new Vuex.Store({
+  state: {
+    cart: [
+
+    ],
+  },
+  mutations: {
+    addToCart(id){
+      cart.push(id)
+    }
+  }
+})
+
 const app = new Vue({
     el: '#app',
     components: {
       App
     },
     router,
+    store,
 });
 
 export default app;
