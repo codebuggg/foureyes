@@ -12,4 +12,8 @@ class Image extends Model
     protected $fillable = [
       "name"
     ];
+
+    protected $visible = [
+      "name",
+    ];
 }
