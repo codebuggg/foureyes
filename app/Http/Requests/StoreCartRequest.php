@@ -2,16 +2,14 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class StoreCartRequest extends FormRequest
+class StoreCartRequest extends JSONRequest
 {
 
     public function rules()
     {
         return [
             "product_id" => "required",
-            "quantity" => "required"
+            #"quantity" => "required"
         ];
     }
 }

@@ -307,6 +307,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -374,9 +382,40 @@ __webpack_require__.r(__webpack_exports__);
   props: ['product'],
   methods: {
     addToCart: function addToCart(id) {
-      this.$store.dispatch('addToCart', {
-        id: id
-      });
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.$store.dispatch('addToCart', {
+                  id: id
+                });
+
+                _context.next = 3;
+                return fetch("/api/carts", {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer ".concat(localStorage.getItem("token"))
+                  },
+                  body: JSON.stringify({
+                    product_id: id
+                  })
+                });
+
+              case 3:
+                res = _context.sent;
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -1493,39 +1532,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -1639,10 +1653,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      cartItems: []
+    };
+  },
   computed: {
     cart: function cart() {
       return this.$store.state.cart;
     }
+  },
+  created: function created() {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var res, body;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return fetch("/api/carts", {
+                headers: {
+                  "Authorization": "Bearer ".concat(localStorage.getItem("token"))
+                }
+              });
+
+            case 2:
+              res = _context.sent;
+
+              if (!(res.status == 200)) {
+                _context.next = 8;
+                break;
+              }
+
+              _context.next = 6;
+              return res.json();
+
+            case 6:
+              body = _context.sent;
+              _this.cartItems = body;
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   }
 });
 
@@ -10505,7 +10563,14 @@ var render = function() {
                                       {
                                         staticClass:
                                           "-m-2 p-2 text-gray-400 hover:text-gray-500",
-                                        attrs: { type: "button" }
+                                        attrs: { type: "button" },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.$store.dispatch(
+                                              "showCart"
+                                            )
+                                          }
+                                        }
                                       },
                                       [
                                         _c("span", { staticClass: "sr-only" }, [
@@ -10543,7 +10608,113 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _vm._m(0)
+                            _c("div", { staticClass: "mt-8" }, [
+                              _c("div", { staticClass: "flow-root" }, [
+                                _c(
+                                  "ul",
+                                  {
+                                    staticClass:
+                                      "-my-6 divide-y divide-gray-200",
+                                    attrs: { role: "list" }
+                                  },
+                                  _vm._l(_vm.cartItems, function(cartItem) {
+                                    return _c(
+                                      "li",
+                                      { staticClass: "py-6 flex" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass:
+                                                "w-full h-full object-center object-cover",
+                                              attrs: {
+                                                src: cartItem.product.image,
+                                                alt:
+                                                  "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "ml-4 flex-1 flex flex-col"
+                                          },
+                                          [
+                                            _c("div", [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "flex justify-between text-base font-medium text-gray-900"
+                                                },
+                                                [
+                                                  _c("h3", [
+                                                    _c(
+                                                      "a",
+                                                      { attrs: { href: "#" } },
+                                                      [
+                                                        _vm._v(
+                                                          "\n                                                        " +
+                                                            _vm._s(
+                                                              cartItem.product
+                                                                .name
+                                                            ) +
+                                                            "\n                                                      "
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    { staticClass: "ml-4" },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                      " +
+                                                          _vm._s(
+                                                            "$" +
+                                                              cartItem.product
+                                                                .price
+                                                          ) +
+                                                          "\n                                                    "
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "mt-1 text-sm text-gray-500"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                      Salmon\n                                                  "
+                                                  )
+                                                ]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._m(0, true)
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  }),
+                                  0
+                                )
+                              ])
+                            ])
                           ]
                         ),
                         _vm._v(" "),
@@ -10564,178 +10735,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-8" }, [
-      _c("div", { staticClass: "flow-root" }, [
-        _c(
-          "ul",
-          {
-            staticClass: "-my-6 divide-y divide-gray-200",
-            attrs: { role: "list" }
-          },
-          [
-            _c("li", { staticClass: "py-6 flex" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
-                },
-                [
-                  _c("img", {
-                    staticClass: "w-full h-full object-center object-cover",
-                    attrs: {
-                      src:
-                        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-                      alt:
-                        "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "ml-4 flex-1 flex flex-col" }, [
-                _c("div", [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex justify-between text-base font-medium text-gray-900"
-                    },
-                    [
-                      _c("h3", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(
-                            "\n                                                                Throwback Hip Bag\n                                                            "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "ml-4" }, [
-                        _vm._v(
-                          "\n                                                            $90.00\n                                                        "
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-                    _vm._v(
-                      "\n                                                        Salmon\n                                                    "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "flex-1 flex items-end justify-between text-sm"
-                  },
-                  [
-                    _c("p", { staticClass: "text-gray-500" }, [
-                      _vm._v(
-                        "\n                                                        Qty 1\n                                                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flex" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "font-medium text-indigo-600 hover:text-indigo-500",
-                          attrs: { type: "button" }
-                        },
-                        [_vm._v("Remove")]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "py-6 flex" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
-                },
-                [
-                  _c("img", {
-                    staticClass: "w-full h-full object-center object-cover",
-                    attrs: {
-                      src:
-                        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-                      alt:
-                        "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "ml-4 flex-1 flex flex-col" }, [
-                _c("div", [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex justify-between text-base font-medium text-gray-900"
-                    },
-                    [
-                      _c("h3", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(
-                            "\n                                                                Medium Stuff Satchel\n                                                            "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "ml-4" }, [
-                        _vm._v(
-                          "\n                                                            $32.00\n                                                        "
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-                    _vm._v(
-                      "\n                                                        Blue\n                                                    "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "flex-1 flex items-end justify-between text-sm"
-                  },
-                  [
-                    _c("p", { staticClass: "text-gray-500" }, [
-                      _vm._v(
-                        "\n                                                        Qty 1\n                                                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flex" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "font-medium text-indigo-600 hover:text-indigo-500",
-                          attrs: { type: "button" }
-                        },
-                        [_vm._v("Remove")]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "div",
+      { staticClass: "flex-1 flex items-end justify-between text-sm" },
+      [
+        _c("p", { staticClass: "text-gray-500" }, [
+          _vm._v(
+            "\n                                                      Qty 1\n                                                  "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex" }, [
+          _c(
+            "button",
+            {
+              staticClass: "font-medium text-indigo-600 hover:text-indigo-500",
+              attrs: { type: "button" }
+            },
+            [_vm._v("Remove")]
+          )
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this

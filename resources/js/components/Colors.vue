@@ -67,8 +67,19 @@
       'product',
     ],
     methods: {
-      addToCart(id) {
-        this.$store.dispatch('addToCart', { id })
+      async addToCart(id) {
+        this.$store.dispatch('addToCart', { id });
+        const res = await fetch("/api/carts", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            product_id: id,
+          })
+        })
+
       }
     },
   }

@@ -11,12 +11,12 @@ class CartsController extends Controller
 
     public function __construct()
     {
-        $this->middleware("auth");
+        $this->middleware("auth:api");
     }
 
     public function index()
     {
-        $cart = Cart::where(["user_id" => \Auth::id()])->get();
+        $cart = Cart::with('product')->where(["user_id" => \Auth::id()])->get();
         return response()->json($cart, 200);
     }
 
@@ -24,8 +24,8 @@ class CartsController extends Controller
     {
         $cart = Cart::make($request->all());
         $cart->user_id = \Auth::id();
+        $cart->quantity = 1;
         $cart->save();
-        return response("", 201);
     }
 
     public function destroy(Request $request)
