@@ -1158,6 +1158,11 @@ __webpack_require__.r(__webpack_exports__);
     cart: function cart() {
       return this.$store.state.cart;
     }
+  },
+  methods: {
+    showCart: function showCart() {
+      this.$store.dispatch('showCart');
+    }
   }
 });
 
@@ -1634,8 +1639,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  computed: {
+    cart: function cart() {
+      return this.$store.state.cart;
+    }
   }
 });
 
@@ -9599,7 +9606,7 @@ var render = function() {
                         attrs: { href: "#" },
                         on: {
                           click: function($event) {
-                            return _vm.$store.dispatch("showCart")
+                            return _vm.showCart()
                           }
                         }
                       },
@@ -10429,119 +10436,127 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "fixed inset-0 overflow-hidden",
-        attrs: {
-          "aria-labelledby": "slide-over-title",
-          role: "dialog",
-          "aria-modal": "true"
-        }
-      },
-      [
-        _c("div", { staticClass: "absolute inset-0 overflow-hidden" }, [
-          _c("div", {
-            staticClass:
-              "absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity",
-            attrs: { "aria-hidden": "true" }
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "fixed inset-y-0 right-0 pl-10 max-w-full flex" },
-            [
-              _c("div", { staticClass: "w-screen max-w-md" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "h-full flex flex-col bg-white shadow-xl overflow-y-scroll"
-                  },
-                  [
+    _vm.cart.show
+      ? _c(
+          "div",
+          {
+            staticClass: "fixed inset-0 overflow-hidden z-50",
+            attrs: {
+              "aria-labelledby": "slide-over-title",
+              role: "dialog",
+              "aria-modal": "true"
+            }
+          },
+          [
+            _c("div", { staticClass: "absolute inset-0 overflow-hidden" }, [
+              _c("div", {
+                staticClass:
+                  "absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity",
+                attrs: { "aria-hidden": "true" }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "fixed inset-y-0 right-0 pl-10 max-w-full flex"
+                },
+                [
+                  _c("div", { staticClass: "w-screen max-w-md" }, [
                     _c(
                       "div",
                       {
-                        staticClass: "flex-1 py-6 overflow-y-auto px-4 sm:px-6"
+                        staticClass:
+                          "h-full flex flex-col bg-white shadow-xl overflow-y-scroll"
                       },
                       [
                         _c(
                           "div",
-                          { staticClass: "flex items-start justify-between" },
+                          {
+                            staticClass:
+                              "flex-1 py-6 overflow-y-auto px-4 sm:px-6"
+                          },
                           [
                             _c(
-                              "h2",
+                              "div",
                               {
-                                staticClass:
-                                  "text-lg font-medium text-gray-900",
-                                attrs: { id: "slide-over-title" }
+                                staticClass: "flex items-start justify-between"
                               },
                               [
-                                _vm._v(
-                                  "\n                                    Shopping cart\n                                "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ml-3 h-7 flex items-center" },
-                              [
                                 _c(
-                                  "button",
+                                  "h2",
                                   {
                                     staticClass:
-                                      "-m-2 p-2 text-gray-400 hover:text-gray-500",
-                                    attrs: { type: "button" }
+                                      "text-lg font-medium text-gray-900",
+                                    attrs: { id: "slide-over-title" }
                                   },
                                   [
-                                    _c("span", { staticClass: "sr-only" }, [
-                                      _vm._v("Close panel")
-                                    ]),
-                                    _vm._v(" "),
+                                    _vm._v(
+                                      "\n                                    Shopping cart\n                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "ml-3 h-7 flex items-center" },
+                                  [
                                     _c(
-                                      "svg",
+                                      "button",
                                       {
-                                        staticClass: "h-6 w-6",
-                                        attrs: {
-                                          xmlns: "http://www.w3.org/2000/svg",
-                                          fill: "none",
-                                          viewBox: "0 0 24 24",
-                                          stroke: "currentColor",
-                                          "aria-hidden": "true"
-                                        }
+                                        staticClass:
+                                          "-m-2 p-2 text-gray-400 hover:text-gray-500",
+                                        attrs: { type: "button" }
                                       },
                                       [
-                                        _c("path", {
-                                          attrs: {
-                                            "stroke-linecap": "round",
-                                            "stroke-linejoin": "round",
-                                            "stroke-width": "2",
-                                            d: "M6 18L18 6M6 6l12 12"
-                                          }
-                                        })
+                                        _c("span", { staticClass: "sr-only" }, [
+                                          _vm._v("Close panel")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "svg",
+                                          {
+                                            staticClass: "h-6 w-6",
+                                            attrs: {
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg",
+                                              fill: "none",
+                                              viewBox: "0 0 24 24",
+                                              stroke: "currentColor",
+                                              "aria-hidden": "true"
+                                            }
+                                          },
+                                          [
+                                            _c("path", {
+                                              attrs: {
+                                                "stroke-linecap": "round",
+                                                "stroke-linejoin": "round",
+                                                "stroke-width": "2",
+                                                d: "M6 18L18 6M6 6l12 12"
+                                              }
+                                            })
+                                          ]
+                                        )
                                       ]
                                     )
                                   ]
                                 )
                               ]
-                            )
+                            ),
+                            _vm._v(" "),
+                            _vm._m(0)
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(0)
+                        _vm._m(1)
                       ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(1)
-                  ]
-                )
-              ])
-            ]
-          )
-        ])
-      ]
-    )
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = [

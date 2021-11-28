@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class="fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+      <div v-if="cart.show" class="fixed inset-0 overflow-hidden z-50" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
           <div class="absolute inset-0 overflow-hidden">
               <!--
                 Background overlay, show/hide based on slide-over state.
@@ -144,9 +144,11 @@
 </template>
 
 <script>
-export default {
-    mounted() {
-        console.log('Component mounted.')
-    }
-}
+  export default {
+    computed: {
+      cart(){
+        return this.$store.state.cart;
+      },
+    },
+  }
 </script>
