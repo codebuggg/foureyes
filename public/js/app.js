@@ -370,7 +370,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['product'],
+  methods: {
+    addToCart: function addToCart(id) {
+      this.$store.dispatch('addToCart', {
+        id: id
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -1144,6 +1153,11 @@ __webpack_require__.r(__webpack_exports__);
     HeroSection: _HeroSection__WEBPACK_IMPORTED_MODULE_0__["default"],
     NavbarAuth: _NavbarAuth__WEBPACK_IMPORTED_MODULE_1__["default"],
     NavbarMenus: _NavbarMenus__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  computed: {
+    cart: function cart() {
+      return this.$store.state.cart;
+    }
   }
 });
 
@@ -1911,6 +1925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Navbar */ "./resources/js/components/Navbar.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _Cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cart */ "./resources/js/views/Cart.vue");
 //
 //
 //
@@ -1924,12 +1939,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Navbar: _components_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Cart: _Cart__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   provide: {
     currentUser: JSON.parse(localStorage.getItem("current_user"))
@@ -2604,11 +2622,26 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
 });
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    cart: []
+    cart: {
+      items: [],
+      show: false
+    }
   },
   mutations: {
-    addToCart: function addToCart(id) {
-      cart.push(id);
+    addToCart: function addToCart(context, id) {
+      context.cart.items.push(id);
+    },
+    showCart: function showCart(context) {
+      context.cart.show = !context.cart.show;
+    }
+  },
+  actions: {
+    addToCart: function addToCart(context, _ref) {
+      var id = _ref.id;
+      context.commit('addToCart', id);
+    },
+    showCart: function showCart(context) {
+      context.commit('showCart');
     }
   }
 });
@@ -7453,7 +7486,12 @@ var render = function() {
         {
           staticClass:
             "max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full",
-          attrs: { type: "submit" }
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              return _vm.addToCart(_vm.product.id)
+            }
+          }
         },
         [_vm._v("Add to bag")]
       ),
@@ -9558,7 +9596,12 @@ var render = function() {
                       "a",
                       {
                         staticClass: "group -m-2 p-2 flex items-center",
-                        attrs: { href: "#" }
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch("showCart")
+                          }
+                        }
                       },
                       [
                         _c(
@@ -9592,7 +9635,7 @@ var render = function() {
                             staticClass:
                               "ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
                           },
-                          [_vm._v("0")]
+                          [_vm._v(_vm._s(_vm.cart.items.length))]
                         ),
                         _vm._v(" "),
                         _c("span", { staticClass: "sr-only" }, [
@@ -11426,22 +11469,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "bg-white" },
-      [
-        _c("MobileMenu"),
-        _vm._v(" "),
-        _c("Navbar"),
-        _vm._v(" "),
-        _c("main", [_vm._t("default")], 2),
-        _vm._v(" "),
-        _c("Footer")
-      ],
-      1
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("Cart"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "bg-white" },
+        [
+          _c("MobileMenu"),
+          _vm._v(" "),
+          _c("Navbar"),
+          _vm._v(" "),
+          _c("main", [_vm._t("default")], 2),
+          _vm._v(" "),
+          _c("Footer")
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11614,7 +11663,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("Colors"),
+                    _c("Colors", { attrs: { product: _vm.product } }),
                     _vm._v(" "),
                     _c("Features")
                   ],

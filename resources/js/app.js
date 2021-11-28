@@ -64,15 +64,27 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
   state: {
-    cart: [
-
-    ],
+    cart: {
+      items: [],
+      show: false,
+    },
   },
   mutations: {
-    addToCart(id){
-      cart.push(id)
-    }
-  }
+    addToCart(context, id){
+      context.cart.items.push(id)
+    },
+    showCart(context){
+      context.cart.show = !context.cart.show;
+    },
+  },
+  actions: {
+    addToCart(context, {id}){
+      context.commit('addToCart', id);
+    },
+    showCart(context){
+      context.commit('showCart');
+    },
+  },
 })
 
 const app = new Vue({

@@ -19,7 +19,7 @@
                   <p>{{ product.description }}</p>
                 </div>
               </div>
-              <Colors />
+              <Colors :product="product" />
               <Features />
             </div>
           </div>
