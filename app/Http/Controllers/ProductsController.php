@@ -16,7 +16,7 @@ class ProductsController extends Controller
 
     public function show($id)
     {
-        $product = Product::with('images')->find($id);
+        $product = Product::with('images', 'colors', 'features')->find($id);
         if($product->units == 0) return response("Out of stock", 404);
         return response()->json($product, 200);
     }

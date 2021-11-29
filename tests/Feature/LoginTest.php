@@ -11,7 +11,7 @@ use Tests\TestCase;
 class LoginTest extends TestCase
 {
 
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
     public function setUp(): void
     {

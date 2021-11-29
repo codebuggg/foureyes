@@ -20,7 +20,7 @@
                 </div>
               </div>
               <Colors :product="product" />
-              <Features />
+              <Features :product="product" />
             </div>
           </div>
         </div>

@@ -355,32 +355,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['product'],
+  data: function data() {
+    return {
+      activeColor: 0
+    };
+  },
   methods: {
+    handleSetColor: function handleSetColor(i) {
+      this.activeColor = i;
+    },
     addToCart: function addToCart(id) {
       var _this = this;
 
@@ -578,13 +563,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['product']
+});
 
 /***/ }),
 
@@ -7543,7 +7524,63 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "mt-6" }, [
-    _vm._m(0),
+    _c("div", [
+      _c("h3", { staticClass: "text-sm text-gray-600" }, [_vm._v("Color")]),
+      _vm._v(" "),
+      _c("fieldset", { staticClass: "mt-2" }, [
+        _c("legend", { staticClass: "sr-only" }, [
+          _vm._v("\n        Choose a color\n      ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "flex items-center space-x-3" },
+          _vm._l(_vm.product.colors, function(color, index) {
+            return _c(
+              "label",
+              {
+                class:
+                  (index == _vm.activeColor ? "ring ring-offset-1" : "ring-2") +
+                  " m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700",
+                on: {
+                  click: function($event) {
+                    return _vm.handleSetColor(index)
+                  }
+                }
+              },
+              [
+                _c("input", {
+                  staticClass: "sr-only",
+                  attrs: {
+                    type: "radio",
+                    name: "color-choice",
+                    value: "Washed Black",
+                    "aria-labelledby": "color-choice-0-label"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass: "sr-only",
+                    attrs: { id: "color-choice-0-label" }
+                  },
+                  [_vm._v("\n              Washed Black\n          ")]
+                ),
+                _vm._v(" "),
+                _c("span", {
+                  staticClass:
+                    "h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full",
+                  style: "background-color: " + color.hash,
+                  attrs: { "aria-hidden": "true" }
+                })
+              ]
+            )
+          }),
+          0
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "mt-10 flex sm:flex-col1" }, [
       _c(
@@ -7600,138 +7637,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h3", { staticClass: "text-sm text-gray-600" }, [_vm._v("Color")]),
-      _vm._v(" "),
-      _c("fieldset", { staticClass: "mt-2" }, [
-        _c("legend", { staticClass: "sr-only" }, [
-          _vm._v("\n                Choose a color\n            ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex items-center space-x-3" }, [
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "Washed Black",
-                  "aria-labelledby": "color-choice-0-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-0-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Washed Black\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "White",
-                  "aria-labelledby": "color-choice-1-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-1-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                        White\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-white border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass:
-                "-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500"
-            },
-            [
-              _c("input", {
-                staticClass: "sr-only",
-                attrs: {
-                  type: "radio",
-                  name: "color-choice",
-                  value: "Washed Gray",
-                  "aria-labelledby": "color-choice-2-label"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "sr-only",
-                  attrs: { id: "color-choice-2-label" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Washed Gray\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("span", {
-                staticClass:
-                  "h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          )
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -8151,40 +8057,29 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c(
+            "div",
+            {
+              staticClass: "pb-6 prose prose-sm",
+              attrs: { id: "disclosure-1" }
+            },
+            [
+              _c(
+                "ul",
+                { attrs: { role: "list" } },
+                _vm._l(_vm.product.features, function(feature) {
+                  return _c("li", [_vm._v(_vm._s(feature.name))])
+                }),
+                0
+              )
+            ]
+          )
         ])
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "pb-6 prose prose-sm", attrs: { id: "disclosure-1" } },
-      [
-        _c("ul", { attrs: { role: "list" } }, [
-          _c("li", [_vm._v("Multiple strap configurations")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Spacious interior with top zip")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Leather handle and tabs")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Interior dividers")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Stainless strap loops")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Double stitched construction")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Water-resistant")])
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -9924,9 +9819,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "li",
-    { staticClass: "w-64 inline-flex flex-col text-center lg:w-auto" },
+    { staticClass: "w-64 mt-10 inline-flex flex-col text-center lg:w-auto" },
     [
-      _c("router-link", { attrs: { to: "/products/1" } }, [
+      _c("router-link", { attrs: { to: "/products/" + _vm.product.id } }, [
         _c("div", { staticClass: "group relative" }, [
           _c(
             "div",
@@ -11701,7 +11596,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Colors", { attrs: { product: _vm.product } }),
                     _vm._v(" "),
-                    _c("Features")
+                    _c("Features", { attrs: { product: _vm.product } })
                   ],
                   1
                 )

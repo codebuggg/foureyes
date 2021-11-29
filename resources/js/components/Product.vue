@@ -1,6 +1,6 @@
 <template>
-  <li class="w-64 inline-flex flex-col text-center lg:w-auto">
-    <router-link to="/products/1">
+  <li class="w-64 mt-10 inline-flex flex-col text-center lg:w-auto">
+    <router-link :to="`/products/${product.id}`">
       <div class="group relative">
         <div class="w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1">
           <img :src="product.image" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">

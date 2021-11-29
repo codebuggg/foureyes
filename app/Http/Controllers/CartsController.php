@@ -5,33 +5,48 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCartRequest;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Product;
+use App\Models\CartProduct;
 
 class CartsController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware("auth:api");
+        #$this->middleware("auth:api");
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $cart = Cart::with('product')->where(["user_id" => \Auth::id()])->get();
+        $cart_id = $request->cart_id;
+        $cart = Cart::with('products')->where(["carts.id" => $cart_id])->first();
         return response()->json($cart, 200);
     }
 
     public function store(StoreCartRequest $request)
     {
-        $cart = Cart::make($request->all());
-        $cart->user_id = \Auth::id();
-        $cart->quantity = 1;
-        $cart->save();
+        $cart_id = $request->cart_id;
+        $product_id = $request->product_id;
+        $cart = Cart::find($cart_id);
+        $product = Product::find($product_id);
+        $cart_product = CartProduct::create([
+          "cart_id" => $cart_id,
+          "product_id" => $product_id,
+          "quantity" => 1,
+        ]);
     }
 
     public function destroy(Request $request)
     {
-        $cart = $this->set_cart($request);
-        $cart->destroy($cart->id);
+        $cart_id = $request->cart_id;
+        $product_id = $request->product_id;
+        $cart = Cart::find($cart_id);
+        $product = Product::find($product_id);
+        $cart_product = CartProduct::where([
+          "cart_id" => $cart_id,
+          "product_id" => $product_id
+        ])->first();
+        $cart_product->delete();
     }
 
     public function update(Request $request)

@@ -21,7 +21,9 @@ class Product extends Model
         'units',
         'description',
         'image',
-        'images'
+        'images',
+        'colors',
+        'features',
     ];
 
     protected $casts = [
@@ -32,6 +34,16 @@ class Product extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function colors()
+    {
+        return $this->belongsToMany(Color::class, 'product_colors');
+    }
+
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class, 'product_features');
     }
 
     public function images()

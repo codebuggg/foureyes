@@ -11,7 +11,7 @@ use Tests\TestCase;
 class RegisterTest extends TestCase
 {
 
-    use DatabaseMigrations, RefreshDatabase;
+    use RefreshDatabase;
 
     public function setUp(): void
     {

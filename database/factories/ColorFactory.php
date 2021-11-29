@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Product;
+use App\Models\Color;
 
-class CartFactory extends Factory
+class ColorFactory extends Factory
 {
     /**
      * Define the model's default state.
