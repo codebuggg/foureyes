@@ -1,11 +1,13 @@
 <template>
   <div>
-    <Cart />
     <div class="bg-white">
       <MobileMenu />
       <Navbar />
-      <main>
-        <slot></slot>
+      <main class="flex">
+        <div class="flex-1">
+          <slot></slot>
+        </div>
+        <Cart v-if="cart.show" />
       </main>
       <Footer />
     </div>
@@ -22,6 +24,11 @@
       Navbar,
       Footer,
       Cart,
+    },
+    computed: {
+      cart(){
+        return this.$store.state.cart;
+      },
     },
     provide: {
       currentUser: JSON.parse(localStorage.getItem("current_user"))

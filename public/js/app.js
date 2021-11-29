@@ -1625,34 +1625,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       cartItems: []
     };
-  },
-  computed: {
-    cart: function cart() {
-      return this.$store.state.cart;
-    }
   },
   created: function created() {
     var _this = this;
@@ -1996,6 +1973,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2004,6 +1983,11 @@ __webpack_require__.r(__webpack_exports__);
     Navbar: _components_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"],
     Cart: _Cart__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  computed: {
+    cart: function cart() {
+      return this.$store.state.cart;
+    }
   },
   provide: {
     currentUser: JSON.parse(localStorage.getItem("current_user"))
@@ -10403,240 +10387,194 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.cart.show
-      ? _c(
+    _c("div", { staticClass: "pl-10 max-w-full h-full flex" }, [
+      _c("div", { staticClass: "w-screen max-w-md" }, [
+        _c(
           "div",
-          {
-            staticClass: "fixed inset-0 overflow-hidden z-50",
-            attrs: {
-              "aria-labelledby": "slide-over-title",
-              role: "dialog",
-              "aria-modal": "true"
-            }
-          },
+          { staticClass: "h-full flex flex-col bg-white overflow-y-scroll" },
           [
-            _c("div", { staticClass: "absolute inset-0 overflow-hidden" }, [
-              _c("div", {
-                staticClass:
-                  "absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "fixed inset-y-0 right-0 pl-10 max-w-full flex"
-                },
-                [
-                  _c("div", { staticClass: "w-screen max-w-md" }, [
+            _c(
+              "div",
+              { staticClass: "flex-1 py-6 overflow-y-auto px-4 sm:px-6" },
+              [
+                _c("div", { staticClass: "flex items-start justify-between" }, [
+                  _c(
+                    "h2",
+                    {
+                      staticClass: "text-lg font-medium text-gray-900",
+                      attrs: { id: "slide-over-title" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                    Shopping cart\n                                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ml-3 h-7 flex items-center" }, [
                     _c(
-                      "div",
+                      "button",
                       {
                         staticClass:
-                          "h-full flex flex-col bg-white shadow-xl overflow-y-scroll"
+                          "-m-2 p-2 text-gray-400 hover:text-gray-500",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch("showCart")
+                          }
+                        }
                       },
                       [
+                        _c("span", { staticClass: "sr-only" }, [
+                          _vm._v("Close panel")
+                        ]),
+                        _vm._v(" "),
                         _c(
-                          "div",
+                          "svg",
                           {
-                            staticClass:
-                              "flex-1 py-6 overflow-y-auto px-4 sm:px-6"
+                            staticClass: "h-6 w-6",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              fill: "none",
+                              viewBox: "0 0 24 24",
+                              stroke: "currentColor",
+                              "aria-hidden": "true"
+                            }
                           },
                           [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "flex items-start justify-between"
-                              },
-                              [
+                            _c("path", {
+                              attrs: {
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
+                                "stroke-width": "2",
+                                d: "M6 18L18 6M6 6l12 12"
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-8" }, [
+                  _c("div", { staticClass: "flow-root" }, [
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "-my-6 divide-y divide-gray-200",
+                        attrs: { role: "list" }
+                      },
+                      _vm._l(_vm.cartItems, function(cartItem) {
+                        return _c("li", { staticClass: "py-6 flex" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
+                            },
+                            [
+                              _c("img", {
+                                staticClass:
+                                  "w-full h-full object-center object-cover",
+                                attrs: {
+                                  src: cartItem.product.image,
+                                  alt:
+                                    "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "ml-4 flex-1 flex flex-col" },
+                            [
+                              _c("div", [
                                 _c(
-                                  "h2",
+                                  "div",
                                   {
                                     staticClass:
-                                      "text-lg font-medium text-gray-900",
-                                    attrs: { id: "slide-over-title" }
+                                      "flex justify-between text-base font-medium text-gray-900"
                                   },
                                   [
-                                    _vm._v(
-                                      "\n                                    Shopping cart\n                                "
-                                    )
+                                    _c("h3", [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v(
+                                          "\n                                                        " +
+                                            _vm._s(cartItem.product.name) +
+                                            "\n                                                      "
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "ml-4" }, [
+                                      _vm._v(
+                                        "\n                                                      " +
+                                          _vm._s("$" + cartItem.product.price) +
+                                          "\n                                                    "
+                                      )
+                                    ])
                                   ]
                                 ),
                                 _vm._v(" "),
                                 _c(
-                                  "div",
-                                  { staticClass: "ml-3 h-7 flex items-center" },
+                                  "p",
+                                  { staticClass: "mt-1 text-sm text-gray-500" },
                                   [
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass:
-                                          "-m-2 p-2 text-gray-400 hover:text-gray-500",
-                                        attrs: { type: "button" },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.$store.dispatch(
-                                              "showCart"
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("span", { staticClass: "sr-only" }, [
-                                          _vm._v("Close panel")
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "svg",
-                                          {
-                                            staticClass: "h-6 w-6",
-                                            attrs: {
-                                              xmlns:
-                                                "http://www.w3.org/2000/svg",
-                                              fill: "none",
-                                              viewBox: "0 0 24 24",
-                                              stroke: "currentColor",
-                                              "aria-hidden": "true"
-                                            }
-                                          },
-                                          [
-                                            _c("path", {
-                                              attrs: {
-                                                "stroke-linecap": "round",
-                                                "stroke-linejoin": "round",
-                                                "stroke-width": "2",
-                                                d: "M6 18L18 6M6 6l12 12"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ]
+                                    _vm._v(
+                                      "\n                                                      Salmon\n                                                  "
                                     )
                                   ]
                                 )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "mt-8" }, [
-                              _c("div", { staticClass: "flow-root" }, [
-                                _c(
-                                  "ul",
-                                  {
-                                    staticClass:
-                                      "-my-6 divide-y divide-gray-200",
-                                    attrs: { role: "list" }
-                                  },
-                                  _vm._l(_vm.cartItems, function(cartItem) {
-                                    return _c(
-                                      "li",
-                                      { staticClass: "py-6 flex" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full object-center object-cover",
-                                              attrs: {
-                                                src: cartItem.product.image,
-                                                alt:
-                                                  "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "ml-4 flex-1 flex flex-col"
-                                          },
-                                          [
-                                            _c("div", [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "flex justify-between text-base font-medium text-gray-900"
-                                                },
-                                                [
-                                                  _c("h3", [
-                                                    _c(
-                                                      "a",
-                                                      { attrs: { href: "#" } },
-                                                      [
-                                                        _vm._v(
-                                                          "\n                                                        " +
-                                                            _vm._s(
-                                                              cartItem.product
-                                                                .name
-                                                            ) +
-                                                            "\n                                                      "
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "p",
-                                                    { staticClass: "ml-4" },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                                      " +
-                                                          _vm._s(
-                                                            "$" +
-                                                              cartItem.product
-                                                                .price
-                                                          ) +
-                                                          "\n                                                    "
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "p",
-                                                {
-                                                  staticClass:
-                                                    "mt-1 text-sm text-gray-500"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                      Salmon\n                                                  "
-                                                  )
-                                                ]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _vm._m(0, true)
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  }),
-                                  0
-                                )
-                              ])
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ]
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(0, true)
+                            ]
+                          )
+                        ])
+                      }),
+                      0
                     )
                   ])
-                ]
-              )
-            ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "border-t border-gray-200 py-6 px-4 sm:px-6" },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("p", { staticClass: "mt-0.5 text-sm text-gray-500" }, [
+                  _vm._v("Shipping and taxes calculated at checkout.")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "mt-6" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass:
+                          "flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700",
+                        attrs: { to: "/checkout" }
+                      },
+                      [_vm._v("Checkout")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            )
           ]
         )
-      : _vm._e()
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -10673,63 +10611,37 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "border-t border-gray-200 py-6 px-4 sm:px-6" },
+      {
+        staticClass: "flex justify-between text-base font-medium text-gray-900"
+      },
+      [_c("p", [_vm._v("Subtotal")]), _vm._v(" "), _c("p", [_vm._v("$262.00")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "mt-6 flex justify-center text-sm text-center text-gray-500"
+      },
       [
-        _c(
-          "div",
-          {
-            staticClass:
-              "flex justify-between text-base font-medium text-gray-900"
-          },
-          [
-            _c("p", [_vm._v("Subtotal")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("$262.00")])
-          ]
-        ),
-        _vm._v(" "),
-        _c("p", { staticClass: "mt-0.5 text-sm text-gray-500" }, [
-          _vm._v("Shipping and taxes calculated at checkout.")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-6" }, [
+        _c("p", [
+          _vm._v("\n                                    or "),
           _c(
-            "a",
+            "button",
             {
-              staticClass:
-                "flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700",
-              attrs: { href: "#" }
+              staticClass: "text-indigo-600 font-medium hover:text-indigo-500",
+              attrs: { type: "button" }
             },
-            [_vm._v("Checkout")]
+            [
+              _vm._v("Continue Shopping"),
+              _c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v(" →")])
+            ]
           )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "mt-6 flex justify-center text-sm text-center text-gray-500"
-          },
-          [
-            _c("p", [
-              _vm._v("\n                                    or "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "text-indigo-600 font-medium hover:text-indigo-500",
-                  attrs: { type: "button" }
-                },
-                [
-                  _vm._v("Continue Shopping"),
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v(" →")
-                  ])
-                ]
-              )
-            ])
-          ]
-        )
+        ])
       ]
     )
   }
@@ -11414,28 +11326,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("Cart"),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "bg-white" },
-        [
-          _c("MobileMenu"),
-          _vm._v(" "),
-          _c("Navbar"),
-          _vm._v(" "),
-          _c("main", [_vm._t("default")], 2),
-          _vm._v(" "),
-          _c("Footer")
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "bg-white" },
+      [
+        _c("MobileMenu"),
+        _vm._v(" "),
+        _c("Navbar"),
+        _vm._v(" "),
+        _c(
+          "main",
+          { staticClass: "flex" },
+          [
+            _c("div", { staticClass: "flex-1" }, [_vm._t("default")], 2),
+            _vm._v(" "),
+            _vm.cart.show ? _c("Cart") : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("Footer")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
