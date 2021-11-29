@@ -52,7 +52,7 @@
       handleSetColor(i){
         this.activeColor = i;
       },
-      async addToCart(id) {
+      async addToCart(id){
         this.$store.dispatch('addToCart', { id });
         const res = await fetch("/api/carts", {
           method: "POST",
