@@ -564,7 +564,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['product']
+  props: ['product'],
+  data: function data() {
+    return {
+      showFeatures: false
+    };
+  },
+  methods: {
+    toggleShowFeatures: function toggleShowFeatures() {
+      this.showFeatures = !this.showFeatures;
+    }
+  }
 });
 
 /***/ }),
@@ -7993,6 +8003,11 @@ var render = function() {
                   type: "button",
                   "aria-controls": "disclosure-1",
                   "aria-expanded": "false"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleShowFeatures()
+                  }
                 }
               },
               [
@@ -8003,77 +8018,76 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("span", { staticClass: "ml-6 flex items-center" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass:
-                        "block h-6 w-6 text-gray-400 group-hover:text-gray-500",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor",
-                        "aria-hidden": "true"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
-                        }
-                      })
-                    ]
-                  ),
+                  _vm.showFeatures
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "block h-6 w-6 text-gray-400 group-hover:text-gray-500",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            "aria-hidden": "true"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                              d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            }
+                          })
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass:
-                        "hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor",
-                        "aria-hidden": "true"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          d: "M18 12H6"
-                        }
-                      })
-                    ]
-                  )
+                  !_vm.showFeatures
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "block h-6 w-6 text-indigo-400 group-hover:text-indigo-500",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            "aria-hidden": "true"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                              d: "M18 12H6"
+                            }
+                          })
+                        ]
+                      )
+                    : _vm._e()
                 ])
               ]
             )
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "pb-6 prose prose-sm",
-              attrs: { id: "disclosure-1" }
-            },
-            [
-              _c(
-                "ul",
-                { attrs: { role: "list" } },
-                _vm._l(_vm.product.features, function(feature) {
-                  return _c("li", [_vm._v(_vm._s(feature.name))])
-                }),
-                0
-              )
-            ]
-          )
+          _vm.showFeatures
+            ? _c("div", { staticClass: "pb-6 prose prose-sm" }, [
+                _c(
+                  "ul",
+                  { attrs: { role: "list" } },
+                  _vm._l(_vm.product.features, function(feature) {
+                    return _c("li", [_vm._v(_vm._s(feature.name))])
+                  }),
+                  0
+                )
+              ])
+            : _vm._e()
         ])
       ])
     ]
