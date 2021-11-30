@@ -26,7 +26,7 @@
               </p>
 
               <div class="flex">
-                  <button @click="$store.dispatch('removeFromCart', index)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                  <button @click="$store.dispatch('removeFromCart', cartItem.product.id)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
               </div>
           </div>
       </div>
