@@ -8,7 +8,7 @@ use Laravel\Passport\Passport;
 
 class AdminTestCase extends TestCase
 {
-    use DatabaseMigrations, RefreshDatabase;
+    use RefreshDatabase;
 
     public function setUp(): void
     {
