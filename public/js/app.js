@@ -362,6 +362,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       activeColor: 0
     };
   },
+  computed: {
+    cart: function cart() {
+      return this.$store.state.cart.item;
+    }
+  },
   methods: {
     handleSetColor: function handleSetColor(i) {
       this.activeColor = i;
@@ -370,7 +375,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -378,23 +382,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.$store.dispatch('addToCart', {
                   id: id
                 });
-
-                _context.next = 3;
-                return fetch("/api/carts", {
+                /*const res = await fetch("/api/carts", {
                   method: "POST",
                   headers: {
                     "content-type": "application/json",
-                    "Authorization": "Bearer ".concat(localStorage.getItem("token"))
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
                   },
                   body: JSON.stringify({
-                    product_id: id
+                    product_id: id,
                   })
-                });
+                })
+                */
 
-              case 3:
-                res = _context.sent;
 
-              case 4:
+              case 1:
               case "end":
                 return _context.stop();
             }

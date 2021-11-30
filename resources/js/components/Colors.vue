@@ -48,13 +48,18 @@
         activeColor: 0,
       }
     },
+    computed: {
+      cart(){
+        return this.$store.state.cart.item;
+      },
+    },
     methods: {
       handleSetColor(i){
         this.activeColor = i;
       },
       async addToCart(id){
         this.$store.dispatch('addToCart', { id });
-        const res = await fetch("/api/carts", {
+        /*const res = await fetch("/api/carts", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -64,6 +69,7 @@
             product_id: id,
           })
         })
+        */
 
       },
     },
