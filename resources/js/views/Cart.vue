@@ -32,38 +32,13 @@
                               <div class="mt-8">
                                   <div class="flow-root">
                                       <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                        <li v-for="cartItem in cart" class="py-6 flex">
-                                            <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-                                              <img :src="cartItem.product.image" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="w-full h-full object-center object-cover">
-                                            </div>
 
-                                            <div class="ml-4 flex-1 flex flex-col">
-                                                <div>
-                                                    <div class="flex justify-between text-base font-medium text-gray-900">
-                                                      <h3>
-                                                        <a href="#">
-                                                          {{ cartItem.product.name }}
-                                                        </a>
-                                                      </h3>
-                                                      <p class="ml-4">
-                                                        {{ `$${cartItem.product.price}` }}
-                                                      </p>
-                                                    </div>
-                                                    <p class="mt-1 text-sm text-gray-500">
-                                                        Salmon
-                                                    </p>
-                                                </div>
-                                                <div class="flex-1 flex items-end justify-between text-sm">
-                                                    <p class="text-gray-500">
-                                                        Qty {{ cartItem.quantity }}
-                                                    </p>
-
-                                                    <div class="flex">
-                                                        <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        <template v-for="(cartItem, index) in cart">
+                                          <CartItem
+                                            :cartItem="cartItem"
+                                            :index="index"
+                                          />
+                                        </template>
 
                                           <!-- More products... -->
                                       </ul>
@@ -93,7 +68,12 @@
 </template>
 
 <script>
+  import CartItem from "../components/CartItem";
+
   export default {
+    components: {
+      CartItem,
+    },
     data(){
       return{
         i: 0,

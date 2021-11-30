@@ -296,6 +296,57 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['cartItem', 'index']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Colors.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Colors.vue?vue&type=script&lang=js& ***!
@@ -1524,6 +1575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_CartItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/CartItem */ "./resources/js/components/CartItem.vue");
 //
 //
 //
@@ -1593,32 +1645,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    CartItem: _components_CartItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       i: 0
@@ -2720,6 +2751,16 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     setCart: function setCart(context, cart) {
       context.cart.items = cart;
+    },
+    removeFromCart: function removeFromCart(context, cart) {
+      var cartItems = context.cart.items;
+      var cartItem = cartItems[cart];
+
+      if (cartItem.quantity > 1) {
+        cartItem.quantity -= 1;
+      } else {
+        cartItems.splice(cart, 1);
+      }
     }
   },
   actions: {
@@ -2732,6 +2773,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     setCart: function setCart(context, cart) {
       context.commit('setCart', cart);
+    },
+    removeFromCart: function removeFromCart(context, cart) {
+      context.commit('removeFromCart', cart);
     }
   },
   getters: {
@@ -5036,6 +5080,45 @@ component.options.__file = "resources/js/components/CTA.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/CartItem.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/CartItem.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CartItem.vue?vue&type=template&id=7f6ae384& */ "./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384&");
+/* harmony import */ var _CartItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartItem.vue?vue&type=script&lang=js& */ "./resources/js/components/CartItem.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CartItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__.render,
+  _CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CartItem.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Colors.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/Colors.vue ***!
@@ -6100,6 +6183,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/CartItem.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/CartItem.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Colors.vue?vue&type=script&lang=js&":
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Colors.vue?vue&type=script&lang=js& ***!
@@ -6616,6 +6715,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CTA_vue_vue_type_template_id_1dd68df5___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CTA_vue_vue_type_template_id_1dd68df5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CTA.vue?vue&type=template&id=1dd68df5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CTA.vue?vue&type=template&id=1dd68df5&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartItem_vue_vue_type_template_id_7f6ae384___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartItem.vue?vue&type=template&id=7f6ae384& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384&");
 
 
 /***/ }),
@@ -7550,6 +7666,115 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CartItem.vue?vue&type=template&id=7f6ae384& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("li", { staticClass: "py-6 flex" }, [
+    _c(
+      "div",
+      {
+        staticClass:
+          "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
+      },
+      [
+        _c("img", {
+          staticClass: "w-full h-full object-center object-cover",
+          attrs: {
+            src: _vm.cartItem.product.image,
+            alt:
+              "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+          }
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "ml-4 flex-1 flex flex-col" }, [
+      _c("div", [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex justify-between text-base font-medium text-gray-900"
+          },
+          [
+            _c("h3", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v(
+                  "\n                  " +
+                    _vm._s(_vm.cartItem.product.name) +
+                    "\n                "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "ml-4" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s("$" + _vm.cartItem.product.price) +
+                  "\n              "
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
+          _vm._v("\n                Salmon\n            ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex-1 flex items-end justify-between text-sm" },
+        [
+          _c("p", { staticClass: "text-gray-500" }, [
+            _vm._v(
+              "\n                Qty " +
+                _vm._s(_vm.cartItem.quantity) +
+                "\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "font-medium text-indigo-600 hover:text-indigo-500",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.$store.dispatch("removeFromCart", _vm.index)
+                  }
+                }
+              },
+              [_vm._v("Remove")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -10520,93 +10745,16 @@ var render = function() {
                         staticClass: "-my-6 divide-y divide-gray-200",
                         attrs: { role: "list" }
                       },
-                      _vm._l(_vm.cart, function(cartItem) {
-                        return _c("li", { staticClass: "py-6 flex" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden"
-                            },
-                            [
-                              _c("img", {
-                                staticClass:
-                                  "w-full h-full object-center object-cover",
-                                attrs: {
-                                  src: cartItem.product.image,
-                                  alt:
-                                    "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                                }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "ml-4 flex-1 flex flex-col" },
-                            [
-                              _c("div", [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex justify-between text-base font-medium text-gray-900"
-                                  },
-                                  [
-                                    _c("h3", [
-                                      _c("a", { attrs: { href: "#" } }, [
-                                        _vm._v(
-                                          "\n                                                        " +
-                                            _vm._s(cartItem.product.name) +
-                                            "\n                                                      "
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "ml-4" }, [
-                                      _vm._v(
-                                        "\n                                                      " +
-                                          _vm._s("$" + cartItem.product.price) +
-                                          "\n                                                    "
-                                      )
-                                    ])
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "p",
-                                  { staticClass: "mt-1 text-sm text-gray-500" },
-                                  [
-                                    _vm._v(
-                                      "\n                                                      Salmon\n                                                  "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex-1 flex items-end justify-between text-sm"
-                                },
-                                [
-                                  _c("p", { staticClass: "text-gray-500" }, [
-                                    _vm._v(
-                                      "\n                                                      Qty " +
-                                        _vm._s(cartItem.quantity) +
-                                        "\n                                                  "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _vm._m(0, true)
-                                ]
-                              )
-                            ]
-                          )
-                        ])
-                      }),
-                      0
+                      [
+                        _vm._l(_vm.cart, function(cartItem, index) {
+                          return [
+                            _c("CartItem", {
+                              attrs: { cartItem: cartItem, index: index }
+                            })
+                          ]
+                        })
+                      ],
+                      2
                     )
                   ])
                 ])
@@ -10617,7 +10765,7 @@ var render = function() {
               "div",
               { staticClass: "border-t border-gray-200 py-6 px-4 sm:px-6" },
               [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("p", { staticClass: "mt-0.5 text-sm text-gray-500" }, [
                   _vm._v("Shipping and taxes calculated at checkout.")
@@ -10680,21 +10828,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex" }, [
-      _c(
-        "button",
-        {
-          staticClass: "font-medium text-indigo-600 hover:text-indigo-500",
-          attrs: { type: "button" }
-        },
-        [_vm._v("Remove")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

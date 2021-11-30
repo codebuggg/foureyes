@@ -89,6 +89,15 @@ const store = new Vuex.Store({
     setCart(context, cart){
       context.cart.items = cart;
     },
+    removeFromCart(context, cart){
+      const cartItems = context.cart.items;
+      const cartItem = cartItems[cart];
+      if(cartItem.quantity > 1){
+        cartItem.quantity -= 1;
+      }else {
+        cartItems.splice(cart, 1);
+      }
+    },
   },
   actions: {
     addToCart(context, {id}){
@@ -100,6 +109,9 @@ const store = new Vuex.Store({
     setCart(context, cart){
       context.commit('setCart', cart);
     },
+    removeFromCart(context, cart){
+      context.commit('removeFromCart', cart);
+    }
   },
   getters: {
     getCart: state => state.cart
