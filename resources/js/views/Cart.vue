@@ -32,7 +32,7 @@
                               <div class="mt-8">
                                   <div class="flow-root">
                                       <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                        <li v-for="cartItem in cartItems" class="py-6 flex">
+                                        <li v-for="cartItem in cart" class="py-6 flex">
                                             <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
                                               <img :src="cartItem.product.image" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="w-full h-full object-center object-cover">
                                             </div>
@@ -55,7 +55,7 @@
                                                 </div>
                                                 <div class="flex-1 flex items-end justify-between text-sm">
                                                     <p class="text-gray-500">
-                                                        Qty 1
+                                                        Qty {{ cartItem.quantity }}
                                                     </p>
 
                                                     <div class="flex">
@@ -82,7 +82,7 @@
                               </div>
                               <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
                                   <p>
-                                      or <button type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                      or <button @click="i++" type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
                                   </p>
                               </div>
                           </div>
@@ -96,19 +96,13 @@
   export default {
     data(){
       return{
-        cartItems: [],
+        i: 0,
       }
     },
-    async created(){
-      const res = await fetch("/api/carts", {
-        headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      if(res.status == 200){
-        const body = await res.json();
-        this.cartItems = body;
-      }
-    }
+    computed: {
+      cart(){
+        return this.$store.state.cart.item;
+      },
+    },
   }
 </script>

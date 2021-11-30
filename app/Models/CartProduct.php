@@ -15,4 +15,14 @@ class CartProduct extends Model
       "quantity",
     ];
 
+    protected $visible = [
+      'quantity',
+      'product',
+    ];
+
+    public function product()
+    {
+      return $this->belongsTo(Product::class);
+    }
+
 }

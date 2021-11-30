@@ -66,6 +66,7 @@ const store = new Vuex.Store({
   state: {
     cart: {
       items: [],
+      item: null,
       show: false,
     },
   },
@@ -76,6 +77,9 @@ const store = new Vuex.Store({
     showCart(context){
       context.cart.show = !context.cart.show;
     },
+    setCart(context, cart){
+      context.cart.item = cart;
+    },
   },
   actions: {
     addToCart(context, {id}){
@@ -84,6 +88,12 @@ const store = new Vuex.Store({
     showCart(context){
       context.commit('showCart');
     },
+    setCart(context, cart){
+      context.commit('setCart', cart);
+    },
+  },
+  getters: {
+    getCart: state => state.cart
   },
 })
 
