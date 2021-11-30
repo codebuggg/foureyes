@@ -72,13 +72,22 @@ const store = new Vuex.Store({
   },
   mutations: {
     addToCart(context, id){
-      context.cart.items.push(id)
+      const cartItems = context.cart.items;
+      const addedToCart = cartItems.filter((cartItem) => {
+        return cartItem.product.id == id;
+      });
+      if(addedToCart.length > 0){
+        // product is already in cart
+        const cartItem = addedToCart[0];
+        const i = cartItems.indexOf(cartItem);
+        cartItems[i].quantity += 1; // increase the quantity of the product by one
+      }
     },
     showCart(context){
       context.cart.show = !context.cart.show;
     },
     setCart(context, cart){
-      context.cart.item = cart;
+      context.cart.items = cart;
     },
   },
   actions: {

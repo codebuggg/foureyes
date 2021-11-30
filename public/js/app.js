@@ -1626,7 +1626,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     cart: function cart() {
-      return this.$store.state.cart.item;
+      return this.$store.state.cart.items;
     }
   }
 });
@@ -2703,13 +2703,23 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   },
   mutations: {
     addToCart: function addToCart(context, id) {
-      context.cart.items.push(id);
+      var cartItems = context.cart.items;
+      var addedToCart = cartItems.filter(function (cartItem) {
+        return cartItem.product.id == id;
+      });
+
+      if (addedToCart.length > 0) {
+        // product is already in cart
+        var cartItem = addedToCart[0];
+        var i = cartItems.indexOf(cartItem);
+        cartItems[i].quantity += 1; // increase the quantity of the product by one
+      }
     },
     showCart: function showCart(context) {
       context.cart.show = !context.cart.show;
     },
     setCart: function setCart(context, cart) {
-      context.cart.item = cart;
+      context.cart.items = cart;
     }
   },
   actions: {

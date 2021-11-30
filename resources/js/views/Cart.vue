@@ -101,7 +101,7 @@
     },
     computed: {
       cart(){
-        return this.$store.state.cart.item;
+        return this.$store.state.cart.items;
       },
     },
   }
