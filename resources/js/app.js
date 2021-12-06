@@ -13,7 +13,7 @@ import Cart from "./views/Cart";
 import Products from "./views/Products/Index";
 import ShowProduct from "./views/Products/Show";
 import Orders from "./views/Orders/Index";
-import NewOrder from "./views/Orders/New";
+import Checkout from "./views/Checkout";
 import Register from "./register";
 
 const router = new VueRouter({
@@ -56,8 +56,8 @@ const router = new VueRouter({
     },
     {
       path: '/checkout',
-      name: 'orders.new',
-      component: NewOrder,
+      name: 'checkout',
+      component: Checkout,
     }
   ]
 })
@@ -111,6 +111,7 @@ const store = new Vuex.Store({
   actions: {
     async addToCart(context, product){
       context.commit('addToCart', product);
+      context.commit('showCart');
       const cartId = localStorage.getItem('cart-id');
       const res = await fetch(`/api/carts/${cartId}/products`, {
         method: "POST",

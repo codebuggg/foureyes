@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderProduct;
-use \App\Models\Cart;
-use Illuminate\Http\Request;
+use \App\Models\CartProduct;
+use App\Http\Requests\StoreOrderRequest;
 use Auth;
 
 class OrdersController extends Controller
@@ -13,7 +13,7 @@ class OrdersController extends Controller
 
     public function __construct()
     {
-        $this->middleware("auth");
+        #$this->middleware("auth");
     }
 
     public function index()
@@ -22,21 +22,24 @@ class OrdersController extends Controller
         return response()->json($orders, 200);
     }
 
-    public function store(Request $request)
+    public function store(StoreOrderRequest $request, $cart)
     {
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'address' => $request->address
-        ]);
+        $params = array_merge(
+          [
+              'user_id' => Auth::id(),
+          ],
+          $request->all(),
+        );
+        $order = Order::create($params);
 
-        $cart = Cart::where([
-          "user_id" => Auth::id()
+        $cart_products = CartProduct::where([
+          "cart_id" => $cart,
         ])->get(); // fetch user cart for creating order products
 
         if(!$cart->first()) return response("", 422);
 
         $subtotal = 0;
-        foreach ($cart as $key => $item) {
+        foreach ($cart_products as $key => $item) {
           $quantity = $item->quantity;
           $product = $item->product;
           $price = $product->price;
