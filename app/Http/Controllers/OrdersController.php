@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use \App\Models\CartProduct;
 use App\Http\Requests\StoreOrderRequest;
+use App\Http\Resources\OrderResource;
 use Auth;
 
 class OrdersController extends Controller
@@ -22,21 +23,17 @@ class OrdersController extends Controller
         return response()->json($orders, 200);
     }
 
-    public function store(StoreOrderRequest $request, $cart)
+    public function store(StoreOrderRequest $request)
     {
-        $params = array_merge(
-          [
-              'user_id' => Auth::id(),
-          ],
-          $request->all(),
-        );
-        $order = Order::create($params);
+        $params = $request->all();
 
         $cart_products = CartProduct::where([
-          "cart_id" => $cart,
+          "cart_id" => $request->cart_id,
         ])->get(); // fetch user cart for creating order products
 
-        if(!$cart->first()) return response("", 422);
+        if(!$cart_products->first()) return response("", 422);
+
+        $order = Order::create($params);
 
         $subtotal = 0;
         foreach ($cart_products as $key => $item) {
@@ -52,7 +49,7 @@ class OrdersController extends Controller
             "order_id" => $order->id,
           ]);
           $subtotal += $total_price;
-          Cart::destroy($item->id);
+          CartProduct::destroy($item->id);
         }
 
         $order->update([
@@ -69,7 +66,7 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {
-        return response()->json($order, 200);
+        return response()->json(new OrderResource($order), 200);
     }
 
     public function destroy(Order $order)

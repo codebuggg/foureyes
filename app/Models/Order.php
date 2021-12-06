@@ -14,6 +14,14 @@ class Order extends Model
         'user_id',
         'address',
         'state',
+        "first_name",
+        "last_name",
+        "phone",
+        "address",
+        "city",
+        "landmark",
+        'subtotal',
+        'total',
     ];
 
     protected $casts = [
@@ -24,6 +32,11 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function order_products()
+    {
+        return $this->hasMany(OrderProduct::class);
     }
 
     public function products()

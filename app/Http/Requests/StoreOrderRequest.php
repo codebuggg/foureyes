@@ -12,8 +12,8 @@ class StoreOrderRequest extends JSONRequest
             "last_name" => "required",
             "phone" => "required",
             "address" => "required",
-            "street2" => "required",
             "city" => "required",
+            "landmark" => "required",
         ];
     }
 }

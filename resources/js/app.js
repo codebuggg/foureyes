@@ -14,6 +14,7 @@ import Products from "./views/Products/Index";
 import ShowProduct from "./views/Products/Show";
 import Orders from "./views/Orders/Index";
 import Checkout from "./views/Checkout";
+import ShowOrder from "./views/Orders/Show";
 import Register from "./register";
 
 const router = new VueRouter({
@@ -58,6 +59,11 @@ const router = new VueRouter({
       path: '/checkout',
       name: 'checkout',
       component: Checkout,
+    },
+    {
+      path: '/orders/:id',
+      name: 'orders.show',
+      component: ShowOrder,
     }
   ]
 })

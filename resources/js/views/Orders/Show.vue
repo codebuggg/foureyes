@@ -1,4 +1,5 @@
 <template>
+  <Page>
     <div>
         <main class="relative lg:min-h-full">
             <div class="h-80 overflow-hidden lg:absolute lg:w-1/2 lg:h-full lg:pr-4 xl:pr-12">
@@ -18,16 +19,16 @@
                         </dl>
 
                         <ul role="list" class="mt-6 text-sm font-medium text-gray-500 border-t border-gray-200 divide-y divide-gray-200">
-                            <li class="flex py-6 space-x-6">
-                                <img src="https://tailwindui.com/img/ecommerce-images/confirmation-page-06-product-01.jpg" alt="Model wearing men&#039;s charcoal basic tee in large." class="flex-none w-24 h-24 bg-gray-100 rounded-md object-center object-cover">
+                            <li v-for="order_product in order.order_products" class="flex py-6 space-x-6">
+                                <img :src="order_product.product.images[0].name" alt="Model wearing men&#039;s charcoal basic tee in large." class="flex-none w-24 h-24 bg-gray-100 rounded-md object-center object-cover">
                                 <div class="flex-auto space-y-1">
                                     <h3 class="text-gray-900">
-                                        <a href="#">Basic Tee</a>
+                                        <a href="#">{{ order_product.product.name }}</a>
                                     </h3>
                                     <p>Charcoal</p>
                                     <p>L</p>
                                 </div>
-                                <p class="flex-none font-medium text-gray-900">$36.00</p>
+                                <p class="flex-none font-medium text-gray-900">{{ `$${order_product.total}` }}</p>
                             </li>
 
                             <!-- More products... -->
@@ -36,7 +37,7 @@
                         <dl class="text-sm font-medium text-gray-500 space-y-6 border-t border-gray-200 pt-6">
                             <div class="flex justify-between">
                                 <dt>Subtotal</dt>
-                                <dd class="text-gray-900">$72.00</dd>
+                                <dd class="text-gray-900">{{ `${order.subtotal}` }}</dd>
                             </div>
 
                             <div class="flex justify-between">
@@ -51,22 +52,22 @@
 
                             <div class="flex items-center justify-between border-t border-gray-200 text-gray-900 pt-6">
                                 <dt class="text-base">Total</dt>
-                                <dd class="text-base">$86.40</dd>
+                                <dd class="text-base">{{ `$${order.total}` }}</dd>
                             </div>
                         </dl>
 
                         <dl class="mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600">
                             <div>
-                                <dt class="font-medium text-gray-900">Shipping Address</dt>
+                                <dt class="font-medium text-gray-900">Delivery Address</dt>
                                 <dd class="mt-2">
                                     <address class="not-italic">
-                                        <span class="block">Kristin Watson</span>
+                                        <span class="block">{{ `${order.first_name} ${order.last_name}` }}</span>
                                         <span class="block">7363 Cynthia Pass</span>
                                         <span class="block">Toronto, ON N3Y 4H8</span>
                                     </address>
                                 </dd>
                             </div>
-                            <div>
+                            <!--<div>
                                 <dt class="font-medium text-gray-900">Payment Information</dt>
                                 <dd class="mt-2 space-y-2 sm:flex sm:space-y-0 sm:space-x-4">
                                     <div class="flex-none">
@@ -82,20 +83,38 @@
                                     </div>
                                 </dd>
                             </div>
+                          -->
                         </dl>
 
                         <div class="mt-16 border-t border-gray-200 py-6 text-right">
-                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></a>
+                          <router-link to="/products" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></router-link>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+  </Page>
 </template>
 
 <script>
-  export default {
+  import Page from "../Page";
+  import Order from "../../api/orders";
 
+  export default {
+    components: {
+      Page,
+    },
+    data(){
+      return{
+        order: {
+        },
+      }
+    },
+    async created(){
+      const id = this.$route.params.id;
+      this.order = await Order.find(id);
+      console.log(this.order);
+    },
   }
 </script>
