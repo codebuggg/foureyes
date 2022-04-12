@@ -8,13 +8,16 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\CartProduct;
 
+use App\Transformers\CartProductsTransformer;
+
 class CartProductsController extends Controller
 {
 
     public function index(Request $request, $cart_id)
     {
-        $cart = CartProduct::with('product')->where(["cart_id" => $cart_id])->get();
-        return response()->json($cart, 200);
+        $cart_products = CartProduct::with('product')->where(["cart_id" => $cart_id])->get();
+        $cart_products = fractal($cart_products, new CartProductsTransformer())->toArray();
+        return response()->json($cart_products);
     }
 
     public function store(StoreCartRequest $request, $cart_id)
