@@ -15,11 +15,9 @@ class AdminStoreProductRequest extends FormRequest
      public function rules()
      {
          return [
-             'name' => 'required',
-             'description' => 'required',
-             'units' => 'required',
-             'price' => 'required',
-             'image' => 'required|image|mimes:jpeg,png,jpg',
+           'name' => 'required',
+           'description' => 'required',
+           'price' => 'required',
          ];
      }
 }

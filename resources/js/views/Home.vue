@@ -4,6 +4,7 @@
       <MobileMenu />
       <Navbar />
       <main>
+        <HeroSection />
         <ShopByCategory />
         <FeaturedSection />
         <FavoritesSection />
@@ -16,6 +17,7 @@
 
 <script>
   import Navbar from "../components/Navbar";
+  import HeroSection from "../components/HeroSection";
   import ShopByCategory from "../components/ShopByCategory";
   import FavoritesSection from "../components/FavouritesSection";
   import Footer from "../components/Footer";
@@ -25,6 +27,7 @@
   export default {
     components: {
       Navbar,
+      HeroSection,
       ShopByCategory,
       FavoritesSection,
       Footer,

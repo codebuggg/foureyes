@@ -3,32 +3,48 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Product;
+use App\Models\Image;
+
+use App\Actions\Base64ToFilename;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 use App\Http\Requests\AdminStoreProductRequest;
+
+use App\Transformers\Admin\ProductsTransformer;
+
 
 class ProductsController extends Controller
 {
     public function index()
     {
-        return response()->json(Product::all(), 200);
+        $products = Product::all();
+        $products = fractal($products, new ProductsTransformer())->toArray();
+        return response()->json($products);
     }
 
-    public function store(AdminStoreProductRequest $request)
+    public function store(AdminStoreProductRequest $request, Base64ToFilename $base64)
     {
-        $params = $request->all();
-        $imageName = $params["image"]->getClientOriginalName();
-        $params["image"]->move(public_path('images'), $imageName);
-        $params["image"] = $imageName;
-        $product = Product::create($params);
+        try {
+          //$params = $request->all();
+          //$imageName = $params["image"]->getClientOriginalName();
+          //$params["image"]->move(public_path('images'), $imageName);
+          //$params["image"] = $imageName;
+          $product = Product::create($request->all());
+          $image = $product->images()->create(["path" => $base64->execute($request)]);
+          return response()->json("", 201);
 
-        return response()->json($product, 201);
+          /*return response()->json([
+              'status' => (bool) $product,
+              'data'   => $product,
+              'message' => $product ? 'Product Created!' : 'Error Creating Product'
+          ], 201);
+          */
+        } catch (\Exception $e) {
+          Log::debug($e);
+        }
 
-        /*return response()->json([
-            'status' => (bool) $product,
-            'data'   => $product,
-            'message' => $product ? 'Product Created!' : 'Error Creating Product'
-        ], 201);
-        */
     }
 
     public function show(Product $product)

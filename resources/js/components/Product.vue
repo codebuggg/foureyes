@@ -3,7 +3,7 @@
     <router-link :to="`/products/${product.id}`" class="block">
       <div class="group relative">
         <div class="w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1">
-          <img :src="product.images[0].name" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">
+          <img :src="product.images[0].path" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">
         </div>
         <div class="mt-6">
           <p class="text-sm text-gray-500">

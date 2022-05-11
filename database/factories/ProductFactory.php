@@ -18,7 +18,6 @@ class ProductFactory extends Factory
           'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consequat.',
           'units' => 21,
           'price' => 200.10,
-          'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png',
         ];
     }
 

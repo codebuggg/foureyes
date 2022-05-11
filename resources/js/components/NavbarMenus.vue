@@ -43,12 +43,6 @@
             name: "Men",
             flyout: FlyoutMenu,
           },
-          {
-            name: "Company",
-          },
-          {
-            name: "Stores",
-          },
         ]
       }
     },

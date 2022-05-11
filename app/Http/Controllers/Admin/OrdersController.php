@@ -6,6 +6,8 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use \App\Models\Cart;
 use Illuminate\Http\Request;
+use App\Transformers\Admin\OrdersTransformer;
+
 
 class OrdersController extends Controller
 {
@@ -13,6 +15,7 @@ class OrdersController extends Controller
     public function index()
     {
         $orders = Order::all();
+        $orders = fractal($orders, new OrdersTransformer())->toArray();
         return response()->json($orders, 200);
     }
 

@@ -25,9 +25,9 @@ class ProductsTableSeeder extends Seeder
                   ->has(Image::factory()
                                 ->count(4)
                                 ->state(new Sequence(
-                                  ["name" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png'],
-                                  ["name" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png'],
-                                  ["name" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-single-track-shoe-ALQF_JM3_hero.png'],
+                                  ["path" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png'],
+                                  ["path" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png'],
+                                  ["path" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-single-track-shoe-ALQF_JM3_hero.png'],
                                   )))
                   ->hasColors(3, new Sequence(
                       ["hash" => "#374151"],
