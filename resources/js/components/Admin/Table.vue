@@ -62,7 +62,7 @@
                 <template v-for="(row, i) in rows">
                   <tr :key="i">
                     <template v-for="(header, j) in headers">
-                      <td :key="j" class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                      <td :key="j" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         <component :is="render(row, header)" :row="row" :header="header" />
                       </td>
                     </template>

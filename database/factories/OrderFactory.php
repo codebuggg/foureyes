@@ -12,6 +12,7 @@ class OrderFactory extends Factory
     {
         return [
             "user_id" => 1,
+            "total" => 20,
         ];
     }
 }

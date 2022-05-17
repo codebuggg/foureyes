@@ -16,14 +16,17 @@
               <Card
                 title="Orders"
                 :text="dashboard.ordersSum"
+                icon="shopping-cart"
               />
               <Card
                 title="Income"
                 :text="`GHC ${dashboard.income}`"
+                icon="credit-card"
               />
               <Card
                 title="Customers"
                 :text="dashboard.userCount"
+                icon="users"
               />
               <!-- More items... -->
             </div>

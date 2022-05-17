@@ -9,9 +9,10 @@
         <Table
           :headers="[
             'user',
+            'phone',
             'total',
-            'state',
-            'date'
+            { key: 'state', render: 'State', options: ['New', 'Confirmed', 'Picked up', 'Processing lens', 'Delivered'] },
+            'date',
           ]"
           :rows="orders"
         />
@@ -21,12 +22,18 @@
 
 </template>
 <script type="text/javascript">
+  import Vue from "vue";
   import LineChart from "../../components/Admin/LineChart";
   import MobileNav from "../../components/Admin/MobileNav";
   import DesktopNav from "../../components/Admin/DesktopNav";
   import Table from "../../components/Admin/Table";
   import Card from "../../components/Admin/Card";
   import Navbar from "../../components/Admin/Navbar";
+
+  Vue.component("State", {
+    props: ["row", "header"],
+    template: "<select><template v-for='(option, i) in header.options'><option>{{option}}</option></template></select>"
+  })
 
   export default{
     components: {

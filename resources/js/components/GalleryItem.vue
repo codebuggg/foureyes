@@ -4,7 +4,7 @@
       Angled view
     </span>
     <span class="absolute inset-0 rounded-md overflow-hidden">
-      <img :src="image.name" alt="" class="w-full h-full object-center object-cover">
+      <img :src="image.path" alt="" class="w-full h-full object-center object-cover">
     </span>
     <!-- Selected: "ring-indigo-500", Not Selected: "ring-transparent" -->
     <span :class="computedClass" aria-hidden="true"></span>

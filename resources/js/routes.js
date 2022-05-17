@@ -19,6 +19,7 @@ import AdminProducts from "./views/admin/AdminProdutcs";
 import AdminOrders from "./views/admin/AdminOrders";
 import ProductsForm from "./views/admin/ProductsForm";
 import Landing from "./views/admin/Landing";
+import Customers from "./views/admin/Customers";
 
 const router = new VueRouter({
   mode: 'history',
@@ -104,6 +105,14 @@ const router = new VueRouter({
       path: '/admin/edit',
       name: 'Landing',
       component: Landing,
+      meta: {
+        auth: true,
+      }
+    },
+    {
+      path: '/admin/customers',
+      name: 'Customers',
+      component: Customers,
       meta: {
         auth: true,
       }

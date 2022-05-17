@@ -13,23 +13,28 @@ const store = new Vuex.Store({
     nav: [
       {
         name: "Home",
-        path: "/"
+        path: "/",
+        icon: "home"
       },
       {
         name: "Products",
-        path: "/products"
+        path: "/products",
+        icon: "list" 
       },
       {
         name: "Orders",
-        path: "/orders"
+        path: "/orders",
+        icon: "shopping-cart"
       },
       {
         name: "Customers",
-        path: "/customers"
+        path: "/customers",
+        icon: "user"
       },
       {
         name: "Landing Page",
-        path: "/edit"
+        path: "/edit",
+        icon: "palette"
       },
     ]
   },

@@ -4,9 +4,15 @@
       <MobileMenu />
       <Navbar />
       <main>
-        <HeroSection />
-        <ShopByCategory />
-        <FeaturedSection />
+        <HeroSection
+          :hero="hero"
+        />
+        <ShopByCategory
+          :shopByCategory="shopByCategory"
+        />
+        <FeaturedSection
+          :featuredSection="featuredSection"
+        />
         <FavoritesSection />
         <CTA />
       </main>
@@ -23,6 +29,7 @@
   import Footer from "../components/Footer";
   import CTA from "../components/CTA";
   import FeaturedSection from "../components/FeaturedSection";
+  import {data} from "../data";
 
   export default {
     components: {
@@ -37,5 +44,10 @@
     provide: {
       currentUser: JSON.parse(localStorage.getItem("current_user"))
     },
+    data(){
+      return{
+        ...data,
+      };
+    }
   }
 </script>

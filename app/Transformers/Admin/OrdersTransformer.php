@@ -13,8 +13,10 @@ class OrdersTransformer extends Fractal\TransformerAbstract
     return [
       'id' => (int) $order->id,
       "user" => $order->user->name,
+      "phone" => $order->user->phone,
       "total" => $order->total,
       "state" => $order->state,
+      "date" => $order->created_at,
     ];
 	}
 }

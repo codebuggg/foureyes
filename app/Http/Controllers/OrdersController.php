@@ -8,6 +8,7 @@ use \App\Models\CartProduct;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Resources\OrderResource;
 use Auth;
+use Illuminate\Support\Facades\Log;
 
 class OrdersController extends Controller
 {
@@ -25,6 +26,7 @@ class OrdersController extends Controller
 
     public function store(StoreOrderRequest $request)
     {
+      try {
         $params = $request->all();
 
         $cart_products = CartProduct::where([
@@ -33,7 +35,9 @@ class OrdersController extends Controller
 
         if(!$cart_products->first()) return response("", 422);
 
-        $order = Order::create($params);
+        $order = Order::create([
+          "user_id" => 1,
+        ]);
 
         $subtotal = 0;
         foreach ($cart_products as $key => $item) {
@@ -49,7 +53,7 @@ class OrdersController extends Controller
             "order_id" => $order->id,
           ]);
           $subtotal += $total_price;
-          CartProduct::destroy($item->id);
+          #CartProduct::destroy($item->id);
         }
 
         $order->update([
@@ -62,6 +66,9 @@ class OrdersController extends Controller
             'data'   => $order,
             'message' => $order ? 'Order Created!' : 'Error Creating Order'
         ], 201);
+      } catch (Exception $e) {
+        Log::info($e);
+      }
     }
 
     public function show(Order $order)

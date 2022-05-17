@@ -1,7 +1,7 @@
 <template>
   <li class="flex py-6 px-4 sm:px-6">
     <div class="flex-shrink-0">
-      <img :src="product.product.image" alt="Front of men&#039;s Basic Tee in black." class="w-20 rounded-md">
+      <img :src="product.product.images[0].path" alt="Front of men&#039;s Basic Tee in black." class="w-20 rounded-md">
     </div>
 
     <div class="ml-6 flex-1 flex flex-col">
