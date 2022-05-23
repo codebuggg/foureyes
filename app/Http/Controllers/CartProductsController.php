@@ -32,6 +32,7 @@ class CartProductsController extends Controller
         else $cart_product = CartProduct::create($params);
     }
 
+    // why not use cart product id
     public function destroy(Request $request, $cart_id, $product_id)
     {
         $cart_product = CartProduct::where([

@@ -4,7 +4,7 @@
       <div class="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <div class="sm:flex sm:items-baseline sm:justify-between">
               <h2 id="category-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Category</h2>
-              <a href="#" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all categories<span aria-hidden="true"> &rarr;</span></a>
+              <router-link to="/products" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all categories<span aria-hidden="true"> &rarr;</span></router-link>
           </div>
 
           <div class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
@@ -14,10 +14,10 @@
                 <div class="p-6 flex items-end sm:absolute sm:inset-0">
                   <div>
                     <h3 class="font-semibold text-white">
-                      <a>
+                      <router-link :to="`/products?category=${shopByCategory.first.title}`">
                         <span class="absolute inset-0"></span>
                         {{shopByCategory.first.title}}
-                      </a>
+                      </router-link>
                     </h3>
                     <p aria-hidden="true" class="mt-1 text-sm text-white">
                       Shop now
@@ -32,10 +32,10 @@
                   <div class="p-6 flex items-end sm:absolute sm:inset-0">
                     <div>
                       <h3 class="font-semibold text-white">
-                        <a href="#">
+                        <router-link :to="`/products?category=${shopByCategory[i].title}`">
                           <span class="absolute inset-0"></span>
                           {{shopByCategory[i].title}}
-                        </a>
+                        </router-link>
                       </h3>
                       <p aria-hidden="true" class="mt-1 text-sm text-white">
                         Shop now

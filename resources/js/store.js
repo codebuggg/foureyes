@@ -19,7 +19,7 @@ const store = new Vuex.Store({
       {
         name: "Products",
         path: "/products",
-        icon: "list" 
+        icon: "list"
       },
       {
         name: "Orders",
@@ -100,6 +100,7 @@ const store = new Vuex.Store({
     },
     async removeFromCart(context, cart){
       context.commit('removeFromCart', cart);
+      context.commit('showCart');
       const cartId = localStorage.getItem('cart-id');
       fetch(`/api/carts/${cartId}/products/${cart}`, {method: "delete"})
     }

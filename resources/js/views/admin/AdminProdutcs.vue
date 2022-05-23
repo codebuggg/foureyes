@@ -16,6 +16,8 @@
           ]"
           :rows="products"
           newPath="/admin/products/create"
+          hasActions="true"
+          resource="products"
         />
       </main>
     </div>

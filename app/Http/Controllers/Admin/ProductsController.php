@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Product;
 use App\Models\Image;
+use App\Models\Feature;
+use App\Models\Color;
 
 use App\Actions\Base64ToFilename;
 
@@ -22,6 +24,16 @@ class ProductsController extends Controller
         $products = Product::all();
         $products = fractal($products, new ProductsTransformer())->toArray();
         return response()->json($products);
+    }
+
+    public function create()
+    {
+      $features = Feature::all();
+      $colors = Color::all();
+      return response()->json([
+        "colors" => $colors,
+        "features" => $features,
+      ]);
     }
 
     public function store(AdminStoreProductRequest $request, Base64ToFilename $base64)

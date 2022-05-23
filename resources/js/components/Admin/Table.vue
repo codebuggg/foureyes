@@ -56,6 +56,9 @@
                   <template v-for="(header, i) in headers">
                     <th :key="i" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ renderHeader(header) }}</th>
                   </template>
+                  <template v-if="hasActions">
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                  </template>
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
@@ -64,6 +67,48 @@
                     <template v-for="(header, j) in headers">
                       <td :key="j" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         <component :is="render(row, header)" :row="row" :header="header" />
+                      </td>
+                    </template>
+                    <template v-if="hasActions">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <t-dropdown>
+                          <div
+                            slot="trigger"
+                            slot-scope="{
+                              mousedownHandler,
+                              focusHandler,
+                              blurHandler,
+                              keydownHandler,
+                              isShown
+                            }"
+                          >
+                            <button
+                              @mousedown="mousedownHandler"
+                              @focus="focusHandler"
+                              @blur="blurHandler"
+                              @keydown="keydownHandler"
+                              type="button" class="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50" id="user-menu-button" aria-expanded="false" aria-haspopup="true"
+                            >
+                              <i class="fa fa-ellipsis-v"></i>
+                            </button>
+                          </div>
+
+                          <!--
+                            Dropdown menu, show/hide based on menu state.
+
+                            Entering: "transition ease-out duration-100"
+                              From: "transform opacity-0 scale-95"
+                              To: "transform opacity-100 scale-100"
+                            Leaving: "transition ease-in duration-75"
+                              From: "transform opacity-100 scale-100"
+                              To: "transform opacity-0 scale-95"
+                          -->
+                          <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <router-link :to="`/admin/${resource}/${row.id}/edit`" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Edit</router-link>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Delete</a>
+                          </div>
+                        </t-dropdown>
                       </td>
                     </template>
                   </tr>
@@ -109,7 +154,9 @@
       "rows",
       "title",
       "canAdd",
-      "newPath"
+      "newPath",
+      "hasActions",
+      "resource",
     ],
     methods: {
       render(row, header){

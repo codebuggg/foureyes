@@ -36,7 +36,7 @@
               </div>
             </div>
           </div>
-          <a href="#" class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Shop Collection</a>
+          <router-link to="/products" class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Shop Collection</router-link>
         </div>
       </div>
     </div>

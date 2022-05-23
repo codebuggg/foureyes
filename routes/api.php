@@ -34,6 +34,7 @@ Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin",
   Route::resource("products", "ProductsController");
   Route::resource("orders", "OrdersController");
   Route::resource("customers", "CustomersController");
+  Route::resource("features", "FeaturesController");
 });
 
 /*Route::get('/products', 'App\Http\Controllers\ProductController@index');

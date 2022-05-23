@@ -35,17 +35,32 @@
                       label="Description"
                       id="description"
                       v-model="form.description"
+                      multiline="true"
+                      rows="5"
                     />
                     <BaseInput
                       label="Price"
                       id="price"
                       v-model="form.price"
                     />
-                    <BaseCheckbox
-                      id="remember-me"
-                      label="Remember me"
-                      name="remember-me"
-                      v-model="form.rememberMe"
+                    <fieldset class="mt-2">
+                      <legend class="">
+                        Select colors
+                      </legend>
+
+                      <div class="flex my-4 items-center space-x-3">
+                        <label v-for="(color, index) in colors" @click="handleSetColor(index)" :class="`${index == activeColor ? 'ring ring-offset-1' : 'ring-2'} m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700`">
+                          <input type="radio" name="color-choice" value="Washed Black" class="sr-only" aria-labelledby="color-choice-0-label">
+                          <p id="color-choice-0-label" class="sr-only">
+                              Washed Black
+                          </p>
+                          <span aria-hidden="true" :style="`background-color: ${color.hash}`" class="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span>
+                        </label>
+                      </div>
+                    </fieldset>
+                    <Features
+                      :features="features"
+                      :selectedFeatures="selectedFeatures"
                     />
                     <BaseButton>
                       Store
@@ -67,13 +82,18 @@
   import Navbar from "../../components/Admin/Navbar";
   import { Cropper } from 'vue-advanced-cropper';
   import 'vue-advanced-cropper/dist/style.css';
+  import Features from "../../components/Admin/Features";
 
   export default{
     components: {
       MobileNav,
       DesktopNav,
       Navbar,
-      Cropper
+      Cropper,
+      Features,
+    },
+    created(){
+      this.fetchNewProduct();
     },
     data(){
       return {
@@ -84,6 +104,17 @@
         crop: {
 
         },
+        activeColor: 1,
+        colors: [
+          {
+            hash: "red"
+          },
+          {
+            hash: "blue"
+          }
+        ],
+        features: [],
+        selectedFeatures: [],
       }
     },
 
@@ -98,6 +129,8 @@
       },
       async storeProduct(){
         let that = this;
+        console.log(this.selectedFeatures[0]);
+        return;
         const res = await fetch("/api/admin/products", {
           method: 'post',
           headers: {
@@ -121,6 +154,14 @@
       onCrop({coordinates, canvas}){
 			   this.crop = coordinates;
          this.canvas = canvas;
+      },
+      async fetchNewProduct(){
+        let that = this;
+        const res = await fetch("/api/admin/products/create");
+        if(res.status == 200){
+          const body = await res.json();
+          that.features = body.features;
+        }
       }
     }
   }

@@ -117,6 +117,14 @@ const router = new VueRouter({
         auth: true,
       }
     },
+    {
+      path: '/admin/products/:id/edit',
+      name: 'EditProductsForm',
+      component: ProductsForm,
+      meta: {
+        auth: true,
+      }
+    },
   ]
 })
 
