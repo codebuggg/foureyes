@@ -7,6 +7,11 @@
           <div class="flex items-center flex-shrink-0 px-4">
             <BaseSiteLogo />
           </div>
+          <div class="px-4">
+            <BaseButton>
+              Update
+            </BaseButton>
+          </div>
           <nav class="mt-5 flex-1 flex flex-col divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
             <div class="px-2 space-y-16">
               <div>
