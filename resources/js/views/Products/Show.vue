@@ -12,7 +12,6 @@
                 <h2 class="sr-only">Product information</h2>
                 <p class="text-3xl text-gray-900">{{ `$ ${product.price}` }}</p>
               </div>
-              <Reviews :product="product" />
               <div class="mt-6">
                 <h3 class="sr-only">Description</h3>
                 <div class="text-base text-gray-700 space-y-6">

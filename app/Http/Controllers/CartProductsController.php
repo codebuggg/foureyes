@@ -8,40 +8,39 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\CartProduct;
 
+use App\Transformers\CartProductsTransformer;
+
 class CartProductsController extends Controller
 {
 
-    public function index(Request $request)
+    public function index(Request $request, $cart_id)
     {
-        $cart_id = 1; #$request->cart_id;
-        $cart = CartProduct::with('product')->where(["cart_id" => $cart_id])->get();
-        return response()->json($cart, 200);
+        $cart_products = CartProduct::with('product')->where(["cart_id" => $cart_id])->get();
+        $cart_products = fractal($cart_products, new CartProductsTransformer())->toArray();
+        return response()->json($cart_products);
     }
 
-    public function store(StoreCartRequest $request)
+    public function store(StoreCartRequest $request, $cart_id)
     {
-        $cart_id = 1; #$request->cart_id;
         $product_id = $request->product_id;
-        $cart = Cart::find($cart_id);
-        $product = Product::find($product_id);
-        $cart_product = CartProduct::create([
+        $params = [
           "cart_id" => $cart_id,
           "product_id" => $product_id,
-          "quantity" => 1,
-        ]);
+        ];
+        $cart_product = CartProduct::firstWhere($params);
+        if($cart_product) $cart_product->update(["quantity" => $cart_product->quantity += 1]);
+        else $cart_product = CartProduct::create($params);
     }
 
-    public function destroy(Request $request)
+    // why not use cart product id
+    public function destroy(Request $request, $cart_id, $product_id)
     {
-        $cart_id = $request->cart_id;
-        $product_id = $request->product_id;
-        $cart = Cart::find($cart_id);
-        $product = Product::find($product_id);
         $cart_product = CartProduct::where([
           "cart_id" => $cart_id,
           "product_id" => $product_id
         ])->first();
-        $cart_product->delete();
+        if($cart_product->quantity > 1) $cart_product->update(["quantity" => $cart_product->quantity -= 1]);
+        else $cart_product->delete();
     }
 
     public function update(Request $request)

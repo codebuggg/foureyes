@@ -20,7 +20,7 @@ class UserController extends Controller
             $status = 201;
             $response = [
                 'data' => Auth::user(),
-                'token' => Auth::user()->createToken('bigStore')->accessToken,
+                'token' => Auth::user()->createToken('bigStore')->plainTextToken,
             ];
         }
 
@@ -38,7 +38,7 @@ class UserController extends Controller
 
         return response()->json([
             'data' => $user,
-            'token' => $user->createToken('bigStore')->accessToken,
+            'token' => $user->createToken('bigStore')->plainTextToken,
         ], 201);
     }
 

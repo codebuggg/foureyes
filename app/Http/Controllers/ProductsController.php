@@ -10,14 +10,14 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::inStock()->get();
+        $products = Product::with('images')->get();
         return response()->json($products, 200);
     }
 
     public function show($id)
     {
         $product = Product::with('images', 'colors', 'features')->find($id);
-        if($product->units == 0) return response("Out of stock", 404);
+        #if($product->units == 0) return response("Out of stock", 404);
         return response()->json($product, 200);
     }
 

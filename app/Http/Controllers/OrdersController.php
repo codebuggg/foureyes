@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderProduct;
-use \App\Models\Cart;
-use Illuminate\Http\Request;
+use \App\Models\CartProduct;
+use App\Http\Requests\StoreOrderRequest;
+use App\Http\Resources\OrderResource;
 use Auth;
+use Illuminate\Support\Facades\Log;
 
 class OrdersController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware("auth");
+        #$this->middleware("auth");
     }
 
     public function index()
@@ -22,21 +24,23 @@ class OrdersController extends Controller
         return response()->json($orders, 200);
     }
 
-    public function store(Request $request)
+    public function store(StoreOrderRequest $request)
     {
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'address' => $request->address
-        ]);
+      try {
+        $params = $request->all();
 
-        $cart = Cart::where([
-          "user_id" => Auth::id()
+        $cart_products = CartProduct::where([
+          "cart_id" => $request->cart_id,
         ])->get(); // fetch user cart for creating order products
 
-        if(!$cart->first()) return response("", 422);
+        if(!$cart_products->first()) return response("", 422);
+
+        $order = Order::create([
+          "user_id" => 1,
+        ]);
 
         $subtotal = 0;
-        foreach ($cart as $key => $item) {
+        foreach ($cart_products as $key => $item) {
           $quantity = $item->quantity;
           $product = $item->product;
           $price = $product->price;
@@ -49,7 +53,7 @@ class OrdersController extends Controller
             "order_id" => $order->id,
           ]);
           $subtotal += $total_price;
-          Cart::destroy($item->id);
+          #CartProduct::destroy($item->id);
         }
 
         $order->update([
@@ -62,11 +66,14 @@ class OrdersController extends Controller
             'data'   => $order,
             'message' => $order ? 'Order Created!' : 'Error Creating Order'
         ], 201);
+      } catch (Exception $e) {
+        Log::info($e);
+      }
     }
 
     public function show(Order $order)
     {
-        return response()->json($order, 200);
+        return response()->json(new OrderResource($order), 200);
     }
 
     public function destroy(Order $order)

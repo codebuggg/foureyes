@@ -14,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 Route::group(["namespace" => "App\Http\Controllers"], function(){
   Route::post('login', 'UserController@login');
@@ -34,10 +30,11 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
 });
 
 Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin", "as" => "admin."], function(){
-  Route::put('products/{product}/units','ProductsController@units')->name("products.units");
-  Route::resource('products', 'ProductsController');
-  Route::put('orders/{order}/state', 'OrdersController@state')->name('orders.state');
-  Route::resource('orders', 'OrdersController');
+  Route::get("dashboard", "DashboardController@index");
+  Route::resource("products", "ProductsController");
+  Route::resource("orders", "OrdersController");
+  Route::resource("customers", "CustomersController");
+  Route::resource("features", "FeaturesController");
 });
 
 /*Route::get('/products', 'App\Http\Controllers\ProductController@index');

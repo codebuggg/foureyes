@@ -19,7 +19,7 @@
                                       Shopping cart
                                   </h2>
                                   <div class="ml-3 h-7 flex items-center">
-                                      <button @click="$store.dispatch('showCart')" type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                                      <button @click="hideCart()" type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                                           <span class="sr-only">Close panel</span>
                                           <!-- Heroicon name: outline/x -->
                                           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -49,7 +49,7 @@
                           <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
                               <div class="flex justify-between text-base font-medium text-gray-900">
                                   <p>Subtotal</p>
-                                  <p>$262.00</p>
+                                  <p>{{ `$${subtotal}`  }}</p>
                               </div>
                               <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                               <div class="mt-6">
@@ -57,7 +57,7 @@
                               </div>
                               <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
                                   <p>
-                                      or <button @click="i++" type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                      or <button @click="hideCart()" type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
                                   </p>
                               </div>
                           </div>
@@ -74,14 +74,17 @@
     components: {
       CartItem,
     },
-    data(){
-      return{
-        i: 0,
-      }
-    },
     computed: {
       cart(){
         return this.$store.state.cart.items;
+      },
+      subtotal(){
+        return this.$store.getters.subtotal;
+      },
+    },
+    methods: {
+      hideCart(){
+        this.$store.dispatch('showCart');
       },
     },
   }

@@ -1,19 +1,17 @@
 <template>
   <li class="w-64 mt-10 inline-flex flex-col text-center lg:w-auto">
-    <router-link :to="`/products/${product.id}`">
+    <router-link :to="`/products/${product.id}`" class="block">
       <div class="group relative">
         <div class="w-full bg-gray-200 rounded-md overflow-hidden aspect-w-1 aspect-h-1">
-          <img :src="product.image" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">
+          <img :src="product.images[0].path" alt="Black machined steel pen with hexagonal grip and small white logo at top." class="w-full h-full object-center object-cover group-hover:opacity-75">
         </div>
         <div class="mt-6">
           <p class="text-sm text-gray-500">
             {{ product.color }}
           </p>
           <h3 class="mt-1 font-semibold text-gray-900">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              {{ product.name }}
-            </a>
+            <span class="absolute inset-0"></span>
+            {{ product.name }}
           </h3>
           <p class="mt-1 text-gray-900">
             {{ `$${product.price}` }}

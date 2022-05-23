@@ -14,6 +14,7 @@ async function authenticate(that, path){
       token,
       data,
     } = body;
+    console.log(token);
     localStorage.setItem("token", token);
     localStorage.setItem("current_user", JSON.stringify(data));
     return that.pushToHome();

@@ -1,7 +1,7 @@
 <template>
   <li class="py-6 flex">
       <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-        <img :src="cartItem.product.image" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="w-full h-full object-center object-cover">
+        <img :src="cartItem.product.images[0].path" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="w-full h-full object-center object-cover">
       </div>
 
       <div class="ml-4 flex-1 flex flex-col">
@@ -26,7 +26,7 @@
               </p>
 
               <div class="flex">
-                  <button @click="$store.dispatch('removeFromCart', index)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                  <button @click="$store.dispatch('removeFromCart', cartItem.product.id)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
               </div>
           </div>
       </div>

@@ -7,12 +7,12 @@ use App\Models\Order;
 
 class OrderFactory extends Factory
 {
-  
+
     public function definition()
     {
         return [
-            "quantity" => 2,
             "user_id" => 1,
+            "total" => 20,
         ];
     }
 }

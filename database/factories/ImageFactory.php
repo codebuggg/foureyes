@@ -14,7 +14,6 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-          "name" => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png',
         ];
     }
 }
