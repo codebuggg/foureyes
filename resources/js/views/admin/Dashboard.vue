@@ -38,8 +38,10 @@
 
               <div class="grid grid-cols-1">
                 <div class="bg-white overflow-hidden shadow rounded-lg">
-                  <div class="p-5">
-                    <BarChart />
+                  <div class="p-5" v-if="chartData.datasets[0].data.length > 0">
+                    <BarChart 
+                      :chartData="chartData"
+                    />
                   </div>
                 </div>
                 <!-- <div class="bg-white overflow-hidden shadow rounded-lg">
@@ -63,6 +65,7 @@
                   'date'
                 ]"
                 :rows="dashboard.orders"
+                :actions="false"
               />
             </div>
             <div class="col-span-4">
@@ -74,6 +77,7 @@
                   'date'
                 ]"
                 :rows="dashboard.customers"
+                :actions="false"
               />
             </div>
           </div>
@@ -108,6 +112,24 @@
         dashboard: {
           ordersSum: 0,
           customers: []
+        },
+        chartData: {
+          labels: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July'
+          ],
+          datasets: [
+            {
+              label: 'Orders',
+              backgroundColor: '#f87979',
+              data: []
+            }
+          ]      
         }
       }
     },
@@ -120,6 +142,23 @@
         if(res.status == 200){
           const body = await res.json();
           this.dashboard = body;
+          let labels = this.dashboard.orderGroups.map((orderGroup) => orderGroup.month);
+          let data = [];
+          this.chartData.labels.forEach((label) => {
+            let value = 0;
+            if(labels.includes(label)) value = this.dashboard.orderGroups.filter((orderGroup) => orderGroup.month == label)[0].data; 
+            data.push(value)
+          });
+            console.log(data);
+          this.chartData  = { 
+            ...this.chartData, 
+            datasets: [
+              { 
+                ...this.chartData.datasets[0], 
+                data 
+              }
+            ] 
+          };
         }
       }
     }

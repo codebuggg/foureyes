@@ -75,18 +75,14 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
     plugins: {
       type: Object,
       "default": function _default() {}
+    },
+    chartData: {
+      type: Object,
+      "default": function _default() {}
     }
   },
   data: function data() {
     return {
-      chartData: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Data One',
-          backgroundColor: '#f87979',
-          data: [40, 39, 10, 40, 39, 80, 40]
-        }]
-      },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false
@@ -1196,7 +1192,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("TD", {
   template: '<div>{{row[header]}}</div>'
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["headers", "rows", "title", "canAdd", "newPath", "resource"],
+  props: ["headers", "rows", "title", "canAdd", "newPath", "resource", "actions"],
   data: function data() {
     return {
       tableRows: []
@@ -5093,10 +5089,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Admin_BarChart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Admin/BarChart */ "./resources/js/components/Admin/BarChart.vue");
 
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -5205,6 +5211,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       dashboard: {
         ordersSum: 0,
         customers: []
+      },
+      chartData: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Orders',
+          backgroundColor: '#f87979',
+          data: []
+        }]
       }
     };
   },
@@ -5216,7 +5230,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var res, body;
+        var res, body, labels, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -5228,7 +5242,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 res = _context.sent;
 
                 if (!(res.status == 200)) {
-                  _context.next = 8;
+                  _context.next = 13;
                   break;
                 }
 
@@ -5238,8 +5252,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 6:
                 body = _context.sent;
                 _this.dashboard = body;
+                labels = _this.dashboard.orderGroups.map(function (orderGroup) {
+                  return orderGroup.month;
+                });
+                data = [];
 
-              case 8:
+                _this.chartData.labels.forEach(function (label) {
+                  var value = 0;
+                  if (labels.includes(label)) value = _this.dashboard.orderGroups.filter(function (orderGroup) {
+                    return orderGroup.month == label;
+                  })[0].data;
+                  data.push(value);
+                });
+
+                console.log(data);
+                _this.chartData = _objectSpread(_objectSpread({}, _this.chartData), {}, {
+                  datasets: [_objectSpread(_objectSpread({}, _this.chartData.datasets[0]), {}, {
+                    data: data
+                  })]
+                });
+
+              case 13:
               case "end":
                 return _context.stop();
             }
@@ -39930,18 +39963,20 @@ var render = function () {
                           ]
                         }),
                         _vm._v(" "),
-                        _c(
-                          "th",
-                          {
-                            staticClass:
-                              "px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
-                          },
-                          [
-                            _vm._v(
-                              "\n                  Actions\n                "
-                            ),
-                          ]
-                        ),
+                        _vm.actions
+                          ? _c(
+                              "th",
+                              {
+                                staticClass:
+                                  "px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Actions\n                "
+                                ),
+                              ]
+                            )
+                          : _vm._e(),
                       ],
                       2
                     ),
@@ -39982,166 +40017,174 @@ var render = function () {
                                 ]
                               }),
                               _vm._v(" "),
-                              _c(
-                                "td",
-                                {
-                                  staticClass:
-                                    "px-6 py-4 whitespace-nowrap text-sm text-gray-500",
-                                },
-                                [
-                                  _c(
-                                    "t-dropdown",
+                              _vm.actions
+                                ? _c(
+                                    "td",
                                     {
-                                      scopedSlots: _vm._u(
-                                        [
-                                          {
-                                            key: "trigger",
-                                            fn: function (ref) {
-                                              var mousedownHandler =
-                                                ref.mousedownHandler
-                                              var focusHandler =
-                                                ref.focusHandler
-                                              var blurHandler = ref.blurHandler
-                                              var keydownHandler =
-                                                ref.keydownHandler
-                                              var isShown = ref.isShown
-                                              return _c("div", {}, [
-                                                _c(
-                                                  "button",
-                                                  {
-                                                    staticClass:
-                                                      "max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50",
-                                                    attrs: {
-                                                      type: "button",
-                                                      id: "user-menu-button",
-                                                      "aria-expanded": "false",
-                                                      "aria-haspopup": "true",
-                                                    },
-                                                    on: {
-                                                      mousedown:
-                                                        mousedownHandler,
-                                                      focus: focusHandler,
-                                                      blur: blurHandler,
-                                                      keydown: keydownHandler,
-                                                    },
-                                                  },
-                                                  [
+                                      staticClass:
+                                        "px-6 py-4 whitespace-nowrap text-sm text-gray-500",
+                                    },
+                                    [
+                                      _c(
+                                        "t-dropdown",
+                                        {
+                                          scopedSlots: _vm._u(
+                                            [
+                                              {
+                                                key: "trigger",
+                                                fn: function (ref) {
+                                                  var mousedownHandler =
+                                                    ref.mousedownHandler
+                                                  var focusHandler =
+                                                    ref.focusHandler
+                                                  var blurHandler =
+                                                    ref.blurHandler
+                                                  var keydownHandler =
+                                                    ref.keydownHandler
+                                                  var isShown = ref.isShown
+                                                  return _c("div", {}, [
                                                     _c(
-                                                      "svg",
+                                                      "button",
                                                       {
                                                         staticClass:
-                                                          "hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block",
+                                                          "max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50",
                                                         attrs: {
-                                                          xmlns:
-                                                            "http://www.w3.org/2000/svg",
-                                                          viewBox: "0 0 20 20",
-                                                          fill: "currentColor",
-                                                          "aria-hidden": "true",
+                                                          type: "button",
+                                                          id: "user-menu-button",
+                                                          "aria-expanded":
+                                                            "false",
+                                                          "aria-haspopup":
+                                                            "true",
+                                                        },
+                                                        on: {
+                                                          mousedown:
+                                                            mousedownHandler,
+                                                          focus: focusHandler,
+                                                          blur: blurHandler,
+                                                          keydown:
+                                                            keydownHandler,
                                                         },
                                                       },
                                                       [
-                                                        _c("path", {
-                                                          attrs: {
-                                                            "fill-rule":
-                                                              "evenodd",
-                                                            d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
-                                                            "clip-rule":
-                                                              "evenodd",
+                                                        _c(
+                                                          "svg",
+                                                          {
+                                                            staticClass:
+                                                              "hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block",
+                                                            attrs: {
+                                                              xmlns:
+                                                                "http://www.w3.org/2000/svg",
+                                                              viewBox:
+                                                                "0 0 20 20",
+                                                              fill: "currentColor",
+                                                              "aria-hidden":
+                                                                "true",
+                                                            },
                                                           },
-                                                        }),
+                                                          [
+                                                            _c("path", {
+                                                              attrs: {
+                                                                "fill-rule":
+                                                                  "evenodd",
+                                                                d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+                                                                "clip-rule":
+                                                                  "evenodd",
+                                                              },
+                                                            }),
+                                                          ]
+                                                        ),
                                                       ]
                                                     ),
-                                                  ]
-                                                ),
-                                              ])
-                                            },
-                                          },
-                                        ],
-                                        null,
-                                        true
-                                      ),
-                                    },
-                                    [
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "origin-top-left absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none",
-                                          attrs: {
-                                            role: "menu",
-                                            "aria-orientation": "vertical",
-                                            "aria-labelledby":
-                                              "user-menu-button",
-                                            tabindex: "-1",
-                                          },
-                                        },
-                                        [
-                                          _c(
-                                            "router-link",
-                                            {
-                                              staticClass:
-                                                "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
-                                              attrs: {
-                                                to:
-                                                  "/admin/" +
-                                                  _vm.resource +
-                                                  "/" +
-                                                  row.id,
-                                                role: "menuitem",
-                                                tabindex: "-1",
-                                              },
-                                            },
-                                            [_vm._v("View")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "router-link",
-                                            {
-                                              staticClass:
-                                                "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
-                                              attrs: {
-                                                to:
-                                                  "/admin/" +
-                                                  _vm.resource +
-                                                  "/" +
-                                                  row.id +
-                                                  "/edit",
-                                                role: "menuitem",
-                                                tabindex: "-1",
-                                              },
-                                            },
-                                            [_vm._v("Edit")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "button",
-                                            {
-                                              staticClass:
-                                                "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
-                                              attrs: {
-                                                role: "menuitem",
-                                                tabindex: "-1",
-                                              },
-                                              on: {
-                                                click: function ($event) {
-                                                  return _vm.removeItem(
-                                                    row.id,
-                                                    i
-                                                  )
+                                                  ])
                                                 },
                                               },
-                                            },
-                                            [_vm._v("Delete")]
+                                            ],
+                                            null,
+                                            true
                                           ),
-                                        ],
-                                        1
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "origin-top-left absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none",
+                                              attrs: {
+                                                role: "menu",
+                                                "aria-orientation": "vertical",
+                                                "aria-labelledby":
+                                                  "user-menu-button",
+                                                tabindex: "-1",
+                                              },
+                                            },
+                                            [
+                                              _c(
+                                                "router-link",
+                                                {
+                                                  staticClass:
+                                                    "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
+                                                  attrs: {
+                                                    to:
+                                                      "/admin/" +
+                                                      _vm.resource +
+                                                      "/" +
+                                                      row.id,
+                                                    role: "menuitem",
+                                                    tabindex: "-1",
+                                                  },
+                                                },
+                                                [_vm._v("View")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "router-link",
+                                                {
+                                                  staticClass:
+                                                    "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
+                                                  attrs: {
+                                                    to:
+                                                      "/admin/" +
+                                                      _vm.resource +
+                                                      "/" +
+                                                      row.id +
+                                                      "/edit",
+                                                    role: "menuitem",
+                                                    tabindex: "-1",
+                                                  },
+                                                },
+                                                [_vm._v("Edit")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100",
+                                                  attrs: {
+                                                    role: "menuitem",
+                                                    tabindex: "-1",
+                                                  },
+                                                  on: {
+                                                    click: function ($event) {
+                                                      return _vm.removeItem(
+                                                        row.id,
+                                                        i
+                                                      )
+                                                    },
+                                                  },
+                                                },
+                                                [_vm._v("Delete")]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ]
                                       ),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
                             ],
                             2
                           ),
@@ -46865,7 +46908,20 @@ var render = function () {
                           staticClass:
                             "bg-white overflow-hidden shadow rounded-lg",
                         },
-                        [_c("div", { staticClass: "p-5" }, [_c("BarChart")], 1)]
+                        [
+                          _vm.chartData.datasets[0].data.length > 0
+                            ? _c(
+                                "div",
+                                { staticClass: "p-5" },
+                                [
+                                  _c("BarChart", {
+                                    attrs: { chartData: _vm.chartData },
+                                  }),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                        ]
                       ),
                     ]),
                   ]
@@ -46886,6 +46942,7 @@ var render = function () {
                             title: "Recent Orders",
                             headers: ["user", "total", "state", "date"],
                             rows: _vm.dashboard.orders,
+                            actions: false,
                           },
                         }),
                       ],
@@ -46901,6 +46958,7 @@ var render = function () {
                             title: "Recent Customers",
                             headers: ["name", "phone", "date"],
                             rows: _vm.dashboard.customers,
+                            actions: false,
                           },
                         }),
                       ],

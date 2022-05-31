@@ -56,7 +56,7 @@
                   <template v-for="(header, i) in headers">
                     <th :key="i" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ renderHeader(header) }}</th>
                   </template>
-                  <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th v-if="actions" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
@@ -69,7 +69,7 @@
                         <component :is="render(row, header)" :row="row" :header="header"  :index="i" @onUpdateRow="onUpdateRow" />
                       </td>
                     </template>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td v-if="actions" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <t-dropdown>
                         <div
                           slot="trigger"
@@ -146,7 +146,8 @@
       "title",
       "canAdd",
       "newPath",
-      "resource"
+      "resource",
+      "actions",
     ],
     data(){
       return{
