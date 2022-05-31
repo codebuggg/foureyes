@@ -8,6 +8,9 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\CartProduct;
 
+use Illuminate\Support\Facades\Log;
+
+
 use App\Transformers\CartProductsTransformer;
 
 class CartProductsController extends Controller
@@ -23,9 +26,11 @@ class CartProductsController extends Controller
     public function store(StoreCartRequest $request, $cart_id)
     {
         $product_id = $request->product_id;
+        $color_id = $request->color_id;
         $params = [
           "cart_id" => $cart_id,
           "product_id" => $product_id,
+          "color_id" => $color_id,
         ];
         $cart_product = CartProduct::firstWhere($params);
         if($cart_product) $cart_product->update(["quantity" => $cart_product->quantity += 1]);
@@ -34,10 +39,10 @@ class CartProductsController extends Controller
 
     public function destroy(Request $request, $cart_id, $product_id)
     {
-        $cart_product = CartProduct::where([
+        $cart_product = CartProduct::firstWhere([
           "cart_id" => $cart_id,
           "product_id" => $product_id
-        ])->first();
+        ]);
         if($cart_product->quantity > 1) $cart_product->update(["quantity" => $cart_product->quantity -= 1]);
         else $cart_product->delete();
     }
@@ -46,13 +51,5 @@ class CartProductsController extends Controller
     {
         $cart = $this->set_cart($request);
         $cart->update(["quantity" => $request->quantity]);
-    }
-
-    private function set_cart($request)
-    {
-        return Cart::firstWhere([
-          "user_id" => \Auth::id(),
-          "product_id" => $request->product_id,
-        ]);
     }
 }

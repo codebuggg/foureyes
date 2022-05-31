@@ -119,6 +119,7 @@
   import Pricing from "../components/Pricing";
   import Order from "../api/orders";
   import BaseInput from "../components/BaseInput";
+  import { mapActions, mapGetters, mapState } from "vuex";
 
   export default {
     components: {
@@ -142,9 +143,9 @@
       }
     },
     computed: {
-      cart(){
-        return this.$store.state.cart.items;
-      },
+      ...mapState({
+        cart: state => state.cart.cart.items,
+      }),
     },
     methods: {
       async onSubmit(){

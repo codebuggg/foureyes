@@ -17,7 +17,7 @@
                 </p>
               </div>
               <p class="mt-1 text-sm text-gray-500">
-                  Salmon
+                {{cartItem.color.name}}
               </p>
           </div>
           <div class="flex-1 flex items-end justify-between text-sm">
@@ -26,7 +26,7 @@
               </p>
 
               <div class="flex">
-                  <button @click="$store.dispatch('removeFromCart', cartItem.product.id)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                  <button @click="removeFromCart(cartItem)" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
               </div>
           </div>
       </div>
@@ -34,6 +34,14 @@
 </template>
 <script>
   export default {
-    props: ['cartItem', 'index'],
+    props: [
+      'cartItem', 
+      'index'
+    ],
+    methods: {
+      async removeFromCart(cartItem){
+        this.$store.dispatch('removeFromCart', cartItem.product.id);
+      },
+    }
   }
 </script>

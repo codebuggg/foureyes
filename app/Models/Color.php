@@ -13,5 +13,6 @@ class Color extends Model
 
     protected $fillable = [
         'hash',
+        "name",
     ];
 }

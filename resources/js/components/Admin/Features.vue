@@ -65,6 +65,9 @@
     watch: {
       sFeatures(newsFeatures, oldQuestion) {
         this.$emit("onChangeFeatures", newsFeatures);
+      },
+      selectedFeatures(){
+        this.sFeatures = this.selectedFeatures;
       }
     },
     methods: {

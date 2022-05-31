@@ -1,7 +1,7 @@
 <template>
   <li class="flex py-6 px-4 sm:px-6">
     <div class="flex-shrink-0">
-      <img :src="product.product.images[0].path" alt="Front of men&#039;s Basic Tee in black." class="w-20 rounded-md">
+      <img :src="product.product.images[0].path" :alt="product.product.name" class="w-20 rounded-md">
     </div>
 
     <div class="ml-6 flex-1 flex flex-col">
@@ -13,15 +13,16 @@
             </a>
           </h4>
           <p class="mt-1 text-sm text-gray-500">
-            Black
+              {{ product.color.name }}
           </p>
-          <p class="mt-1 text-sm text-gray-500">
+          <!-- <p class="mt-1 text-sm text-gray-500">
             Large
           </p>
+          -->
         </div>
 
         <div class="ml-4 flex-shrink-0 flow-root">
-          <button type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500">
+          <button type="button" @click="removeFromCart(product.product.id)" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500">
             <span class="sr-only">Remove</span>
             <!-- Heroicon name: solid/trash -->
             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -34,7 +35,7 @@
       <div class="flex-1 pt-2 flex items-end justify-between">
         <p class="mt-1 text-sm font-medium text-gray-900">$32.00</p>
 
-        <div class="ml-4">
+        <!-- <div class="ml-4">
           <label for="quantity" class="sr-only">Quantity</label>
           <select id="quantity" name="quantity" class="rounded-md border border-gray-300 text-base font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="1">1</option>
@@ -47,14 +48,21 @@
             <option value="8">8</option>
           </select>
         </div>
+        -->
       </div>
     </div>
   </li>
 </template>
 <script>
+  import { mapActions, mapGetters, mapState } from "vuex";
   export default {
     props: [
       'product',
     ],
+    methods: {
+      ...mapActions([
+        "removeFromCart"
+      ])
+    }
   }
 </script>

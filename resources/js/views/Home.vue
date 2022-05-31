@@ -13,8 +13,9 @@
         <FeaturedSection
           :featuredSection="featuredSection"
         />
-        <FavoritesSection />
-        <CTA />
+        <FavoritesSection 
+          :products="recent"
+        />
       </main>
       <Footer />
     </div>
@@ -30,6 +31,8 @@
   import CTA from "../components/CTA";
   import FeaturedSection from "../components/FeaturedSection";
   import {data} from "../data";
+  import { mapState } from 'vuex';
+  import MobileMenu from "../components/MobileMenu";
 
   export default {
     components: {
@@ -40,14 +43,30 @@
       Footer,
       CTA,
       FeaturedSection,
+      MobileMenu,
     },
-    provide: {
-      currentUser: JSON.parse(localStorage.getItem("current_user"))
+    computed: {
+      ...mapState({
+        currentUser: state => state.currentUser.currentUser,
+      })
+    },
+    provide(){
+      return({
+        currentUser: this.currentUser,
+      })
     },
     data(){
       return{
         ...data,
+        recent: []
       };
+    },
+    async created(){
+      const res = await jsonFetch("recent");
+      if(res.status == 200){
+        const body = await res.json();
+        this.recent = body;
+      }
     }
   }
 </script>

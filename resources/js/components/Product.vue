@@ -21,22 +21,7 @@
 
       <h4 class="sr-only">Available colors</h4>
       <ul role="list" class="mt-auto pt-6 flex items-center justify-center space-x-3">
-        <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #111827;">
-          <span class="sr-only">
-          Black
-          </span>
-        </li>
-
-        <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #fde68a;">
-          <span class="sr-only">
-          Brass
-          </span>
-        </li>
-
-        <li class="w-4 h-4 rounded-full border border-black border-opacity-10" style="background-color: #e5e7eb;">
-          <span class="sr-only">
-          Chrome
-          </span>
+        <li v-for="color in product.colors" class="w-4 h-4 rounded-full border border-black border-opacity-10" :style="`background-color: ${color.hash};`">
         </li>
       </ul>
     </router-link>

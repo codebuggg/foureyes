@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use \App\Models\CartProduct;
+use App\Models\User;
+
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Resources\OrderResource;
+
 use Auth;
 use Illuminate\Support\Facades\Log;
 
@@ -26,7 +29,8 @@ class OrdersController extends Controller
 
     public function store(StoreOrderRequest $request)
     {
-      try {
+      try 
+      {
         $params = $request->all();
 
         $cart_products = CartProduct::where([
@@ -35,13 +39,20 @@ class OrdersController extends Controller
 
         if(!$cart_products->first()) return response("", 422);
 
+        $user = User::firstWhere("phone", $request->phone);
+
+        if(!$user)
+        {
+          $user = User::create(array_merge(["name" => $request->first_name, "email" => $request->phone, "phone" => $request->phone,"password" => "password"], $request->all()));
+        }
+
         $order = Order::create([
-          "user_id" => 1,
+          "user_id" => $user->id,
         ]);
 
         $subtotal = 0;
         foreach ($cart_products as $key => $item) {
-          $quantity = $item->quantity;
+          $quantity = 1;
           $product = $item->product;
           $price = $product->price;
           $total_price = $price * $quantity;

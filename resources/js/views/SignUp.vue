@@ -50,13 +50,6 @@
               v-model="form.cpassword"
             />
 
-            <BaseCheckbox
-              id="remember-me"
-              label="Remember me"
-              name="remember-me"
-              v-model="form.rememberMe"
-            />
-
             <div>
               <BaseButton
                 type="submit"

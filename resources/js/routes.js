@@ -117,34 +117,36 @@ const router = new VueRouter({
         auth: true,
       }
     },
+    {
+      path: '/admin/products/:id/edit',
+      name: 'AdminEditProduct',
+      component: ProductsForm,
+      meta: {
+        auth: true,
+      }
+    },
   ]
 })
 
 router.beforeEach(async (to, from, next) => {
-  if (to.matched.some(record => record.meta.auth)) {
-    if (localStorage.getItem('token') == null) {
-      next({
-        path: '/sign_up',
-        params: { nextUrl: to.fullPath }
-      })
-    }else{
-      try {
-        const res = await authFetch("user");
-        if(res.status == 200){
-          const body = await res.json();
-          router.app.$store.dispatch('setCurrentUser', body);
-          next();
-        }else{
-          next({
-            path: '/sign_up',
-            params: { nextUrl: to.fullPath }
-          })
-        }
-      } catch (e) {
-        console.log(e);
+  let isSignedIn = false;
+  if (localStorage.getItem('token') != null) {
+    try {
+      const res = await authFetch("user");
+      if(res.status == 200){
+        const body = await res.json();
+        router.app.$store.dispatch('setCurrentUser', body);
+        isSignedIn = true;
       }
+    } catch (e) {
+      console.log(e);
     }
   }
+  
+  if(to.matched.some(record => record.meta.auth) && !isSignedIn) next({
+    path: '/sign_up',
+    params: { nextUrl: to.fullPath }
+  })
   else next();
 })
 

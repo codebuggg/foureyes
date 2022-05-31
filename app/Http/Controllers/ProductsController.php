@@ -10,7 +10,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::with('images')->get();
+        $products = Product::with('images', 'colors')->get();
         return response()->json($products, 200);
     }
 

@@ -36,27 +36,48 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 class="text-lg leading-6 font-medium text-gray-900">Sales</h2>
 
-              <div class="grid grid-cols-1">
+              <div class="grid grid-cols-2 gap-2">
                 <div class="bg-white overflow-hidden shadow rounded-lg">
                   <div class="p-5">
                     <LineChart />
                   </div>
                 </div>
-
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                  <div class="p-5">
+                    <BarChart />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-
-          <Table
-            :headers="[
-              'user',
-              'total',
-              'state',
-              'date'
-            ]"
-            :rows="dashboard.orders"
-          />
+          <div class="mt-8">
+          <div class="max-w-6xl mx-auto grid grid-cols-12">
+            <div class="col-span-8">
+              <Table
+                title="Recent Orders"
+                :headers="[
+                  'user',
+                  'total',
+                  'state',
+                  'date'
+                ]"
+                :rows="dashboard.orders"
+              />
+            </div>
+            <div class="col-span-4">
+              <Table
+                title="Recent Customers"
+                :headers="[
+                  'name',
+                  'phone',
+                  'date'
+                ]"
+                :rows="dashboard.customers"
+              />
+            </div>
+          </div>
+          </div>
         </div>
       </main>
     </div>
@@ -70,6 +91,7 @@
   import Table from "../../components/Admin/Table";
   import Card from "../../components/Admin/Card";
   import Navbar from "../../components/Admin/Navbar";
+  import BarChart from "../../components/Admin/BarChart";
 
   export default{
     components: {
@@ -79,11 +101,13 @@
       Table,
       Card,
       Navbar,
+      BarChart,
     },
     data(){
       return {
         dashboard: {
           ordersSum: 0,
+          customers: []
         }
       }
     },

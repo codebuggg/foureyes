@@ -7,7 +7,7 @@
       <Navbar />
       <main class="flex-1 pb-8">
         <div class="max-w-6xl mx-auto mt-8 px-4 sm:px-6 lg:px-8 flex justify-between">
-          <h2 class=" text-lg leading-6 font-medium text-gray-900">New Product</h2>
+          <h2 class=" text-lg leading-6 font-medium text-gray-900">{{ isEditing ? 'Edit Product' : 'New Product' }}</h2>
         </div>
         <!-- Activity table (small breakpoint and up) -->
         <div class="">
@@ -35,20 +35,27 @@
                       label="Description"
                       id="description"
                       v-model="form.description"
+                      multiline="true"
+                      rows="5"
                     />
                     <BaseInput
                       label="Price"
                       id="price"
                       v-model="form.price"
                     />
-                    <BaseCheckbox
-                      id="remember-me"
-                      label="Remember me"
-                      name="remember-me"
-                      v-model="form.rememberMe"
+                    <ColorsProducts 
+                      :colors="colors"
+                      :selectedColors="selectedColors"
+                      :handleSetColor="handleSetColor"
+                      :isSelectedColor="isSelectedColor"
+                    />
+                    <Features
+                      :features="features"
+                      :selectedFeatures="selectedFeatures"
+                      @onChangeFeatures="handleChangeFeatures"
                     />
                     <BaseButton>
-                      Store
+                      {{ isEditing ? 'Update' : 'Store'}}
                     </BaseButton>
                   </form>
                 </div>
@@ -67,23 +74,42 @@
   import Navbar from "../../components/Admin/Navbar";
   import { Cropper } from 'vue-advanced-cropper';
   import 'vue-advanced-cropper/dist/style.css';
+  import Features from "../../components/Admin/Features";
+  import ColorsProducts from "../../components/Admin/ColorsForm";
 
   export default{
     components: {
       MobileNav,
       DesktopNav,
       Navbar,
-      Cropper
+      Cropper,
+      Features,
+      ColorsProducts,
+    },
+    created(){
+      let path = this.$router.history.current.path;
+      if(path.includes("edit")){
+        this.fetchEditProduct();
+        this.isEditing = true;
+      }else this.fetchNewProduct();
     },
     data(){
       return {
         form: {
+
         },
         img: "",
         canvas: "",
         crop: {
 
         },
+        colors: [
+
+        ],
+        features: [],
+        selectedFeatures: [],
+        selectedColors: [],
+        isEditing: false,
       }
     },
 
@@ -98,14 +124,17 @@
       },
       async storeProduct(){
         let that = this;
-        const res = await fetch("/api/admin/products", {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ ...this.form, file: that.getImage(that.canvas) }),
+        let url = this.isEditing ? `admin/products/${this.form.id}` : 'admin/products';
+        const res = await authFetch(url, {
+          method: this.isEditing ? 'put' : 'post',
+          body: JSON.stringify({ 
+            ...this.form,
+            file: that.getImage(that.canvas),
+            features: that.selectedFeatures,
+            colors: that.selectedColors,
+          }),
         });
-        if(res.status == 201){
+        if(res.ok){
           return this.$router.push({ name: "AdminProducts" });
         }
       },
@@ -121,6 +150,50 @@
       onCrop({coordinates, canvas}){
 			   this.crop = coordinates;
          this.canvas = canvas;
+      },
+      async fetchNewProduct(){
+        let that = this;
+        const res = await authFetch("admin/products/create");
+        if(res.status == 200){
+          const body = await res.json();
+          that.features = body.features;
+          that.colors = body.colors;
+        }
+      },
+      handleChangeFeatures(e){
+        this.selectedFeatures = e;
+      },
+      handleSetColor(index){
+        let b = this.selectedColors.filter((color) => color == index);
+        if(b.length > 0){
+          let i = this.selectedColors.indexOf(b[0]);
+          this.selectedColors.splice(i, 1);
+        }else{
+          this.selectedColors.push(index);
+        }
+      },
+      getSelectedColor(index){
+        return this.selectedColors.filter((color) => color == index);
+      },
+      isSelectedColor(index){
+        let b = this.selectedColors.filter((color) => color == index);
+        return b.length  > 0;
+      },
+      handleChangeColors(color){
+        this.selectedColors = color;
+      },
+      async fetchEditProduct(){
+        const id = this.$router.history.current.params.id;
+        const res = await authFetch(`admin/products/${id}/edit`);
+        if(res.status == 200){
+          const body = await res.json();
+          this.form = body.product;
+          this.img = body.product.image.path;
+          this.features = body.features;
+          this.colors = body.colors;
+          this.selectedColors = body.product.colors.map((color) => color.id);
+          this.selectedFeatures = body.product.features.map((feature) => feature.id);
+        }
       }
     }
   }

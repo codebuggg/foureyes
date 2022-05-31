@@ -16,7 +16,7 @@ class OrdersTransformer extends Fractal\TransformerAbstract
       "phone" => $order->user->phone,
       "total" => $order->total,
       "state" => $order->state,
-      "date" => $order->created_at,
+      "date" => date_format($order->created_at, "Y-m-d"),
     ];
 	}
 }
