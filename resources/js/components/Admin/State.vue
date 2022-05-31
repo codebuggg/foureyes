@@ -1,5 +1,5 @@
 <template>
-    <select @change="onChangeState" class='block w-full py-2 px-3 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'>>
+    <select :value="value" @change="onChangeState" class='block w-full py-2 px-3 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'>>
         <option v-for='(option, i) in header.options'>{{option}}</option>
     </select>
 </template>
@@ -10,6 +10,15 @@
             "row",
             "header",
         ],
+        data(){
+            return {
+                value: "",
+            }
+        },
+        created(){
+            console.log(this.header);
+            this.value = this.row[this.header.key];
+        },
         methods: {
             onChangeState: async function ({target}) {
                 const { value } = target;

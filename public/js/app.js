@@ -975,6 +975,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "State",
   props: ["row", "header"],
+  data: function data() {
+    return {
+      value: ""
+    };
+  },
+  created: function created() {
+    console.log(this.header);
+    this.value = this.row[this.header.key];
+  },
   methods: {
     onChangeState: function () {
       var _onChangeState = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(_ref) {
@@ -39734,6 +39743,7 @@ var render = function () {
     {
       staticClass:
         "block w-full py-2 px-3 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+      domProps: { value: _vm.value },
       on: { change: _vm.onChangeState },
     },
     [
