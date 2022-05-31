@@ -80,13 +80,16 @@ chart_js__WEBPACK_IMPORTED_MODULE_0__.Chart.register(chart_js__WEBPACK_IMPORTED_
   data: function data() {
     return {
       chartData: {
-        labels: ['January', 'February', 'March'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-          data: [40, 20, 12]
+          label: 'Data One',
+          backgroundColor: '#f87979',
+          data: [40, 39, 10, 40, 39, 80, 40]
         }]
       },
       chartOptions: {
-        responsive: true
+        responsive: true,
+        maintainAspectRatio: false
       }
     };
   }
@@ -46855,23 +46858,7 @@ var render = function () {
                       [_vm._v("Sales")]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "grid grid-cols-2 gap-2" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white overflow-hidden shadow rounded-lg",
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "p-5" },
-                            [_c("LineChart")],
-                            1
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
+                    _c("div", { staticClass: "grid grid-cols-1" }, [
                       _c(
                         "div",
                         {

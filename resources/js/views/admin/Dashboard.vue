@@ -36,17 +36,17 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 class="text-lg leading-6 font-medium text-gray-900">Sales</h2>
 
-              <div class="grid grid-cols-2 gap-2">
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                  <div class="p-5">
-                    <LineChart />
-                  </div>
-                </div>
+              <div class="grid grid-cols-1">
                 <div class="bg-white overflow-hidden shadow rounded-lg">
                   <div class="p-5">
                     <BarChart />
                   </div>
                 </div>
+                <!-- <div class="bg-white overflow-hidden shadow rounded-lg">
+                  <div class="p-5">
+                    <BarChart />
+                  </div>
+                </div> -->
               </div>
             </div>
           </div>
