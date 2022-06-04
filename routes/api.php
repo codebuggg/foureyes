@@ -28,6 +28,7 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
   Route::resource('products','ProductsController');
   Route::resource('carts.products', 'CartProductsController');
   Route::get('recent', 'HomeController@recent');
+  Route::get('landing', 'HomeController@landing');
 });
 
 Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin", "as" => "admin."], function(){
@@ -38,6 +39,7 @@ Route::group(["namespace" => "App\Http\Controllers\Admin", "prefix" => "/admin",
   Route::resource("customers", "CustomersController");
   Route::resource("features", "FeaturesController");
   Route::resource("colors", "ColorsController");
+  Route::put('landing', 'LandingController@update');
 });
 
 /*Route::get('/products', 'App\Http\Controllers\ProductController@index');

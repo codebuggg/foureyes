@@ -4,6 +4,7 @@
       :hero="hero"
       :shopByCategory="shopByCategory"
       :featuredSection="featuredSection"
+      @updateLanding="updateLanding"
     />
 
     <div class="lg:pl-64 flex flex-col flex-1">
@@ -32,6 +33,7 @@
   import CTA from "../../components/CTA";
   import FeaturedSection from "../../components/FeaturedSection";
   import {data} from "../../data";
+import Vue from "vue";
 
   export default{
     components: {
@@ -47,10 +49,51 @@
     },
     data(){
       return {
-        ...data
+        hero: {
+
+        },
+        featuredSection: {
+
+        },
+        shopByCategory: {
+          
+        }
       }
     },
+    created(){
+      this.fetchLanding();
+    },
     methods: {
+      async fetchLanding(){
+        const res = await authFetch("landing");
+        if(res.ok){
+          let body = await res.json();
+          let that = this;
+          body = JSON.parse(body);
+          that.hero = body.hero || data.hero;
+          that.shopByCategory = body.shopByCategory || data.shopByCategory;
+          that.featuredSection = body.featuredSection || data.featuredSection;
+          Vue.nextTick(function(){
+            console.log(that.hero.title);
+          });
+        }
+      },
+      async updateLanding(){
+        let {
+          hero,
+          shopByCategory,
+          featuredSection,
+        } = this;
+        console.log(this.hero);
+        const res = await authFetch("admin/landing", {
+          method: "put",
+          body: { 
+            hero,
+            shopByCategory,
+            featuredSection,
+          },
+        });
+      }
     }
   }
 </script>
