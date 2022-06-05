@@ -8,7 +8,7 @@
           </div>
 
           <div class="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8">
-              <router-link :to="`/products/${product.id}`" class="group relative" v-for="product in products">
+              <router-link :to="`/products/${product.id}`" class="group relative" v-for="product in products" :key="product.id">
                   <div class="w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3">
                       <img :src="product.images[0].path" :alt="product.name" class="w-full h-full object-center object-cover">
                   </div>

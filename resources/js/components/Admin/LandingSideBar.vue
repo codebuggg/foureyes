@@ -16,9 +16,10 @@
             </button>
           </div>
           <nav class="mt-5 flex-1 flex flex-col divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
-            <div class="px-2 space-y-16">
-              <div>
-                <h2>Hero</h2>
+            <div class="px-2 space-y-5">
+              <Accordion
+                title="Hero"
+              >
                 <BaseInput
                   label="Tile"
                   v-model="hero.title"
@@ -34,9 +35,8 @@
                   :multiple="true"
                   :changeImage="handleChangeMultiple"
                 />
-              </div>
-              <div class="shopByCategory">
-                <h2>Shop By Category</h2>
+              </Accordion>
+              <Accordion class="shopByCategory" title="Shop By Category">
                 <div class="">
                   <h3 class="">Section 1</h3>
                   <BaseImageInput
@@ -67,8 +67,8 @@
                     v-model="shopByCategory.third.title"
                   />
                 </div>
-              </div>
-              <div class="featuredSection">
+              </Accordion>
+              <Accordion class="featuredSection" title="Featured Section">
                 <BaseImageInput
                   :changeImage="handleChangeFeaturedImage"
                 />
@@ -84,7 +84,7 @@
                   :multiline="true"
                   :rows="6"
                 />
-              </div>
+              </Accordion>
             </div>
           </nav>
         </div>
@@ -93,11 +93,13 @@
 </template>
 <script type="text/javascript">
   import NavLink from "./NavLink";
+  import Accordion from "./Accordion.vue";
 
   export default {
     components: {
-      NavLink,
-    },
+    NavLink,
+    Accordion
+},
     props: [
       "hero",
       "shopByCategory",

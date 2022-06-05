@@ -12,6 +12,39 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      open: false
+    };
+  },
+  props: ["title"]
+});
+
+/***/ }),
+
 /***/ "./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/BarChart.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/BarChart.vue?vue&type=script&lang=js& ***!
@@ -511,6 +544,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _NavLink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavLink */ "./resources/js/components/Admin/NavLink.vue");
+/* harmony import */ var _Accordion_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Accordion.vue */ "./resources/js/components/Admin/Accordion.vue");
 //
 //
 //
@@ -605,9 +639,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    NavLink: _NavLink__WEBPACK_IMPORTED_MODULE_0__["default"]
+    NavLink: _NavLink__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Accordion: _Accordion_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: ["hero", "shopByCategory", "featuredSection"],
   methods: {
@@ -34295,6 +34331,45 @@ const Scatter = /* #__PURE__ */ generateChart('scatter-chart', 'scatter', chart_
 
 /***/ }),
 
+/***/ "./resources/js/components/Admin/Accordion.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Admin/Accordion.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Accordion.vue?vue&type=template&id=70e4aecd& */ "./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd&");
+/* harmony import */ var _Accordion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Accordion.vue?vue&type=script&lang=js& */ "./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Accordion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Admin/Accordion.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Admin/BarChart.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/Admin/BarChart.vue ***!
@@ -36599,6 +36674,22 @@ component.options.__file = "resources/js/views/admin/ProductsForm.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_babel_loader_8_2_5_rb5fcebzp6kx3hqg3ucus54t3m_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_Accordion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./Accordion.vue?vue&type=script&lang=js& */ "./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_pnpm_babel_loader_8_2_5_rb5fcebzp6kx3hqg3ucus54t3m_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_Accordion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Admin/BarChart.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/Admin/BarChart.vue?vue&type=script&lang=js& ***!
@@ -37544,6 +37635,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_pnpm_babel_loader_8_2_5_rb5fcebzp6kx3hqg3ucus54t3m_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./ProductsForm.vue?vue&type=script&lang=js& */ "./node_modules/.pnpm/babel-loader@8.2.5_rb5fcebzp6kx3hqg3ucus54t3m/node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/admin/ProductsForm.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_pnpm_babel_loader_8_2_5_rb5fcebzp6kx3hqg3ucus54t3m_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_pnpm_vue_loader_15_9_8_ffwzdgtqke25ahxrxm6chzu3e4_node_modules_vue_loader_lib_index_js_vue_loader_options_Accordion_vue_vue_type_template_id_70e4aecd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./Accordion.vue?vue&type=template&id=70e4aecd& */ "./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd&");
+
 
 /***/ }),
 
@@ -38550,6 +38658,57 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/Accordion.vue?vue&type=template&id=70e4aecd& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "px-3" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "flex justify-between cursor-pointer",
+          on: {
+            click: function ($event) {
+              _vm.open = !_vm.open
+            },
+          },
+        },
+        [
+          _c("h2", [_vm._v(_vm._s(_vm.title))]),
+          _vm._v(" "),
+          _c("div", [
+            _c("i", { class: "fa fa-" + (_vm.open ? "minus" : "plus") }),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _vm.open ? _vm._t("default") : _vm._e(),
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/BarChart.vue?vue&type=template&id=32db6fd4&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/.pnpm/vue-loader@15.9.8_ffwzdgtqke25ahxrxm6chzu3e4/node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Admin/BarChart.vue?vue&type=template&id=32db6fd4& ***!
@@ -39224,65 +39383,40 @@ var render = function () {
               attrs: { "aria-label": "Sidebar" },
             },
             [
-              _c("div", { staticClass: "px-2 space-y-16" }, [
-                _c(
-                  "div",
-                  [
-                    _c("h2", [_vm._v("Hero")]),
-                    _vm._v(" "),
-                    _c("BaseInput", {
-                      attrs: { label: "Tile", multiline: true },
-                      model: {
-                        value: _vm.hero.title,
-                        callback: function ($$v) {
-                          _vm.$set(_vm.hero, "title", $$v)
-                        },
-                        expression: "hero.title",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("BaseInput", {
-                      attrs: { label: "Subtitle", multiline: true, rows: 6 },
-                      model: {
-                        value: _vm.hero.subtitle,
-                        callback: function ($$v) {
-                          _vm.$set(_vm.hero, "subtitle", $$v)
-                        },
-                        expression: "hero.subtitle",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("BaseImageInput", {
-                      attrs: {
-                        multiple: true,
-                        changeImage: _vm.handleChangeMultiple,
-                      },
-                    }),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "shopByCategory" }, [
-                  _c("h2", [_vm._v("Shop By Category")]),
-                  _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "px-2 space-y-5" },
+                [
                   _c(
-                    "div",
-                    {},
+                    "Accordion",
+                    { attrs: { title: "Hero" } },
                     [
-                      _c("h3", {}, [_vm._v("Section 1")]),
-                      _vm._v(" "),
-                      _c("BaseImageInput", {
-                        attrs: { changeImage: _vm.handleImageChangeFirst },
+                      _c("BaseInput", {
+                        attrs: { label: "Tile", multiline: true },
+                        model: {
+                          value: _vm.hero.title,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.hero, "title", $$v)
+                          },
+                          expression: "hero.title",
+                        },
                       }),
                       _vm._v(" "),
                       _c("BaseInput", {
-                        attrs: { label: "Title" },
+                        attrs: { label: "Subtitle", multiline: true, rows: 6 },
                         model: {
-                          value: _vm.shopByCategory.first.title,
+                          value: _vm.hero.subtitle,
                           callback: function ($$v) {
-                            _vm.$set(_vm.shopByCategory.first, "title", $$v)
+                            _vm.$set(_vm.hero, "subtitle", $$v)
                           },
-                          expression: "shopByCategory.first.title",
+                          expression: "hero.subtitle",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("BaseImageInput", {
+                        attrs: {
+                          multiple: true,
+                          changeImage: _vm.handleChangeMultiple,
                         },
                       }),
                     ],
@@ -39290,87 +39424,128 @@ var render = function () {
                   ),
                   _vm._v(" "),
                   _c(
-                    "div",
-                    {},
+                    "Accordion",
+                    {
+                      staticClass: "shopByCategory",
+                      attrs: { title: "Shop By Category" },
+                    },
                     [
-                      _c("h3", {}, [_vm._v("Section 2")]),
+                      _c(
+                        "div",
+                        {},
+                        [
+                          _c("h3", {}, [_vm._v("Section 1")]),
+                          _vm._v(" "),
+                          _c("BaseImageInput", {
+                            attrs: { changeImage: _vm.handleImageChangeFirst },
+                          }),
+                          _vm._v(" "),
+                          _c("BaseInput", {
+                            attrs: { label: "Title" },
+                            model: {
+                              value: _vm.shopByCategory.first.title,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.shopByCategory.first, "title", $$v)
+                              },
+                              expression: "shopByCategory.first.title",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
-                      _c("BaseImageInput", {
-                        attrs: { changeImage: _vm.handleImageChange },
-                      }),
+                      _c(
+                        "div",
+                        {},
+                        [
+                          _c("h3", {}, [_vm._v("Section 2")]),
+                          _vm._v(" "),
+                          _c("BaseImageInput", {
+                            attrs: { changeImage: _vm.handleImageChange },
+                          }),
+                          _vm._v(" "),
+                          _c("BaseInput", {
+                            attrs: { label: "Title" },
+                            model: {
+                              value: _vm.shopByCategory.second.title,
+                              callback: function ($$v) {
+                                _vm.$set(
+                                  _vm.shopByCategory.second,
+                                  "title",
+                                  $$v
+                                )
+                              },
+                              expression: "shopByCategory.second.title",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
-                      _c("BaseInput", {
-                        attrs: { label: "Title" },
-                        model: {
-                          value: _vm.shopByCategory.second.title,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.shopByCategory.second, "title", $$v)
-                          },
-                          expression: "shopByCategory.second.title",
-                        },
-                      }),
-                    ],
-                    1
+                      _c(
+                        "div",
+                        {},
+                        [
+                          _c("h3", {}, [_vm._v("Section 3")]),
+                          _vm._v(" "),
+                          _c("BaseImageInput", {
+                            attrs: { changeImage: _vm.handleImageChange2 },
+                          }),
+                          _vm._v(" "),
+                          _c("BaseInput", {
+                            attrs: { label: "Title" },
+                            model: {
+                              value: _vm.shopByCategory.third.title,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.shopByCategory.third, "title", $$v)
+                              },
+                              expression: "shopByCategory.third.title",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
-                    "div",
-                    {},
+                    "Accordion",
+                    {
+                      staticClass: "featuredSection",
+                      attrs: { title: "Featured Section" },
+                    },
                     [
-                      _c("h3", {}, [_vm._v("Section 3")]),
-                      _vm._v(" "),
                       _c("BaseImageInput", {
-                        attrs: { changeImage: _vm.handleImageChange2 },
+                        attrs: { changeImage: _vm.handleChangeFeaturedImage },
                       }),
                       _vm._v(" "),
                       _c("BaseInput", {
-                        attrs: { label: "Title" },
+                        attrs: { label: "Title", multiline: true, rows: 3 },
                         model: {
-                          value: _vm.shopByCategory.third.title,
+                          value: _vm.featuredSection.title,
                           callback: function ($$v) {
-                            _vm.$set(_vm.shopByCategory.third, "title", $$v)
+                            _vm.$set(_vm.featuredSection, "title", $$v)
                           },
-                          expression: "shopByCategory.third.title",
+                          expression: "featuredSection.title",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("BaseInput", {
+                        attrs: { label: "Subtitle", multiline: true, rows: 6 },
+                        model: {
+                          value: _vm.featuredSection.subtitle,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.featuredSection, "subtitle", $$v)
+                          },
+                          expression: "featuredSection.subtitle",
                         },
                       }),
                     ],
                     1
                   ),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "featuredSection" },
-                  [
-                    _c("BaseImageInput", {
-                      attrs: { changeImage: _vm.handleChangeFeaturedImage },
-                    }),
-                    _vm._v(" "),
-                    _c("BaseInput", {
-                      attrs: { label: "Title", multiline: true, rows: 3 },
-                      model: {
-                        value: _vm.featuredSection.title,
-                        callback: function ($$v) {
-                          _vm.$set(_vm.featuredSection, "title", $$v)
-                        },
-                        expression: "featuredSection.title",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("BaseInput", {
-                      attrs: { label: "Subtitle", multiline: true, rows: 6 },
-                      model: {
-                        value: _vm.featuredSection.subtitle,
-                        callback: function ($$v) {
-                          _vm.$set(_vm.featuredSection, "subtitle", $$v)
-                        },
-                        expression: "featuredSection.subtitle",
-                      },
-                    }),
-                  ],
-                  1
-                ),
-              ]),
+                ],
+                1
+              ),
             ]
           ),
         ]
@@ -40542,7 +40717,7 @@ var render = function () {
     "div",
     { staticClass: "relative mt-5" },
     [
-      _c("BaseButton", [_vm._v("Select images")]),
+      _c("BaseButton", [_vm._v("Select image")]),
       _vm._v(" "),
       _c("input", {
         staticClass: "absolute top-0 h-full w-full z-50 opacity-0",
@@ -41339,6 +41514,7 @@ var render = function () {
             return _c(
               "router-link",
               {
+                key: product.id,
                 staticClass: "group relative",
                 attrs: { to: "/products/" + product.id },
               },
