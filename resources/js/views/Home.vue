@@ -3,6 +3,9 @@
     <div class="bg-white">
       <Navbar />
       <main>
+        <HeroSection
+          :hero="hero"
+        />
         <ShopByCategory
           :shopByCategory="shopByCategory"
         />
@@ -61,6 +64,20 @@
         const body = await res.json();
         this.recent = body;
       }
+      this.fetchLanding();
+    },
+    methods: {
+       async fetchLanding(){
+        const res = await authFetch("landing");
+        if(res.ok){
+          let body = await res.json();
+          let that = this;
+          body = JSON.parse(body);
+          that.hero = body.hero || data.hero;
+          that.shopByCategory = body.shopByCategory || data.shopByCategory;
+          that.featuredSection = body.featuredSection || data.featuredSection;
+        }
+      },
     }
   }
 </script>

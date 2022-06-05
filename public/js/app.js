@@ -3840,6 +3840,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -3902,12 +3905,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.recent = body;
 
             case 8:
+              _this.fetchLanding();
+
+            case 9:
             case "end":
               return _context.stop();
           }
         }
       }, _callee);
     }))();
+  },
+  methods: {
+    fetchLanding: function fetchLanding() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var res, body, that;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return authFetch("landing");
+
+              case 2:
+                res = _context2.sent;
+
+                if (!res.ok) {
+                  _context2.next = 12;
+                  break;
+                }
+
+                _context2.next = 6;
+                return res.json();
+
+              case 6:
+                body = _context2.sent;
+                that = _this2;
+                body = JSON.parse(body);
+                that.hero = body.hero || _data__WEBPACK_IMPORTED_MODULE_8__.data.hero;
+                that.shopByCategory = body.shopByCategory || _data__WEBPACK_IMPORTED_MODULE_8__.data.shopByCategory;
+                that.featuredSection = body.featuredSection || _data__WEBPACK_IMPORTED_MODULE_8__.data.featuredSection;
+
+              case 12:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
   }
 });
 
@@ -45825,6 +45872,8 @@ var render = function () {
         _c(
           "main",
           [
+            _c("HeroSection", { attrs: { hero: _vm.hero } }),
+            _vm._v(" "),
             _c("ShopByCategory", {
               attrs: { shopByCategory: _vm.shopByCategory },
             }),

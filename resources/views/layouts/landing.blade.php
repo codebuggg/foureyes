@@ -7,6 +7,7 @@
       <meta name="csrf-token" content="{{csrf_token()}}">
       <title>Big Store</title>
       <link href=" {{ mix('css/app.css') }}" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
   </head>
   <body class="h-full">
     <div id="app">
