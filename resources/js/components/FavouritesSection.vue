@@ -4,7 +4,7 @@
       <div class="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <div class="sm:flex sm:items-baseline sm:justify-between">
               <h2 id="favorites-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Recent Products</h2>
-              <router-link to="/products" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all products<span aria-hidden="true"> &rarr;</span></router-link>
+              <router-link to="/products" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all products</router-link>
           </div>
 
           <div class="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8">
@@ -20,8 +20,9 @@
               </router-link>
           </div>
 
-          <div class="mt-6 sm:hidden">
-              <router-link to="/products" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">Browse all favorites<span aria-hidden="true"> &rarr;</span></router-link>to="/products"   </div>
+        <div class="mt-6 sm:hidden">
+            <router-link to="/products" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">Browse all favorites</router-link>
+        </div>
       </div>
   </section>
 </template>

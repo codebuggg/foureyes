@@ -1,11 +1,14 @@
 <template>
   <header class="relative overflow-hidden">
+      <MobileMenu 
+        :open="open"
+      />
       <!-- Top navigation -->
       <nav aria-label="Top" class="relative z-20 bg-white bg-opacity-90 backdrop-filter backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="h-16 flex items-center">
             <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-            <button type="button" class="bg-white p-2 rounded-md text-gray-400 lg:hidden">
+            <button type="button" @click="open = !open" class="bg-white p-2 rounded-md text-gray-400 lg:hidden">
               <span class="sr-only">Open menu</span>
               <!-- Heroicon name: outline/menu -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -70,13 +73,18 @@
   import NavbarAuth from "./NavbarAuth";
   import NavbarMenus from "./NavbarMenus";
   import { mapActions, mapGetters } from "vuex";
+  import MobileMenu from "./MobileMenu";
 
   export default {
     components: {
       HeroSection,
       NavbarAuth,
       NavbarMenus,
+      MobileMenu,
     },
+    data: () => ({
+      open: false
+    }),
     computed: {
       ...mapGetters([
         "cartSize",

@@ -1,12 +1,8 @@
 <template>
   <div>
     <div class="bg-white">
-      <MobileMenu />
       <Navbar />
       <main>
-        <HeroSection
-          :hero="hero"
-        />
         <ShopByCategory
           :shopByCategory="shopByCategory"
         />
@@ -32,7 +28,6 @@
   import FeaturedSection from "../components/FeaturedSection";
   import {data} from "../data";
   import { mapState } from 'vuex';
-  import MobileMenu from "../components/MobileMenu";
 
   export default {
     components: {
@@ -43,7 +38,6 @@
       Footer,
       CTA,
       FeaturedSection,
-      MobileMenu,
     },
     computed: {
       ...mapState({

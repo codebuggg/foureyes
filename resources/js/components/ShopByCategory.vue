@@ -4,14 +4,14 @@
       <div class="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <div class="sm:flex sm:items-baseline sm:justify-between">
               <h2 id="category-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Category</h2>
-              <router-link to="/products" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all categories<span aria-hidden="true"> &rarr;</span></router-link>
+              <router-link to="/products" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all categories</router-link>
           </div>
 
           <div class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
-              <div class="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
+              <div class="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden relative sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
                 <img :src="shopByCategory.first.img" :alt="shopByCategory.first.title" class="object-center object-cover group-hover:opacity-75">
-                <div aria-hidden="true" class="bg-gradient-to-b from-transparent to-black opacity-50"></div>
-                <div class="p-6 flex items-end sm:absolute sm:inset-0">
+                <div aria-hidden="true" class="bg-gradient-to-b absolute inset-0 from-transparent to-black opacity-50"></div>
+                <div class="p-6 flex items-end absolute inset-0">
                   <div>
                     <h3 class="font-semibold text-white">
                       <router-link :to="`/products?category=${shopByCategory.first.title}`">
@@ -26,10 +26,10 @@
                 </div>
               </div>
               <template v-for="i in ['second', 'third']">
-                <div class="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
+                <div class="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden relative sm:aspect-none sm:h-full">
                   <img :src="shopByCategory[i].img" :alt="shopByCategory[i].title" class="object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full">
-                  <div aria-hidden="true" class="bg-gradient-to-b from-transparent to-black opacity-50 sm:absolute sm:inset-0"></div>
-                  <div class="p-6 flex items-end sm:absolute sm:inset-0">
+                  <div aria-hidden="true" class="bg-gradient-to-b from-transparent to-black opacity-50 absolute inset-0"></div>
+                  <div class="p-6 flex items-end absolute inset-0">
                     <div>
                       <h3 class="font-semibold text-white">
                         <router-link :to="getLink(shopByCategory[i].title)">
@@ -47,7 +47,7 @@
           </div>
 
           <div class="mt-6 sm:hidden">
-              <router-link to="/products" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">Browse all categories<span aria-hidden="true"> &rarr;</span></router-link>
+            <router-link to="/products" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">Browse all categories<span aria-hidden="true"> &rarr;</span></router-link>
           </div>
       </div>
   </section>
