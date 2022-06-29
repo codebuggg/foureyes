@@ -1,6 +1,6 @@
 <template>
   <div class="relative mt-5">
-    <BaseButton>Select image</BaseButton>
+    <BaseButton>Select images</BaseButton>
     <input type="file" class="absolute top-0 h-full w-full z-50 opacity-0" @change="handleImageChange" :multiple="multiple" />
   </div>
 </template>

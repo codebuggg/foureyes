@@ -14,7 +14,6 @@ class CartProductsTransformer extends Fractal\TransformerAbstract
       'id' => (int) $cart_product->id,
       'quantity' => $cart_product->quantity,
       "product" => fractal($cart_product->product, new ProductsTransformer())->toArray(),
-      "color" => $cart_product->color,
     ];
 	}
 }

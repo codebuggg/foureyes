@@ -46,13 +46,13 @@
     data(){
       return {
         product: {
-          images: []
+
         }
       }
     },
     async created() {
       const id = this.$route.params.id;
-      const res = await authFetch(`products/${id}`);
+      const res = await fetch(`/api/products/${id}`);
       if(res.status == 200){
         const body = await res.json();
         this.product = body;

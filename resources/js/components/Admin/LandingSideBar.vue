@@ -7,19 +7,10 @@
           <div class="flex items-center flex-shrink-0 px-4">
             <BaseSiteLogo />
           </div>
-          <div class="px-4">
-            <button
-              class="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              @click="$emit('updateLanding')"
-            >
-              Update
-            </button>
-          </div>
           <nav class="mt-5 flex-1 flex flex-col divide-y divide-cyan-800 overflow-y-auto" aria-label="Sidebar">
-            <div class="px-2 space-y-5">
-              <Accordion
-                title="Hero"
-              >
+            <div class="px-2 space-y-16">
+              <div>
+                <h2>Hero</h2>
                 <BaseInput
                   label="Tile"
                   v-model="hero.title"
@@ -35,8 +26,9 @@
                   :multiple="true"
                   :changeImage="handleChangeMultiple"
                 />
-              </Accordion>
-              <Accordion class="shopByCategory" title="Shop By Category">
+              </div>
+              <div class="shopByCategory">
+                <h2>Shop By Category</h2>
                 <div class="">
                   <h3 class="">Section 1</h3>
                   <BaseImageInput
@@ -67,8 +59,8 @@
                     v-model="shopByCategory.third.title"
                   />
                 </div>
-              </Accordion>
-              <Accordion class="featuredSection" title="Featured Section">
+              </div>
+              <div class="featuredSection">
                 <BaseImageInput
                   :changeImage="handleChangeFeaturedImage"
                 />
@@ -84,7 +76,7 @@
                   :multiline="true"
                   :rows="6"
                 />
-              </Accordion>
+              </div>
             </div>
           </nav>
         </div>
@@ -93,17 +85,15 @@
 </template>
 <script type="text/javascript">
   import NavLink from "./NavLink";
-  import Accordion from "./Accordion.vue";
 
   export default {
     components: {
-    NavLink,
-    Accordion
-},
+      NavLink,
+    },
     props: [
       "hero",
       "shopByCategory",
-      "featuredSection",
+      "featuredSection"
     ],
     methods: {
       handleImageChangeFirst(e){

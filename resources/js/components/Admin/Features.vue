@@ -23,8 +23,8 @@
               <input
                 type="checkbox"
                 class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                :value="feature.id"
-                v-model="sFeatures"
+                :value="feature.name"
+                v-model="selectedFeatures"
               />
               <label
                 class="ml-2 block text-sm text-gray-900"
@@ -59,15 +59,6 @@
     data(){
       return{
         showFeaturesForm: false,
-        sFeatures: [],
-      }
-    },
-    watch: {
-      sFeatures(newsFeatures, oldQuestion) {
-        this.$emit("onChangeFeatures", newsFeatures);
-      },
-      selectedFeatures(){
-        this.sFeatures = this.selectedFeatures;
       }
     },
     methods: {

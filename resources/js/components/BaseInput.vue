@@ -1,5 +1,5 @@
 <template>
-  <div class="my-3">
+  <div class="my-4">
     <label
       :for="id"
       class="block text-sm font-medium text-gray-700">

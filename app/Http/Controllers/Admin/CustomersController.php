@@ -12,7 +12,7 @@ class CustomersController extends Controller
 
     public function index()
     {
-        $customers = User::where("is_admin", false)->get();
+        $customers = User::all();
         $customers = fractal($customers, new CustomersTransformer())->toArray();
         return response()->json($customers, 200);
     }

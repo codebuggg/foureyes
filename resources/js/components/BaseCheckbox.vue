@@ -5,7 +5,8 @@
       v-bind="$attrs"
       type="checkbox"
       class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-      v-model='newValue'
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     />
     <label
       :for="id"
@@ -23,15 +24,5 @@
       'id',
       'value',
     ],
-    data(){
-      return{
-        newValue: '',
-      }
-    },
-    watch: {
-      newValue(val){
-        this.$emit('input', val);
-      }
-    }
   }
 </script>

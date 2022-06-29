@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="bg-white">
+      <MobileMenu />
       <Navbar />
       <main>
         <HeroSection
@@ -12,9 +13,8 @@
         <FeaturedSection
           :featuredSection="featuredSection"
         />
-        <FavoritesSection 
-          :products="recent"
-        />
+        <FavoritesSection />
+        <CTA />
       </main>
       <Footer />
     </div>
@@ -30,7 +30,6 @@
   import CTA from "../components/CTA";
   import FeaturedSection from "../components/FeaturedSection";
   import {data} from "../data";
-  import { mapState } from 'vuex';
 
   export default {
     components: {
@@ -42,42 +41,13 @@
       CTA,
       FeaturedSection,
     },
-    computed: {
-      ...mapState({
-        currentUser: state => state.currentUser.currentUser,
-      })
-    },
-    provide(){
-      return({
-        currentUser: this.currentUser,
-      })
+    provide: {
+      currentUser: JSON.parse(localStorage.getItem("current_user"))
     },
     data(){
       return{
         ...data,
-        recent: []
       };
-    },
-    async created(){
-      const res = await jsonFetch("recent");
-      if(res.status == 200){
-        const body = await res.json();
-        this.recent = body;
-      }
-      this.fetchLanding();
-    },
-    methods: {
-       async fetchLanding(){
-        const res = await authFetch("landing");
-        if(res.ok){
-          let body = await res.json();
-          let that = this;
-          body = JSON.parse(body);
-          that.hero = body.hero || data.hero;
-          that.shopByCategory = body.shopByCategory || data.shopByCategory;
-          that.featuredSection = body.featuredSection || data.featuredSection;
-        }
-      },
     }
   }
 </script>

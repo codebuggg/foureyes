@@ -14,7 +14,7 @@ class CustomersTransformer extends Fractal\TransformerAbstract
       'id' => (int) $customer->id,
       "user" => $customer->name,
       "phone" => $customer->phone,
-      "date" => date_format($customer->created_at, "Y-m-d"),
+      "date" => $customer->created_at,
     ];
 	}
 }

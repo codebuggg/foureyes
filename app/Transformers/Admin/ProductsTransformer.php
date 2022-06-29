@@ -5,7 +5,6 @@ namespace App\Transformers\Admin;
 use League\Fractal;
 
 use App\Models\Product;
-use App\Models\Color;
 
 class ProductsTransformer extends Fractal\TransformerAbstract
 {
@@ -17,8 +16,6 @@ class ProductsTransformer extends Fractal\TransformerAbstract
       "image" => $product->images[0],
       "price" => $product->price,
       "name" => $product->name,
-      "colors" => $product->colors,
-      "description" => $product->description,
     ];
 	}
 }

@@ -11,7 +11,7 @@
             'user',
             'phone',
             'total',
-            { key: 'state', render: 'State', options: ['Confirmed', 'Picked up', 'Processing lens', 'Delivered'] },
+            { key: 'state', render: 'State', options: ['New', 'Confirmed', 'Picked up', 'Processing lens', 'Delivered'] },
             'date',
           ]"
           :rows="orders"
@@ -29,9 +29,11 @@
   import Table from "../../components/Admin/Table";
   import Card from "../../components/Admin/Card";
   import Navbar from "../../components/Admin/Navbar";
-  import State from "../../components/Admin/State";
-  Vue.component("State", State)
-  
+
+  Vue.component("State", {
+    props: ["row", "header"],
+    template: "<select><template v-for='(option, i) in header.options'><option>{{option}}</option></template></select>"
+  })
 
   export default{
     components: {
@@ -41,7 +43,6 @@
       Table,
       Card,
       Navbar,
-      State,
     },
     data(){
       return {

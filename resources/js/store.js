@@ -1,14 +1,49 @@
-const cartModule = {
-  state: () => ({
+import Vue from "vue";
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
     cart: {
       items: [],
+      item: null,
       show: false,
     },
-  }),
+    nav: [
+      {
+        name: "Home",
+        path: "/",
+        icon: "home"
+      },
+      {
+        name: "Products",
+        path: "/products",
+        icon: "list"
+      },
+      {
+        name: "Orders",
+        path: "/orders",
+        icon: "shopping-cart"
+      },
+      {
+        name: "Customers",
+        path: "/customers",
+        icon: "user"
+      },
+      {
+        name: "Landing Page",
+        path: "/edit",
+        icon: "palette"
+      },
+    ]
+  },
   mutations: {
-    addToCart(context, cartProduct){
+    addToCart(context, product){
       const cartItems = context.cart.items;
-      const addedToCart = cartItems.filter((cartItem) => cartItem.product.id == cartProduct.product.id );
+      const addedToCart = cartItems.filter((cartItem) => {
+        return cartItem.product.id == product.id;
+      });
       if(addedToCart.length > 0){
         // product is already in cart
         const cartItem = addedToCart[0];
@@ -17,7 +52,7 @@ const cartModule = {
       }else {
         cartItems.push({
           quantity: 1,
-          ...cartProduct
+          product,
         });
       }
     },
@@ -42,16 +77,19 @@ const cartModule = {
     },
   },
   actions: {
-    async addToCart(context, cartProduct){
-      context.commit('addToCart', cartProduct);
+    async addToCart(context, product){
+      context.commit('addToCart', product);
       context.commit('showCart');
       const cartId = localStorage.getItem('cart-id');
-      const res = await authFetch(`carts/${cartId}/products`, {
+      const res = await fetch(`/api/carts/${cartId}/products`, {
         method: "POST",
-        body: {
-          product_id: cartProduct.product.id,
-          color_id: cartProduct.color.id,
-        }
+        headers: {
+          "content-type": "application/json",
+          //"Authorization": `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          product_id: product.id,
+        })
       });
     },
     showCart(context){
@@ -62,26 +100,9 @@ const cartModule = {
     },
     async removeFromCart(context, cart){
       context.commit('removeFromCart', cart);
+      context.commit('showCart');
       const cartId = localStorage.getItem('cart-id');
       fetch(`/api/carts/${cartId}/products/${cart}`, {method: "delete"})
-    },
-    async fetchCartItems(context){
-      var cartId = localStorage.getItem('cart-id');
-      if(!cartId){
-        var res = await authFetch("carts", {
-          method: "POST"
-        });
-        if(res.status == 201){
-          const body = await res.json();
-          localStorage.setItem('cart-id', body.id);
-          cartId = body.id;
-        }
-      }
-      res = await authFetch(`carts/${cartId}/products`);
-      if(res.status == 200){
-        const body = await res.json();
-        context.commit('setCart', body);
-      }
     }
   },
   getters: {
@@ -98,9 +119,8 @@ const cartModule = {
       });
       return total;
     },
-    cartSize: state => state.cart.items.length,
+    routes: state => state.nav
   },
-};
+})
 
-export default cartModule;
-
+export default store;

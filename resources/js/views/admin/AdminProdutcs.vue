@@ -9,15 +9,14 @@
         <Table
           title="Products"
           :canAdd="true"
-          actions
           :headers="[
             { key: 'image', render: 'Im' },
             'name',
             'price',
-            { key: 'colors', render: 'Colors' },
           ]"
           :rows="products"
           newPath="/admin/products/create"
+          hasActions="true"
           resource="products"
         />
       </main>
@@ -37,11 +36,6 @@
   Vue.component("Im", {
     props: ["row", "header"],
     template: "<img width='100' :src='row[header.key].path' />"
-  })
-
-  Vue.component("Colors", {
-    props: ["row", "header"],
-    template: '<div class="flex"><div v-for="color in row[header.key]" class=" m-0.5 relative p-0.5 rounded-full flex items-center justify-center focus:outline-none ring-gray-700"><span aria-hidden="true" :style="`background-color: ${color.hash}`" class="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span></div></div>'
   })
 
   export default{

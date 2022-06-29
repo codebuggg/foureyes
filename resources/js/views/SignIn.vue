@@ -36,11 +36,20 @@
               v-model="form.password"
             />
 
-            <BaseLink
-              to="/forgot-password"
-            >
-              Forgot your password?
-            </BaseLink>
+            <div class="flex items-center justify-between">
+              <BaseCheckbox
+                id="remember-me"
+                label="Remember me"
+                name="remember-me"
+                v-model="form.rememberMe"
+              />
+
+              <BaseLink
+                to="/forgot-password"
+              >
+                Forgot your password?
+              </BaseLink>
+            </div>
 
             <div>
               <BaseButton>

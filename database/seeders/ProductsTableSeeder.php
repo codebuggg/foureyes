@@ -17,7 +17,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::factory()
-                  ->count(3)
+                  ->count(30)
                   ->state(new Sequence(
                       ['price' => 1600.21],
                       ['price' => 378.00],

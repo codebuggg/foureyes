@@ -7,7 +7,7 @@
       <Navbar />
       <main class="flex-1 pb-8">
         <div class="max-w-6xl mx-auto mt-8 px-4 sm:px-6 lg:px-8 flex justify-between">
-          <h2 class=" text-lg leading-6 font-medium text-gray-900">{{ isEditing ? 'Edit Product' : 'New Product' }}</h2>
+          <h2 class=" text-lg leading-6 font-medium text-gray-900">New Product</h2>
         </div>
         <!-- Activity table (small breakpoint and up) -->
         <div class="">
@@ -43,19 +43,27 @@
                       id="price"
                       v-model="form.price"
                     />
-                    <ColorsProducts 
-                      :colors="colors"
-                      :selectedColors="selectedColors"
-                      :handleSetColor="handleSetColor"
-                      :isSelectedColor="isSelectedColor"
-                    />
+                    <fieldset class="mt-2">
+                      <legend class="">
+                        Select colors
+                      </legend>
+
+                      <div class="flex my-4 items-center space-x-3">
+                        <label v-for="(color, index) in colors" @click="handleSetColor(index)" :class="`${index == activeColor ? 'ring ring-offset-1' : 'ring-2'} m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700`">
+                          <input type="radio" name="color-choice" value="Washed Black" class="sr-only" aria-labelledby="color-choice-0-label">
+                          <p id="color-choice-0-label" class="sr-only">
+                              Washed Black
+                          </p>
+                          <span aria-hidden="true" :style="`background-color: ${color.hash}`" class="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span>
+                        </label>
+                      </div>
+                    </fieldset>
                     <Features
                       :features="features"
                       :selectedFeatures="selectedFeatures"
-                      @onChangeFeatures="handleChangeFeatures"
                     />
                     <BaseButton>
-                      {{ isEditing ? 'Update' : 'Store'}}
+                      Store
                     </BaseButton>
                   </form>
                 </div>
@@ -75,7 +83,6 @@
   import { Cropper } from 'vue-advanced-cropper';
   import 'vue-advanced-cropper/dist/style.css';
   import Features from "../../components/Admin/Features";
-  import ColorsProducts from "../../components/Admin/ColorsForm";
 
   export default{
     components: {
@@ -84,32 +91,30 @@
       Navbar,
       Cropper,
       Features,
-      ColorsProducts,
     },
     created(){
-      let path = this.$router.history.current.path;
-      if(path.includes("edit")){
-        this.fetchEditProduct();
-        this.isEditing = true;
-      }else this.fetchNewProduct();
+      this.fetchNewProduct();
     },
     data(){
       return {
         form: {
-
         },
         img: "",
         canvas: "",
         crop: {
 
         },
+        activeColor: 1,
         colors: [
-
+          {
+            hash: "red"
+          },
+          {
+            hash: "blue"
+          }
         ],
         features: [],
         selectedFeatures: [],
-        selectedColors: [],
-        isEditing: false,
       }
     },
 
@@ -124,17 +129,16 @@
       },
       async storeProduct(){
         let that = this;
-        let url = this.isEditing ? `admin/products/${this.form.id}` : 'admin/products';
-        const res = await authFetch(url, {
-          method: this.isEditing ? 'put' : 'post',
-          body: JSON.stringify({ 
-            ...this.form,
-            file: that.getImage(that.canvas),
-            features: that.selectedFeatures,
-            colors: that.selectedColors,
-          }),
+        console.log(this.selectedFeatures[0]);
+        return;
+        const res = await fetch("/api/admin/products", {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ...this.form, file: that.getImage(that.canvas) }),
         });
-        if(res.ok){
+        if(res.status == 201){
           return this.$router.push({ name: "AdminProducts" });
         }
       },
@@ -153,46 +157,10 @@
       },
       async fetchNewProduct(){
         let that = this;
-        const res = await authFetch("admin/products/create");
+        const res = await fetch("/api/admin/products/create");
         if(res.status == 200){
           const body = await res.json();
           that.features = body.features;
-          that.colors = body.colors;
-        }
-      },
-      handleChangeFeatures(e){
-        this.selectedFeatures = e;
-      },
-      handleSetColor(index){
-        let b = this.selectedColors.filter((color) => color == index);
-        if(b.length > 0){
-          let i = this.selectedColors.indexOf(b[0]);
-          this.selectedColors.splice(i, 1);
-        }else{
-          this.selectedColors.push(index);
-        }
-      },
-      getSelectedColor(index){
-        return this.selectedColors.filter((color) => color == index);
-      },
-      isSelectedColor(index){
-        let b = this.selectedColors.filter((color) => color == index);
-        return b.length  > 0;
-      },
-      handleChangeColors(color){
-        this.selectedColors = color;
-      },
-      async fetchEditProduct(){
-        const id = this.$router.history.current.params.id;
-        const res = await authFetch(`admin/products/${id}/edit`);
-        if(res.status == 200){
-          const body = await res.json();
-          this.form = body.product;
-          this.img = body.product.image.path;
-          this.features = body.features;
-          this.colors = body.colors;
-          this.selectedColors = body.product.colors.map((color) => color.id);
-          this.selectedFeatures = body.product.features.map((feature) => feature.id);
         }
       }
     }
